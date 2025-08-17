@@ -574,7 +574,7 @@ iframe {
 @media (max-width: 768px) {
   .testimonial-track {
     flex-wrap: nowrap;
-    animation: marquee-vertical 10s linear infinite;
+    animation: marquee-vertical 8s linear infinite;
     flex-direction: column;
     height: 500px;
   }
