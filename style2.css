@@ -118,7 +118,7 @@ body {
 
 /*Home Page*/
 #hero {
-  background-image: url('./img/Picsart_24-04-13_21-22-47-513.jpg');
+  background-image: url('./img/indexbanner.jpg');
   height: 90vh;
   width: 100%;
   background-position: right;
@@ -327,19 +327,6 @@ iframe {
 
 .card.flipped .card-inner {
   transform: rotateY(180deg);
-}
-
-.flip-button {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  padding: 5px 10px;
-  border: none;
-  background-color: #96dda1;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 50px;
-  font-size: 12px;
 }
 
 .card-back p {

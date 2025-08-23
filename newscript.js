@@ -41,8 +41,16 @@ openImageLinks.forEach((link) => {
 });
 
 // Toggle flip effect on cart click event
-document.querySelectorAll('.flip-button').forEach((button) => {
-  button.addEventListener('click', () => {
+document.querySelectorAll('.card').forEach((button) => {
+  button.addEventListener('mouseenter', () => {
+    const card = button.closest('.card');
+    card.classList.toggle('flipped');
+  });
+});
+
+// Toggle flip effect on cart click event
+document.querySelectorAll('.card').forEach((button) => {
+  button.addEventListener('mouseleave', () => {
     const card = button.closest('.card');
     card.classList.toggle('flipped');
   });
