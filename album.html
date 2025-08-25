@@ -24,6 +24,38 @@
             color: black;
         }
 
+        .album-heading {
+            display: flex;
+            align-items: start;
+            justify-content: center;
+        }
+
+        .album-heading h1 {
+            color: white;
+            position: absolute;
+            z-index: 99;
+            font-size: 46px;
+            margin-top: 150px;
+
+        }
+
+        .album-heading img {
+            width: 100%;
+            opacity: 20%;
+        }
+
+        .album-heading .span-container {
+            position: absolute;
+            margin-top: 300px;
+            width: 50%;
+            height: 50px;
+            /* background-color: wheat; */
+        }
+
+        .album-heading .span-container span {
+            color: white;
+        }
+
         #header {
             display: flex;
             align-items: center;
@@ -63,7 +95,7 @@
 
         #navbar li a:hover,
         #navbar li a.active {
-            color: #088178;
+            color: #0191f7;
         }
 
         #navbar li a.active::after,
@@ -71,7 +103,7 @@
             content: '';
             width: 30%;
             height: 2px;
-            background: #088178;
+            background: #0191f7;
             position: absolute;
             bottom: -4px;
             left: 20px;
@@ -218,6 +250,65 @@
         .competition-section:nth-child(3) .photo-track {
             animation-duration: 40s;
         }
+
+    .copyright {
+      color: #5f6e6a;
+      width: 100%;
+      text-align: center;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+
+    footer .col {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      flex-direction: column;
+    }
+
+    footer .logo {
+      margin-bottom: 30px;
+    }
+
+    footer h4 {
+      color: #0191f7;
+      font-size: 14px;
+      padding-bottom: 20px;
+    }
+
+    footer p {
+      font-size: 13px;
+      margin: 0 0 8px 0;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #5f6e6a;
+      font-size: 13px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    footer a:hover {
+      color: #0191f7;
+    }
+
+
+
+    footer .follow i {
+      color: #5f6e6a;
+      padding-right: 4px;
+      cursor: pointer;
+    }
+
+    footer .follow i:hover {
+      color: #0191f7;
+    }
+
 
         @keyframes scroll {
             from {
@@ -402,8 +493,12 @@
     </section>
     <section>
         <div class="album-heading" style="text-align: center;">
-            <h1>Album</h1>
-            <span>Tracing the Path from Dreams to Reality, One Step at a Time</span>
+            <h1>Album of Glimpses From Recent Competitions</h1>
+            <img src="img/Picsart_24-04-13_21-22-47-513.jpg" alt="">
+            <div class="span-container">
+
+                <span>The Album showcases our recent active participation in some of our major competitions. Each secstion is a new timeline, new memory and new learnign opportunity.</span>
+            </div>
         </div>
 
         <div class="album-container">
@@ -621,16 +716,52 @@
                                                         <p>Artists collaborating and learning</p>
                                                     </div>
                                                 </div>
-                                                <!-- <div class="photo-item">
-                        <img src="https://via.placeholder.com/280x200/1abc9c/ffffff?text=Workshop" alt="Technical workshop">
-                        <div class="photo-overlay">
-                            <h3>Technical Workshop</h3>
-                            <p>Engineers collaborating and learning</p>
-                        </div>
-                    </div> -->
+
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <footer class="section-p1">
+                                    <div class="col">
+                                        <h4>About</h4>
+                                        <a href="about.html">About Us</a>
+                                        <a href="contact.html">Contact Us</a>
+                                    </div>
+                                    <div class="col">
+                                        <h4>Quick Links</h4>
+                                        <a href="album.html">Album</a>
+                                        <a href="blog.html">blog</a>
+                                    </div>
+                                    <div class="col">
+                                        <div class="follow">
+                                            <h4>Follow Us</h4>
+                                            <div class="icons">
+
+                                                <a target="_blank"
+                                                    href="https://www.facebook.com/robotechforum?mibextid=ZbWKwL">
+                                                    <i class="bi bi-facebook"></i>
+                                                </a>
+                                                <a target="_blank"
+                                                    href="https://www.instagram.com/the_robo_tech_forum_gcoea/">
+                                                    <i class="bi bi-instagram"> </i>
+                                                </a>
+                                                <a target="_blank"
+                                                    href="https://www.linkedin.com/company/the-robo-tech-forum/">
+                                                    <i class="bi bi-linkedin"></i>
+                                                </a>
+
+                                                <!-- <i class="bi bi-facebook" href="https://www.facebook.com/robotechforum?mibextid=ZbWKwL"></i> -->
+                                                <!-- <i class="bi bi-instagram"> <link rel="stylesheet" href="https://www.instagram.com/the_robo_tech_forum_gcoea/"></i> -->
+                                                <!-- <i class="bi bi-linkedin"> <link rel="stylesheet" href="https://www.linkedin.com/company/the-robo-tech-forum/"></i> -->
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </footer>
+                                <div class="copyright">
+                                    <p>© 2025-The Robo-Tech Forum<br>
+                                        Developed by Mehul Dhakne in Collaboration With Hitesh Nagpure</p>
                                 </div>
 
                                 <script>

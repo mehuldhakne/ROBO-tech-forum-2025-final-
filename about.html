@@ -8,7 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
   <style>
     * {
@@ -37,6 +37,7 @@
       max-width: 500px;
       width: 90%;
     }
+
     .about-mehul h2 {
       font-size: 24px;
       color: #333;
@@ -85,6 +86,8 @@
       position: sticky;
     }
 
+
+
     .navbar-div {
       background-color: #fff;
       padding: 0;
@@ -113,15 +116,17 @@
 
     #navbar li a:hover,
     #navbar li a.active {
-      color: #088178;
+      color: #0191f7;
     }
+
+    
 
     #navbar li a.active::after,
     #navbar li a:hover::after {
       content: '';
       width: 30%;
       height: 2px;
-      background: #088178;
+      background: #0191f7;
       position: absolute;
       bottom: -4px;
       left: 20px;
@@ -539,6 +544,12 @@
       }
     }
 
+    .copyright {
+      color: #5f6e6a;
+      width: 100%;
+      text-align: center;
+    }
+
     footer {
       display: flex;
       justify-content: space-evenly;
@@ -557,7 +568,7 @@
     }
 
     footer h4 {
-      color: #088178;
+      color: #0191f7;
       font-size: 14px;
       padding-bottom: 20px;
     }
@@ -576,12 +587,10 @@
     }
 
     footer a:hover {
-      color: #088178;
+      color: #0191f7;
     }
 
-    footer .follow {
-      margin-top: 20px;
-    }
+
 
     footer .follow i {
       color: #5f6e6a;
@@ -590,7 +599,7 @@
     }
 
     footer .follow i:hover {
-      color: #088178;
+      color: #0191f7;
     }
   </style>
 </head>
@@ -604,9 +613,9 @@
     <div class="navbar-div">
       <ul id="navbar">
         <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="album.html">Album</a></li>
+        <li><a href="album.html">Album</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a class="active" href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <a href="#" id="close"><i class="bi bi-x-lg"></i></a>
       </ul>
@@ -631,7 +640,7 @@
           <h3>
             Our Mission
           </h3>
-          <p>To Our mission is to provide a platform for students to learn, experiment, and build robots that can solve
+          <p>Our mission is to provide a platform for students to learn, experiment, and build robots that can solve
             real-world problems. We believe in fostering creativity and teamwork in the field of robotics.
           </p>
         </div>
@@ -666,54 +675,48 @@
 
           <div class="timeline">
             <div class="timeline-item">
+              <div class="timeline-year">2014</div>
+              <div class="timeline-content">Founded in 2014 by some bunch of passionate tech enthusiast Engineers to share and explore the vast knowledge of Robotics. The main target of the founders was to target the DD Robocon Competition.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2017</div>
+              <div class="timeline-content">First time the club got The Mathworks Modelling Award. This was the biggest and the greated achievement for the whole Club which still is celebrated.</div>
+            </div>
+            <div class="timeline-item">
               <div class="timeline-year">2018</div>
-              <div class="timeline-content">Club founded by five engineering students with a shared passion for robotics
-                and automation technology.</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year">2019</div>
-              <div class="timeline-content">First competition entry in regional VEX Robotics tournament, establishing
-                our competitive program foundation.</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year">2020</div>
-              <div class="timeline-content">Expanded to 50+ members and launched our first community outreach program
-                for middle school students.</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year">2021</div>
-              <div class="timeline-content">Won first major competition award and established partnerships with three
-                local engineering firms.</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year">2022</div>
-              <div class="timeline-content">Opened dedicated robotics laboratory and launched advanced research project
-                initiatives.</div>
+              <div class="timeline-content">This was the second time The Robo-Tech Forum was recognized and Considered worthy of the Mathworks Modelling Award, 2018. This makes our achievement to be twice in a row.</div>
             </div>
             <div class="timeline-item">
               <div class="timeline-year">2023</div>
-              <div class="timeline-content">Reached 100+ active members and began hosting annual regional robotics
-                symposium.</div>
+              <div class="timeline-content">The Robo-Tech Forum was recognized by E-Yantra Lab of IIT, Bombay which lead us to gaining the access of Cutting Edge E-Yantra Lab Robotics Components, deepening our knowledge in the world of Robotics.</div>
             </div>
             <div class="timeline-item">
               <div class="timeline-year">2024</div>
+              <div class="timeline-content">The Club now comes under the Department of Electronics and Telecommunicaton, Government College of Engineering, Amravati.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2025</div>
+              <div class="timeline-content">We were able to secure All India Rank 12 in DD Robocon which marked our growth and development in the field of Robotics.</div>
+            </div>
+            <!-- <div class="timeline-item">
+              <div class="timeline-year">2024</div>
               <div class="timeline-content">Established alumni mentorship network and launched scholarship program for
                 underrepresented students in STEM.</div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
 
       <div class="stats-grid">
         <div class="stat-card">
-          <span class="stat-number">100+</span>
-          <div class="stat-label">Active Members</div>
-          <div class="stat-description">Students from diverse academic backgrounds collaborating on innovative projects
+          <span class="stat-number">500+</span>
+          <div class="stat-label">Benefited Members</div>
+          <div class="stat-description">Students from diverse academic backgrounds who were actually benefited from The Robo-Tech Forum.
           </div>
         </div>
 
         <div class="stat-card">
-          <span class="stat-number">10</span>
+          <span class="stat-number">50+</span>
           <div class="stat-label">Projects Completed</div>
           <div class="stat-description">From educational prototypes to award-winning competition robots</div>
         </div>
@@ -762,6 +765,10 @@
 
         </div>
       </div>
+    </div>
+    <div class="copyright">
+      <p>© 2025-The Robo-Tech Forum<br>
+        Developed by Mehul Dhakne in Collaboration With Hitesh Nagpure</p>
     </div>
 
   </footer>

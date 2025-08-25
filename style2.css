@@ -165,7 +165,7 @@ strong {
 
 #navbar li a:hover,
 #navbar li a.active {
-  color: #088178;
+  color: #0191f7;
 }
 
 #navbar li a.active::after,
@@ -173,7 +173,7 @@ strong {
   content: '';
   width: 30%;
   height: 2px;
-  background: #088178;
+  background: #0191f7;
   position: absolute;
   bottom: -4px;
   left: 20px;
@@ -234,9 +234,9 @@ strong {
 
 #hero button {
   background-image: url('button.png');
-  background-color: #088178;
+  background-color: #0191f7;
   color: #fff;
-  border: 1 solid #088178;
+  border: 1 solid #0191f7;
   padding: 14px 80px 14px 65px;
   cursor: pointer;
   font-size: 185x;
@@ -292,7 +292,7 @@ strong {
     padding: 9px 8px 6px 8px;
     line-height: 1;
     border-radius: 4px;
-    color: #088178;
+    color: #0191f7;
     background-color: #fddde4;
     display: inline-block;
 }
@@ -984,7 +984,7 @@ strong {
   padding-top: 7px;
   font-size: 15px;
   font-weight: 700;
-  color: #088178;
+  color: #0191f7;
 }
 
 #cart {
@@ -994,7 +994,7 @@ strong {
   border-radius: 50px;
   background-color: #e8f6ea;
   font-weight: 500;
-  color: #088178;
+  color: #0191f7;
   border: 1px solid #cce7d0;
   position: absolute;
   bottom: 20px;
@@ -1034,7 +1034,7 @@ strong {
 }
 
 #banner button:hover {
-  background: #088178;
+  background: #0191f7;
   color: #fff;
   padding: 18px 20px;
 }
@@ -1063,7 +1063,7 @@ strong {
 }
 
 #sm-banner .banner-box button:hover {
-  background: #088178;
+  background: #0191f7;
   color: #fff;
 }
 
@@ -1169,7 +1169,7 @@ strong {
   border-radius: 5px;
 }
 #newsletter button {
-  background-color: #088178;
+  background-color: #0191f7;
   color: #fff;
   white-space: nowrap;
   border-radius: 5px;
@@ -1194,7 +1194,7 @@ footer .logo {
 
 footer h4 {
   font-size: 20px;
-  color: #088178;
+  color: #0191f7;
   font-size: 14px;
   padding-bottom: 20px;
 }
@@ -1213,7 +1213,7 @@ footer a {
 }
 
 footer a:hover {
-  color: #088178;
+  color: #0191f7;
 }
 
 footer .follow {
@@ -1227,7 +1227,7 @@ footer .follow i {
 }
 
 footer .follow i:hover {
-  color: #088178;
+  color: #0191f7;
 }
 
 /* .follow .icons .contact-icon img{
@@ -1235,7 +1235,7 @@ footer .follow i:hover {
   height: 10px;
 } */
 /*footer .install .row img{
-    border: 1px solid #088178;
+    border: 1px solid #0191f7;
     border: 6px;
 }
 footer .install img{
@@ -1272,7 +1272,7 @@ footer .install img{
 #pagination a {
   border-radius: 50px;
   text-decoration: none;
-  background-color: #088178;
+  background-color: #0191f7;
   padding: 15px 20px;
   color: #fff;
   font-weight: 600;
@@ -1311,7 +1311,7 @@ footer .install img{
 
   #navbar li {
     margin-bottom: 25px;
-    background-color: #a1d8ff;
+    /* background-color: #a1d8ff; */
   }
 
   #mobile {
