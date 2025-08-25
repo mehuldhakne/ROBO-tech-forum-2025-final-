@@ -1,258 +1,801 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Album</title>
-    <!-- Include necessary CSS files -->
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="./style2.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-      integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <section id="header">
-      <a href="#"
-        ><img
-          src="./logo-removebg-preview-modified.png"
-          width="140px"
-          class="logo"
-          alt=""
-      /></a>
 
-      <div>
-        <ul id="navbar">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="album.html">Album</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a class="active" href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <a href="#" id="close"> <i class="bi bi-x-lg"></i></a>
-        </ul>
-      </div>
-      <div id="mobile">
-        <i id="bar" class="bi bi-justify"></i>
-      </div>
-    </section>
-    <section class="about-section">
-      <div class="container">
-        <h1 id="about-title">About The Robotech Club</h1>
-        <p>
-          Welcome to the Robotech Club, where technology meets innovation! Our
-          club is dedicated to exploring the exciting world of robotics,
-          engineering, and automation.
-        </p>
-
-        <div class="about-details">
-          <div class="image">
-            <img
-              src="./img/Picsart_24-04-13_21-22-47-513.jpg"
-              height="250px"
-              alt="Robotech Club Team"
-            />
-          </div>
-          <div class="content">
-            <h2>Our Mission</h2>
-            <p>
-              Our mission is to provide a platform for students to learn,
-              experiment, and build robots that can solve real-world problems.
-              We believe in fostering creativity and teamwork in the field of
-              robotics.
-            </p>
-
-            <h2>What We Do</h2>
-            <p>
-              We work on various projects, from simple robots to complex
-              autonomous systems. Our club members have access to
-              state-of-the-art tools and resources to bring their ideas to life.
-            </p>
-
-            <button id="learnMoreBtn">Learn More</button>
-            <p id="learnMoreText" style="display: none">
-              We also host workshops, competitions, and collaborate with
-              industry leaders to stay at the forefront of robotics technology.
-            </p>
-          </div>
-        </div>
-        <div class="about-mehul">
-          <h2>Meet the Developer</h2>
-          <p>
-            This website is developed by <strong>Mehul Dhakne</strong>. Connect
-            with me on
-            <a href="https://www.linkedin.com/in/mehuldhakne" target="_blank"
-              >LinkedIn</a
-            >.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <footer class="section-p1">
-      <div class="col">
-        <h4>About</h4>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact Us</a>
-      </div>
-      <div class="col">
-        <h4>Quick Links</h4>
-        <a href="album.html">Album</a>
-        <a href="blog.html">blog</a>
-      </div>
-      <div class="col">
-        <div class="follow">
-          <h4>Follow Us</h4>
-          <div class="icons">
-            <i class="bi bi-facebook"
-              ><link
-                rel="stylesheet"
-                href="https://www.facebook.com/robotechforum?mibextid=ZbWKwL"
-            /></i>
-            <i class="bi bi-instagram"
-              ><link
-                rel="stylesheet"
-                href="https://www.instagram.com/the_robo_tech_forum_gcoea/"
-            /></i>
-            <i class="bi bi-linkedin"
-              ><link
-                rel="stylesheet"
-                href="https://www.linkedin.com/company/the-robo-tech-forum/"
-            /></i>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <div class="copyright">
-      <p>
-        © 2025-The Robo-tech Forum <br />
-        Developed by Mehul Dhakne
-      </p>
-    </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./newscript.js"></script>
-    <!-- Include necessary JavaScript files -->
-    <script src="script.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./newscript.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Times New Roman', Times, serif;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+      font-family: 'times new roman UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+      color: #334155;
+      overflow-x: hidden;
     }
 
-    .about-mehul {
-      background: #ffffff;
-      padding: 20px 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      max-width: 500px;
-      width: 90%;
-    }
-    .about-mehul h2 {
-      font-size: 24px;
-      color: #333;
-      margin-bottom: 10px;
-    }
-
-    .about-mehul p {
-      font-size: 16px;
-      color: #555;
-    }
-
-    .about-mehul a {
-      color: #007bff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .about-mehul a:hover {
-      text-decoration: underline;
-    }
-
-    .about-section {
-      padding: 40px 0;
-      background-color: #f4f4f4;
-    }
-
-    .container {
-      width: 80%;
-      margin: 0 auto;
-    }
-
-    #about-title {
-      text-align: center;
-      margin-bottom: 20px;
+    strong {
       color: black;
     }
 
-    .about-details {
+    #header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
+      padding: 20px 80px;
+      background-color: #fff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+      z-index: 999;
+      position: sticky;
     }
 
-    .about-mehul {
+    .navbar-div {
+      background-color: #fff;
+      padding: 0;
+    }
+
+    #navbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-      margin-top: 20px;
     }
 
-    .image img {
-      max-width: 100%;
-      border-radius: 10px;
+
+    #navbar li {
+      list-style: none;
+      padding: 0 20px;
+      position: relative;
     }
 
-    .content {
-      flex: 1;
-      margin-left: 20px;
-    }
-
-    h2 {
-      margin-top: 20px;
-      font-size: 24px;
-      color: #333;
-    }
-
-    p {
-      margin-top: 10px;
+    #navbar li a {
+      text-decoration: none;
       font-size: 16px;
-      color: #666;
+      font-weight: 600;
+      color: #1a1a1a;
+      transition: 0.3s ease;
     }
 
-    button {
-      background-color: #28a745;
-      color: white;
-      border: none;
-      padding: 10px 20px;
+    #navbar li a:hover,
+    #navbar li a.active {
+      color: #088178;
+    }
+
+    #navbar li a.active::after,
+    #navbar li a:hover::after {
+      content: '';
+      width: 30%;
+      height: 2px;
+      background: #088178;
+      position: absolute;
+      bottom: -4px;
+      left: 20px;
+    }
+
+    .navbar-logo {
+      position: absolute;
+      /* Position it independently of the rest of the navbar */
+      top: 10px;
+      /* Adjust to move closer to the top */
+      left: 10px;
+      /* Move it to the leftmost edge */
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #003366;
+      /* Robotech brand color */
+      text-decoration: none;
+    }
+
+    /* Mobile Menu Styles */
+    #mobile {
+      display: none;
       cursor: pointer;
-      margin-top: 20px;
-      font-size: 16px;
+      font-size: 24px;
+      color: #2c3e50;
     }
 
-    button:hover {
-      background-color: #218838;
+    #close {
+      display: none;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      color: #2c3e50;
+    }
+
+    .about-section {
+      min-height: 100vh;
+      padding: 80px 20px;
+      position: relative;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Subtle background elements */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: #3b82f6;
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite;
+      opacity: 0.3;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-15px) rotate(180deg);
+      }
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 80px;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .section-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      margin-bottom: 20px;
+
+      color: black;
+    }
+
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: #64748b;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .content-sections {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 60px;
+      margin-bottom: 80px;
+    }
+
+    .content-card {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 50px 40px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .content-card:nth-child(1) {
+      animation: slideInLeft 1s ease-out 0.3s forwards;
+    }
+
+    .content-card:nth-child(2) {
+      animation: slideInRight 1s ease-out 0.5s forwards;
+    }
+
+    .content-card:nth-child(3) {
+      animation: slideInLeft 1s ease-out 0.7s forwards;
+    }
+
+    .content-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(59, 130, 246, 0.1);
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .content-card h3 {
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      color: #007aff;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .content-card p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #475569;
+      margin-bottom: 20px;
+    }
+
+    .content-card ul {
+      list-style: none;
+      margin: 25px 0;
+    }
+
+    .content-card li {
+      font-size: 1.05rem;
+      color: #475569;
+      margin-bottom: 12px;
+      padding-left: 25px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .content-card li::before {
+      content: "▶";
+      position: absolute;
+      left: 0;
+      color: #3b82f6;
+      font-size: 12px;
+    }
+
+    .highlight {
+      color: #1e40af;
+      font-weight: 600;
+      background: linear-gradient(120deg, transparent 0%, rgba(59, 130, 246, 0.1) 50%, transparent 100%);
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, #3b82f6, #06b6d4);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+      padding-left: 40px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -8px;
+      top: 8px;
+      width: 16px;
+      height: 16px;
+      background: #3b82f6;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    }
+
+    .timeline-year {
+      font-weight: 700;
+      color: #1e40af;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .timeline-content {
+      font-size: 1rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 80px;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      transition: all 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out forwards;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .stat-card:nth-child(1) {
+      animation-delay: 1.2s;
+    }
+
+    .stat-card:nth-child(2) {
+      animation-delay: 1.4s;
+    }
+
+    .stat-card:nth-child(3) {
+      animation-delay: 1.6s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #1e40af;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      color: #334155;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .stat-description {
+      font-size: 0.9rem;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    .cta-section {
+      text-align: center;
+      margin-top: 60px;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out 1.8s forwards;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      color: white;
+      padding: 18px 40px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
+      background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .content-card {
+        padding: 40px 25px;
+      }
+
+      .content-card h3 {
+        font-size: 1.8rem;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .card-icon {
+        margin-bottom: 10px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .about-section {
+        padding: 60px 15px;
+      }
+
+      .timeline {
+        padding-left: 20px;
+      }
+
+      .timeline-item {
+        padding-left: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section-title {
+        font-size: 2.5rem;
+      }
+
+      .content-card h3 {
+        font-size: 1.6rem;
+      }
+
+      .content-card {
+        padding: 30px 20px;
+      }
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+
+    footer .col {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      flex-direction: column;
+    }
+
+    footer .logo {
+      margin-bottom: 30px;
+    }
+
+    footer h4 {
+      color: #088178;
+      font-size: 14px;
+      padding-bottom: 20px;
+    }
+
+    footer p {
+      font-size: 13px;
+      margin: 0 0 8px 0;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #5f6e6a;
+      font-size: 13px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    footer a:hover {
+      color: #088178;
+    }
+
+    footer .follow {
+      margin-top: 20px;
+    }
+
+    footer .follow i {
+      color: #5f6e6a;
+      padding-right: 4px;
+      cursor: pointer;
+    }
+
+    footer .follow i:hover {
+      color: #088178;
     }
   </style>
+</head>
+
+<body>
+  <section id="header">
+    <a href="#"><img src="./logo-removebg-preview-modified.png" width="140px" class="logo" alt=""></a>
+    <a href="#" class="navbar-logo">
+      <strong>The Robo-Tech Forum</strong>
+    </a>
+    <div class="navbar-div">
+      <ul id="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="album.html">Album</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <a href="#" id="close"><i class="bi bi-x-lg"></i></a>
+      </ul>
+    </div>
+    <div id="mobile">
+      <i id="bar" class="bi bi-list"></i>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">About Our Robotics Club</h2>
+        <p class="section-subtitle">Welcome to the Robotech Club, where technology meets innovation! Our club is
+          dedicated to exploring the exciting world of robotics, engineering, and automation.</p>
+      </div>
+
+      <div class="content-sections">
+        <div class="content-card">
+          <h3>
+            Our Mission
+          </h3>
+          <p>To Our mission is to provide a platform for students to learn, experiment, and build robots that can solve
+            real-world problems. We believe in fostering creativity and teamwork in the field of robotics.
+          </p>
+        </div>
+
+        <div class="content-card">
+          <h3>
+            What We Do
+          </h3>
+          <p>We work on various projects, from simple robots to complex autonomous systems. Our club members have access
+            to state-of-the-art tools and resources to bring their ideas to life.. Our club offers comprehensive
+            programs designed to provide practical experience with modern robotics
+            technologies:</p>
+          <ul>
+            <li><strong>Robotics Workshops:</strong> Hands-on sessions covering programming, electronics, mechanical
+              design, and system integration</li>
+            <li><strong>Competition Teams:</strong> Participation in DD Robocon, IRoC-U, and regional
+              engineering & Robotics competitions</li>
+            <li><strong>Personal Projects:</strong> Collaborative work on autonomous systems, machine learning
+              applications, and innovative prototypes</li>
+            <li><strong>Industry Partnerships:</strong> Company Sponsorships and internship opportunities</li>
+            <li><strong>Technical Skills Development:</strong> Training in CAD design, 3D printing, microcontroller
+              programming, and project management</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>
+            Our History
+          </h3>
+          <p>Founded with a vision to democratize robotics education, our club has grown from a small group of
+            enthusiasts into a thriving community of innovators.</p>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-year">2018</div>
+              <div class="timeline-content">Club founded by five engineering students with a shared passion for robotics
+                and automation technology.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2019</div>
+              <div class="timeline-content">First competition entry in regional VEX Robotics tournament, establishing
+                our competitive program foundation.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2020</div>
+              <div class="timeline-content">Expanded to 50+ members and launched our first community outreach program
+                for middle school students.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2021</div>
+              <div class="timeline-content">Won first major competition award and established partnerships with three
+                local engineering firms.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2022</div>
+              <div class="timeline-content">Opened dedicated robotics laboratory and launched advanced research project
+                initiatives.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2023</div>
+              <div class="timeline-content">Reached 100+ active members and began hosting annual regional robotics
+                symposium.</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-year">2024</div>
+              <div class="timeline-content">Established alumni mentorship network and launched scholarship program for
+                underrepresented students in STEM.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-number">100+</span>
+          <div class="stat-label">Active Members</div>
+          <div class="stat-description">Students from diverse academic backgrounds collaborating on innovative projects
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-number">10</span>
+          <div class="stat-label">Projects Completed</div>
+          <div class="stat-description">From educational prototypes to award-winning competition robots</div>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-number">2</span>
+          <div class="stat-label">industrial Sponsors</div>
+          <div class="stat-description">Industrial Sponsorship we have</div>
+        </div>
+      </div>
+
+      <!-- <div class="cta-section">
+        <a href="#" class="cta-button">Join Our Community</a>
+      </div> -->
+    </div>
+  </section>
+  <footer class="section-p1">
+    <div class="col">
+      <h4>About</h4>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="col">
+      <h4>Quick Links</h4>
+      <a href="album.html">Album</a>
+      <a href="blog.html">blog</a>
+    </div>
+    <div class="col">
+      <div class="follow">
+        <h4>Follow Us</h4>
+        <div class="icons">
+
+          <a target="_blank" href="https://www.facebook.com/robotechforum?mibextid=ZbWKwL">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a target="_blank" href="https://www.instagram.com/the_robo_tech_forum_gcoea/">
+            <i class="bi bi-instagram"> </i>
+          </a>
+          <a target="_blank" href="https://www.linkedin.com/company/the-robo-tech-forum/">
+            <i class="bi bi-linkedin"></i>
+          </a>
+
+          <!-- <i class="bi bi-facebook" href="https://www.facebook.com/robotechforum?mibextid=ZbWKwL"></i> -->
+          <!-- <i class="bi bi-instagram"> <link rel="stylesheet" href="https://www.instagram.com/the_robo_tech_forum_gcoea/"></i> -->
+          <!-- <i class="bi bi-linkedin"> <link rel="stylesheet" href="https://www.linkedin.com/company/the-robo-tech-forum/"></i> -->
+
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <script>
+    // Create subtle floating particles
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 25;
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+
+        // Random positioning
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+
+        // Random animation delay
+        particle.style.animationDelay = Math.random() * 8 + 's';
+
+        // Smaller, more subtle particles
+        const size = Math.random() * 2 + 2;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    // Animate numbers on scroll/load
+    function animateNumbers() {
+      const statNumbers = document.querySelectorAll('.stat-number');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const target = entry.target;
+            const finalNumber = parseInt(target.textContent);
+            let currentNumber = 0;
+            const increment = finalNumber / 60;
+
+            const timer = setInterval(() => {
+              currentNumber += increment;
+              if (currentNumber >= finalNumber) {
+                target.textContent = finalNumber + (target.textContent.includes('+') ? '+' : '');
+                clearInterval(timer);
+              } else {
+                target.textContent = Math.floor(currentNumber) + (target.textContent.includes('+') ? '+' : '');
+              }
+            }, 50);
+
+            observer.unobserve(target);
+          }
+        });
+      });
+
+      statNumbers.forEach(number => {
+        observer.observe(number);
+      });
+    }
+
+    // Initialize everything when page loads
+    document.addEventListener('DOMContentLoaded', () => {
+      createParticles();
+      animateNumbers();
+    });
+
+    // Professional hover effects for cards
+    document.querySelectorAll('.content-card, .stat-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.borderColor = 'rgba(59, 130, 246, 0.4)';
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.borderColor = 'rgba(59, 130, 246, 0.2)';
+      });
+    });
+  </script>
+</body>
+
 </html>

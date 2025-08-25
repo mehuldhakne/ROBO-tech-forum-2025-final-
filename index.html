@@ -1,269 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-comm Mehul</title>
-     <script src="script.js"></script>
-     <script
-  src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
-  type="module"
-></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-   <link rel="stylesheet" href="./style2.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Robo-Tech Forum GCOEA</title>
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./style2.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    
-  <section id="header">
-    <a href="#"><img src="./logo-removebg-preview-modified.png" width="140px" class="logo" alt=""></a>
-    <a href="#" class="navbar-logo">
-      <strong>The Robo-Tech Forum</strong>
-  </a>
-    <div>
+
+<body class="no-scroll">
+
+  <video id="intro-video" autoplay muted src="/Videos/intro-video.mp4"></video>
+
+  <div id="main">
+
+
+    <section id="header">
+      <a href="#"><img src="./logo-removebg-preview-modified.png" width="140px" class="logo" alt=""></a>
+      <a href="#" class="navbar-logo">
+        <strong>The Robo-Tech Forum</strong>
+      </a>
+      <div>
         <ul id="navbar">
-            <li><a class="active" href="index.html">Home</a></li>
-            <li><a href="album.html">Album</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <!-- <li>
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="album.html">Album</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <!-- <li>
                 <button id="dark-mode-toggle" class="dark-mode-btn">Dark Mode</button>
             </li> -->
-            <a href="#" id="close"><i class="bi bi-x-lg"></i></a>
+          <a href="#" id="close"><i class="bi bi-x-lg"></i></a>
         </ul>
-    </div>
-    <div id="mobile">
-        <i id="bar" class="bi bi-justify"></i>
-    </div>
-</section>
-
-
-<section id="hero">
-    <h4>THE</h4>
-    <h2> The Robo-Tech Forum </h2>
-    <h1>GCOEA</h1>
-    
-   
-
-    <button> <a href="#product1" class="explore-btn">Explore Now</a></button>
-</section>
-
-
-
-<section class="learning-section">
-    <div class="section">
-        <div class="feature-box">
-            <iframe src="https://lottie.host/embed/73847d78-ecbf-4384-89e0-61fa457ee8f4/pEy2eTQ5Js.lottie"></iframe>
-            <h3>We Learn</h3>
-            <p>Learning is what drives our work and fuels us to consistently improve.</p>
-            <div class="empty-space"></div>
-        </div>
-        <div class="feature-box">
-            <iframe src="https://lottie.host/embed/0785ae5b-ad58-4a16-9e7e-50690527a839/B2wkta8lD1.lottie"></iframe>
-            <h3>We Create</h3>
-            <p>We tinker, experiment, and innovate out of the box ideas with a team spirit.</p>
-            <div class="empty-space"></div>
-        </div>
-        <div class="feature-box">
-            <iframe src="https://lottie.host/embed/023e2769-ab78-4b2a-86a0-6beb133c970b/ekB8u4vyAP.lottie"></iframe>
-            <h3>We Teach</h3>
-            <p>We teach each other in order to lift the club which in turn lifts ourselves.</p>
-            <div class="empty-space"></div>
-        </div>
-    </div>
-</section>
-
-<!-- upcoming events -->
- <section id="product1" class="section-p1">
-        <h2>Upcoming Events</h2>
-        <p>Enroll now with us</p>
-        <div class="cards-container">
-            <div class="card">
-              <div class="card-inner">
-                <div class="card-front">
-                  <img src="./event banner/eYRC2024-25(jpg).jpg" alt="" />
-                  <div class="des">
-                    <span>Eyantra robotics </span>
-                    <h5>comp. 25</h5>
-                  </div>
-      
-                  
-                </div>
-                <div class="card-back">
-                  <h4>E Yantra Competiton</h4>
-                  <p>
-                    A prestigious national robotics competition organized by IIT Bombay under the Ministry of Education, E-Yantra 2024-25 challenges students to solve real-world problems using embedded systems and robotics, promoting innovation, problem-solving, and teamwork.
-
-                  </p>
-      
-                 
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-inner">
-                <div class="card-front">
-                  <img
-                    src="./event banner/logo (1).png"
-                    alt=""
-                  />
-                  <div class="des">
-                    <span>Robocon</span>
-                    <h5>robotcontest</h5>
-                  </div>
-      
-                  
-                </div>
-                <div class="card-back">
-                  <h4>Robocon </h4>
-                  <p>
-                    DD ROBOCON 2025 is the Indian edition of the ABU Robocon, organized by Doordarshan in collaboration with IIT Delhi. It is a national-level robotics competition where teams design and build robots to complete complex tasks based on a unique theme, aiming for international qualification.
-
-                  </p>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-inner">
-                <div class="card-front">
-                  <img src="./event banner/Tech-Fest IIT.png" alt="" />
-                  <div class="des">
-                    <span>Techfest IIT B </span>
-                    <h5> IIT Bombay</h5>
-                  </div>
-                  
-                </div>
-                <div class="card-back">
-                  <h4>Techfest IIT B</h4>
-                  <p>
-                    Techfest is Asia's largest science and technology festival, organized annually by IIT Bombay. It hosts a wide range of competitions, workshops, exhibitions, and lectures, serving as a premier platform for showcasing technical talent and innovation.
-
-                  </p>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-inner">
-                <div class="card-front">
-                  <img
-                    src="./event banner/fluxus (1)-2019013131.png"
-                    alt=""
-                  />
-                  <div class="des">
-                    <span>Fluxus IIT IND</span>
-                    <h5>IIT Indore</h5>
-                  </div>
-      
-                  
-                </div>
-                <div class="card-back">
-                  <h4>Fluxus IIT IND</h4>
-                  <p>
-                    Fluxus is the annual techno-cultural festival of IIT Indore, offering a blend of technical challenges, cultural performances, and engaging events. It attracts participants from across the country, fostering creativity, collaboration, and competition.
-                  </p>
-                 
-                </div>
-              </div>
-            </div>
-          </div>
-    </section>
-    
-
-
-<!-- sponsors banner -->
-<section class="sponsors-section">
-    <h2>Our Sponsors</h2>
-    <div class="sponsors-container">
-        <div class="sponsor-box">
-            <img src="./sponsors/mathworks-logo.png" alt="Sponsor 1" class="sponsor-image">
-        </div>
-        <div class="sponsor-box">
-            <img src="./sponsors/Untitled design-re.png" alt="Sponsor 2" class="sponsor-image">
-        </div>
-    </div>
-</section>
-
-<!-- our team -->
-
-
-
-
-<!-- reviews and comments -->
-<section class="testimonial-section">
-  <h2>What People Say About Us</h2>
-  <div class="testimonial-container">
-      <div class="testimonial-track">
-           <div class="testimonial-box">
-              <span class="quote-mark">&#8220;</span>
-              <p>A club in GCOEA that’s genuinely shaping students’ skills and experiences for the better.</p>
-              <span class="author">-  Lakshmi Thorhate</span>
-          </div>
-          <div class="testimonial-box">
-              <span class="quote-mark">&#8220;</span>
-              <p>It’s a great place to learn and grow, with a supportive community that encourages innovation.</p>
-              <span class="author">- Mehul Dhakne</span>
-          </div>
-          
-          <div class="testimonial-box">
-              <span class="quote-mark">&#8220;</span>
-              <p>I served as Team Captain and Coordinator of RTF for year 2025 and the experience taught me various things and made my personality and nature more confident..</p>
-              <span class="author">- Shreyash Satish Dabhade</span>
-          </div>
-           <div class="testimonial-box">
-              <span class="quote-mark">&#8220;</span>
-              <p>Openness to work</p>
-              <span class="author">- Swarup Pramod Bhelkar</span>
-          </div>
-          <div class="testimonial-box">
-              <span class="quote-mark">&#8220;</span>
-              <p>The chance to work on real tech projects, learn new tools,and collaborate with a teammates that’s always ready to help and brainstorm.</p>
-              <span class="author">- Lakshmi Thorhate</span>
-          </div>
-          <div class="testimonial-box">
-              <span class="quote-mark">&#8220;</span>
-              <p>The range of diversity in the competition we participate in and all the components we have here to use, motivates me more to work hard. It keeps igniting my passion for robotics and exploring new things.</p>
-              <span class="author">- Shreyash Satish Dabhade</span>
-          </div>
-          <div class="testimonial-box">
-              <span class="quote-mark">&#8220;</span>
-              <p>A truly awesome environment.</p>
-              <span class="author">- Vaibhavi Sunil Jamode</span>
-          </div>
       </div>
-  </div>
-</section>
+      <div id="mobile">
+        <i id="bar" class="bi bi-justify"></i>
+      </div>
+    </section>
 
-<footer class="section-p1">
-    <div class="col">
-      <h4>About</h4>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact Us</a>
-    </div>
-    <div class="col">
-      <h4>Quick Links</h4>
-      <a href="album.html">Album</a>
-      <a href="blog.html">blog</a>
-    </div>
-    <div class="col">
-      <div class="follow">
+
+    <section id="hero">
+      <h4>THE</h4>
+      <h2>The Robo-Tech Forum </h2>
+      <a href="https://www.gcoea.ac.in/">
+
+        <h1>GCOEA </h1>
+      </a>
+
+
+
+      <a href="project.html" target="_blank" class="project-btn">Projects</a>
+    </section>
+
+
+
+    <section class="learning-section">
+      <div class="section">
+        <div class="feature-box">
+          <iframe src="https://lottie.host/embed/73847d78-ecbf-4384-89e0-61fa457ee8f4/pEy2eTQ5Js.lottie"></iframe>
+          <h3>We Learn</h3>
+          <p>Learning is what drives our work and fuels us to consistently improve.</p>
+          <div class="empty-space"></div>
+        </div>
+        <div class="feature-box">
+          <iframe src="https://lottie.host/embed/0785ae5b-ad58-4a16-9e7e-50690527a839/B2wkta8lD1.lottie"></iframe>
+          <h3>We Create</h3>
+          <p>We tinker, experiment, and innovate out of the box ideas with a team spirit.</p>
+          <div class="empty-space"></div>
+        </div>
+        <div class="feature-box">
+          <iframe src="https://lottie.host/embed/023e2769-ab78-4b2a-86a0-6beb133c970b/ekB8u4vyAP.lottie"></iframe>
+          <h3>We Teach</h3>
+          <p>We teach each other in order to lift the club which in turn lifts ourselves.</p>
+          <div class="empty-space"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- upcoming events -->
+    <section id="product1" class="section-p1">
+      <h2>Competitions We Participate In</h2>
+      <div class="cards-container">
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./event banner/eYRC2024-25(jpg).jpg" alt="" />
+              <div class="des">
+                <span>Eyantra Robotics challenge</span>
+                <h5>2025-26</h5>
+              </div>
+
+
+            </div>
+            <div class="card-back">
+              <h4>E Yantra Competiton</h4>
+              <div class="card-back-p">
+
+                <p>
+                  A prestigious national robotics competition organized by IIT Bombay under the Ministry of Education,
+                  E-Yantra 2024-25 challenges students to solve real-world problems using embedded systems and robotics,
+                  promoting innovation, problem-solving, and teamwork.
+  
+                </p>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./event banner/logo (1).png" alt="" />
+              <div class="des">
+                <span>Robocon</span>
+                <h5>robotcontest</h5>
+              </div>
+
+
+            </div>
+            <div class="card-back">
+              <h4>Robocon </h4>
+              <div class="card-back-p">
+
+                <p>
+                  DD ROBOCON 2025 is the Indian edition of the ABU Robocon, organized by Doordarshan in collaboration
+                  with
+                  IIT Delhi. It is a national-level robotics competition where teams design and build robots to complete
+                  complex tasks based on a unique theme, aiming for international qualification.
+  
+                </p>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./event banner/Tech-Fest IIT.png" alt="" />
+              <div class="des">
+                <span>Techfest IIT B </span>
+                <h5> IIT Bombay</h5>
+              </div>
+
+            </div>
+            <div class="card-back">
+              <h4>Techfest IIT B</h4>
+              <div class="card-back-p">
+
+                <p>
+                  Techfest is Asia's largest science and technology festival, organized annually by IIT Bombay. It hosts
+                  a
+                  wide range of competitions, workshops, exhibitions, and lectures, serving as a premier platform for
+                  showcasing technical talent and innovation.
+  
+                </p>
+              </div>
+              
+
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="./event banner/fluxus (1)-2019013131.png" alt="" />
+              <div class="des">
+                <span>Fluxus IIT IND</span>
+                <h5>IIT Indore</h5>
+              </div>
+
+
+            </div>
+            <div class="card-back">
+              <h4>Fluxus IIT IND</h4>
+              <div class="card-back-p">
+
+                <p>
+                  Fluxus is the annual techno-cultural festival of IIT Indore, offering a blend of technical challenges,
+                  cultural performances, and engaging events. It attracts participants from across the country,
+                  fostering
+                  creativity, collaboration, and competition.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- sponsors banner -->
+    <section class="sponsors-section">
+      <h2>Our Sponsors</h2>
+      <div class="sponsors-container">
+        <div class="sponsor-box">
+          <img src="./sponsors/mathworks-logo.png" alt="Sponsor 1" class="sponsor-image">
+        </div>
+        <div class="sponsor-box">
+          <img src="./sponsors/Untitled design-re.png" alt="Sponsor 2" class="sponsor-image">
+        </div>
+      </div>
+    </section>
+
+    <!-- our team -->
+
+
+
+
+    <!-- reviews and comments -->
+    <section class="testimonial-section">
+      <h2>What People Say About Us</h2>
+      <div class="testimonial-container">
+        <div class="testimonial-track">
+          <div class="testimonial-box">
+            <span class="quote-mark">&#8220;</span>
+            <p>A club in GCOEA that’s genuinely shaping students’ skills and experiences for the better.</p>
+            <span class="author">- Lakshmi Thorhate</span>
+          </div>
+          <div class="testimonial-box">
+            <span class="quote-mark">&#8220;</span>
+            <p>It’s a great place to learn and grow, with a supportive community that encourages innovation.</p>
+            <span class="author">- Mehul Dhakne</span>
+          </div>
+
+          <div class="testimonial-box">
+            <span class="quote-mark">&#8220;</span>
+            <p>I served as Team Captain and Coordinator of RTF for year 2025 and the experience taught me various
+              things
+              and made my personality and nature more confident..</p>
+            <span class="author">- Shreyash Satish Dabhade</span>
+          </div>
+          <div class="testimonial-box">
+            <span class="quote-mark">&#8220;</span>
+            <p>Openness to work</p>
+            <span class="author">- Swarup Pramod Bhelkar</span>
+          </div>
+          <div class="testimonial-box">
+            <span class="quote-mark">&#8220;</span>
+            <p>The chance to work on real tech projects, learn new tools,and collaborate with a teammates that’s
+              always
+              ready to help and brainstorm.</p>
+            <span class="author">- Lakshmi Thorhate</span>
+          </div>
+          <div class="testimonial-box">
+            <span class="quote-mark">&#8220;</span>
+            <p>The range of diversity in the competition we participate in and all the components we have here to use,
+              motivates me more to work hard. It keeps igniting my passion for robotics and exploring new things.</p>
+            <span class="author">- Shreyash Satish Dabhade</span>
+          </div>
+          <div class="testimonial-box">
+            <span class="quote-mark">&#8220;</span>
+            <p>A truly awesome environment.</p>
+            <span class="author">- Vaibhavi Sunil Jamode</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="section-p1">
+      <div class="col">
+        <h4>About</h4>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div class="col">
+        <h4>Quick Links</h4>
+        <a href="album.html">Album</a>
+        <a href="blog.html">blog</a>
+      </div>
+      <div class="col">
+        <div class="follow">
           <h4>Follow Us</h4>
           <div class="icons">
-            <i class="bi bi-facebook"> <link rel="stylesheet" href="https://www.facebook.com/robotechforum?mibextid=ZbWKwL"></i>
-            <i class="bi bi-instagram"> <link rel="stylesheet" href="https://www.instagram.com/the_robo_tech_forum_gcoea/"></i>
-            <i class="bi bi-linkedin"> <link rel="stylesheet" href="https://www.linkedin.com/company/the-robo-tech-forum/"></i>
-           
+
+            <a target="_blank" href="https://www.facebook.com/robotechforum?mibextid=ZbWKwL">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a target="_blank" href="https://www.instagram.com/the_robo_tech_forum_gcoea/">
+              <i class="bi bi-instagram"> </i>
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/company/the-robo-tech-forum/">
+              <i class="bi bi-linkedin"></i>
+            </a>
+
+            <!-- <i class="bi bi-facebook" href="https://www.facebook.com/robotechforum?mibextid=ZbWKwL"></i> -->
+            <!-- <i class="bi bi-instagram"> <link rel="stylesheet" href="https://www.instagram.com/the_robo_tech_forum_gcoea/"></i> -->
+            <!-- <i class="bi bi-linkedin"> <link rel="stylesheet" href="https://www.linkedin.com/company/the-robo-tech-forum/"></i> -->
+
           </div>
         </div>
+      </div>
+
+    </footer>
+    <div class="copyright">
+      <p>© 2025-The Robo-Tech Forum<br>
+        Developed by Mehul Dhakne</p>
     </div>
-  </footer>
-<div class="copyright"> 
-    <p>© 2025-The Robo-tech Forum<br>
-    Developed by Mehul Dhakne</p>
-</div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-   <script src="./newscript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+      
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="./newscript.js"></script>
+
+  </div>
+
 </body>
+
 </html

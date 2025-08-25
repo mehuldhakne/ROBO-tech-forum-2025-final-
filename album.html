@@ -1,303 +1,622 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Album</title>
-    <!-- Include necessary CSS files -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="./style2.css">
-    
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'times new roman', sans-serif;
+            background-color: #000;
+            min-height: 100vh;
+        }
+
+        strong{
+            color: black;
+        }
+
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 80px;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+            z-index: 999;
+            position: sticky;
+        }
+        .navbar-div {
+            background-color: #fff;
+            padding: 0;
+        }
+
+        #navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        #navbar li {
+            list-style: none;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        #navbar li a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            transition: 0.3s ease;
+        }
+
+        #navbar li a:hover,
+        #navbar li a.active {
+            color: #088178;
+        }
+
+        #navbar li a.active::after,
+        #navbar li a:hover::after {
+            content: '';
+            width: 30%;
+            height: 2px;
+            background: #088178;
+            position: absolute;
+            bottom: -4px;
+            left: 20px;
+        }
+
+        .navbar-logo {
+            position: absolute;
+            /* Position it independently of the rest of the navbar */
+            top: 10px;
+            /* Adjust to move closer to the top */
+            left: 10px;
+            /* Move it to the leftmost edge */
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #003366;
+            /* Robotech brand color */
+            text-decoration: none;
+        }
+
+        /* Mobile Menu Styles */
+        #mobile {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #2c3e50;
+        }
+
+        #close {
+            display: none;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #2c3e50;
+        }
+
+        /* Gallery Container */
+        .gallery-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .competition-section {
+            border: 2px solid #000;
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+        }
+
+        .competition-title {
+            color: black;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .photo-carousel {
+            height: 240px;
+            overflow: hidden;
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            padding: 20px 0;
+        }
+
+        .photo-track {
+            display: flex;
+            height: 100%;
+            animation: scroll 45s linear infinite;
+            transition: animation-play-state 0.3s ease;
+        }
+
+        .photo-track.paused {
+            animation-play-state: paused;
+        }
+
+        .photo-item {
+            min-width: 280px;
+            height: 200px;
+            position: relative;
+            margin-right: 25px;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.05);
+            z-index: 10;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .photo-overlay {
+            position: absolute;
+            display: none;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover .photo-overlay {
+            transform: translateY(0);
+        }
+
+        .photo-overlay h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .photo-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Different scroll speeds for variety */
+        .competition-section:nth-child(2) .photo-track {
+            animation-duration: 45s;
+        }
+
+        .competition-section:nth-child(3) .photo-track {
+            animation-duration: 40s;
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(calc(-280px * 6 - 150px));
+            }
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 1024px) {
+            #header {
+                padding: 20px 60px;
+            }
+
+            .navbar-logo {
+                font-size: 1.3em;
+            }
+
+            #navbar li a {
+                font-size: 15px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            #header {
+                padding: 20px 40px;
+            }
+
+            .navbar-logo {
+                font-size: 1.2em;
+                position: static;
+            }
+
+            /* Hide desktop navigation */
+            .navbar-div {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background: antiquewhite;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 1001;
+            }
+
+            .navbar-div.active {
+                right: 0;
+            }
+
+            #navbar {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 80px 20px 20px 20px;
+                height: 100%;
+            }
+
+            #navbar li {
+                width: 100%;
+                margin-bottom: 10px;
+                padding: 0;
+            }
+
+            #navbar li a {
+                width: 100%;
+                padding: 15px 20px;
+                border-radius: 8px;
+                font-size: 16px;
+                display: block;
+            }
+
+            /* Show mobile menu button */
+            #mobile {
+                display: block;
+            }
+
+            #close {
+                display: block;
+            }
+
+            .logo {
+                width: 120px;
+            }
+
+            .gallery-container {
+                margin: 30px auto;
+                gap: 30px;
+                padding: 0 15px;
+            }
+
+            .competition-section {
+                padding: 20px;
+            }
+
+            .photo-item {
+                min-width: 240px;
+                height: 180px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            #header {
+                padding: 15px 20px;
+            }
+
+            .navbar-logo {
+                font-size: 1.1em;
+            }
+
+            .logo {
+                width: 100px;
+            }
+
+            .navbar-div {
+                width: 280px;
+                padding: 70px 15px 15px 15px;
+            }
+
+            .competition-title {
+                font-size: 1.5rem;
+            }
+
+            .gallery-container {
+                padding: 0 10px;
+            }
+
+            .competition-section {
+                padding: 15px;
+            }
+        }
+
+        /* Overlay for mobile menu */
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+        }
+
+        .menu-overlay.active {
+            display: block;
+        }
+    </style>
 </head>
+
 <body>
     <section id="header">
-        <a href="#"><img src="./logo-removebg-preview-modified.png" width="140px"  class="logo" alt=""></a>
-    
-    <div>
-        <ul id="navbar">
-            <li><a href="index.html">Home</a></li>
-            <li><a class="active" href="album.html">Album</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <a href="#" id="close"> <i class="bi bi-x-lg"></i></a>
+        <a href="#"><img src="./logo-removebg-preview-modified.png" width="140px" class="logo" alt=""></a>
+        <a href="#" class="navbar-logo">
+            <strong>The Robo-Tech Forum</strong>
+        </a>
+        <div class="navbar-div" >
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="album.html">Album</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <a href="#" id="close"><i class="bi bi-x-lg"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <i id="bar" class="bi bi-list"></i>
+        </div>
+    </section>
 
-        </ul>
-    </div>
-    <div id="mobile"> 
-         <i id="bar" class="bi bi-justify"></i>     
-    </div>
-</section>
-<section>
-    <div class="album-heading" style="text-align: center;">
-        <h1>Album</h1>
-        <span>Tracing the Path from Dreams to Reality, One Step at a Time</span>
-    </div>
-    
-    <div class="album-container">
-    <!-- Dropdown Album -->
-    <div class="album-card">
-        <div class="album-header" onclick="toggleAlbum(this)">
-            <h3>Robocon 2025</h3>
-            <span class="arrow">&#9654;</span>
-          </div>
-      <div class="album-content">
-          <div class="pro-container">
-              <section id="product1" class="section-p1">
-                  <div class="pro-container">
-                      <div class="pro">
-                          <img src="./img/Robocon 2025/20250713_140558.jpg" alt="">
-                          <div class="des">
-                              <span>[title]</span>
-                              <h5>[description]</h5>
-                             
-                              <h4>View More</h4>
-                          </div>
-                          <a href="./img/Robocon 2025/20250713_140558.jpg" target="_blank"> <i class="bi bi-arrow-right-short" id="cart"></i></i></a>
-                      </div>
-              
-                      <div class="pro">
-                          <img src="./img/Robocon 2025/20250708_162529.jpg" alt="">
-                          <div class="des">
-                            <span>[title]</span>
-                            <h5>[description]</h5>
-                              <h4>View More</h4>
-                          </div>
-                          <a href="./img/Robocon 2025/20250708_162529.jpg" target="_blank"> <i class="bi bi-arrow-right-short" id="cart"></i></i></a>
-                      </div>
-              
-                      <div class="pro">
-                          <img src="./img/Robocon 2025/20250713_181824.jpg" alt="">
-                          <div class="des">
-                            <span>[title]</span>
-                            <h5>[description]</h5>
-                              
-                              <h4>View More</h4>
-                          </div>
-                          <a href="./img/Robocon 2025/20250713_181824.jpg" target="_blank"> <i class="bi bi-arrow-right-short" id="cart"></i></i></a>
-                      </div>
+    <!-- Mobile menu overlay -->
+    <div class="menu-overlay" id="menu-overlay"></div>
 
-                      <div class="pro">
-                          <img src="./img/Robocon 2025/20250714_102709.jpg" alt="">
-                          <div class="des">
-                            <span>[title]</span>
-                            <h5>[description]</h5>
-                              
-                              <h4>View More</h4>
-                          </div>
-                          <a href="./img/Robocon 2025/20250714_102709.jpg" target="_blank"> <i class="bi bi-arrow-right-short" id="cart"></i></i></a>
-                      </div>
+    <div class="gallery-container">
+        <!-- Sports Competition -->
+        <div class="competition-section">
+            <h2 class="competition-title">DD Robocon 2025</h2>
+            <div class="photo-carousel">
+                <div class="photo-track" id="track1">
+                    <div class="photo-item">
+                        <img src="/img/Robocon 2025/20250708_162529.jpg" alt="Runner crossing finish line">
+                        <div class="photo-overlay">
+                            <h3>Victory Sprint</h3>
+                            <p>Final moments of the championship race</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="/img/Robocon 2025/20250710_075947.jpg" alt="Basketball game action">
+                        <div class="photo-overlay">
+                            <h3>Court Domination</h3>
+                            <p>Intense basketball championship finals</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="img/Robocon 2025/20250713_140558.jpg" alt="Soccer celebration">
+                        <div class="photo-overlay">
+                            <h3>Goal Celebration</h3>
+                            <p>Team celebrating the winning goal</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="img/Robocon 2025/20250713_181824.jpg" alt="Tennis match">
+                        <div class="photo-overlay">
+                            <h3>Perfect Serve</h3>
+                            <p>Championship point tennis serve</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="img/Robocon 2025/20250713_182807.jpg" alt="Swimming competition">
+                        <div class="photo-overlay">
+                            <h3>Pool Victory</h3>
+                            <p>Swimming championship triumph</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="img/Robocon 2025/20250713_183423 - Copy.jpg" alt="Cycling race">
+                        <div class="photo-overlay">
+                            <h3>Speed Demon</h3>
+                            <p>Cycling competition finish line</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="img/Robocon 2025/20250714_102709.jpg" alt="Cycling race">
+                        <div class="photo-overlay">
+                            <h3>Speed Demon</h3>
+                            <p>Cycling competition finish line</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                      <div class="pro">
-                          <img src="./img/Robocon 2025/20250713_183423 - Copy.jpg" alt="">
-                          <div class="des">
-                            <span>[title]</span>
-                            <h5>[description]</h5>
-                              
-                              <h4>View More</h4>
-                          </div>
-                          <a href="./img/Robocon 2025/20250713_183423 - Copy.jpg" target="_blank"> <i class="bi bi-arrow-right-short" id="cart"></i></i></a>
-                      </div>
+        <!-- Academic Competition -->
+        <div class="competition-section">
+            <h2 class="competition-title">DD Robocon 2024</h2>
+            <div class="photo-carousel">
+                <div class="photo-track" id="track2">
+                    <div class="photo-item">
+                        <img src="img/Robocon 2024/IMG-20250327-WA0006.jpg" alt="University graduation ceremony">
+                        <div class="photo-overlay">
+                            <h3>Graduation Day</h3>
+                            <p>Academic achievement celebration</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="img/Robocon 2024/IMG-20250327-WA0008.jpg" alt="Study session">
+                        <div class="photo-overlay">
+                            <h3>Research Excellence</h3>
+                            <p>Students working on breakthrough research</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="img/Robocon 2024/IMG-20250327-WA0009.jpg" alt="Science competition">
+                        <div class="photo-overlay">
+                            <h3>Science Fair Victory</h3>
+                            <p>Winning project presentation</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="img/Robocon 2024/IMG-20250327-WA0006.jpg" alt="Library study">
+                        <div class="photo-overlay">
+                            <h3>Knowledge Quest</h3>
+                            <p>Dedicated academic pursuit</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="img/Robocon 2024/IMG-20250327-WA0011.jpg" alt="Math competition">
+                        <div class="photo-overlay">
+                            <h3>Math Olympiad</h3>
+                            <p>Solving complex mathematical problems</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="img/Robocon 2024/IMG-20250327-WA0010.jpg" alt="Award ceremony">
+                        <div class="photo-overlay">
+                            <h3>Honor Roll</h3>
+                            <p>Academic excellence recognition</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                      <div class="pro">
-                          <img src="./img/Robocon 2025/20250710_075947.jpg" alt="">
-                          <div class="des">
-                            <span>[title]</span>
-                            <h5>[description]</h5>
-                              
-                              <h4>View More</h4>
-                          </div>
-                          <a href="./img/Robocon 2025/20250710_075947.jpg" target="_blank"> <i class="bi bi-arrow-right-short" id="cart"></i></i></a>
-                      </div>
-
-                      <div class="pro">
-                          <img src="./img/Robocon 2025/20250713_182807.jpg" alt="">
-                          <div class="des">
-                            <span>[title]</span>
-                            <h5>[description]</h5>
-                              
-                              <h4>View More</h4>
-                          </div>
-                          <a href="./img/Robocon 2025/20250713_182807.jpg" target="_blank"> <i class="bi bi-arrow-right-short" id="cart"></i></i></a>
-                      </div>
-                      
-              
-                      
-                  </div>
-              </section>
-          </div>
-      </div>
-    </div> 
-
-
-    <!-- second drop down  -->
-
-    <!-- Dropdown Album -->
-    <div class="album-card">
-        <div class="album-header" onclick="toggleAlbum(this)">
-            <h3>Robocon 2024</h3>
-            <span class="arrow">&#9654;</span>
-          </div>
-      <div class="album-content">
-          <div class="pro-container">
-              <section id="product1" class="section-p1">
-                  <div class="pro-container">
-                      <div class="pro">
-                          <img src="./img/Robocon 2024/IMG-20250327-WA0006.jpg" alt="">
-                          <div class="des">
-                            <span>[title]</span>
-                            <h5>[description]</h5>
-                             
-                              <h4>View More</h4>
-                          </div>
-                          <a href="./img/Robocon 2024/IMG-20250327-WA0006.jpg" target="_blank"> <i class="bi bi-arrow-right-short" id="cart"></i></i></a>
-                      </div>
-              
-                      <div class="pro">
-                          <img src="./img/Robocon 2024/IMG-20250327-WA0008.jpg" alt="">
-                          <div class="des">
-                            <span>[title]</span>
-                            <h5>[description]</h5>
-                              <h4>View More</h4>
-                          </div>
-                          <a href="./img/Robocon 2024/IMG-20250327-WA0008.jpg" target="_blank"> <i class="bi bi-arrow-right-short" id="cart"></i></i></a>
-                      </div>
-              
-                      <div class="pro">
-                          <img src="./img/Robocon 2024/IMG-20250327-WA0009.jpg" alt="">
-                          <div class="des">
-                            <span>[title]</span>
-                            <h5>[description]</h5>
-                              
-                              <h4>View More</h4>
-                          </div>
-                          <a href="./img/Robocon 2024/IMG-20250327-WA0009.jpg" target="_blank"> <i class="bi bi-arrow-right-short" id="cart"></i></i></a>
-                      </div>
-              
-                      <div class="pro">
-                          <img src="./img/Robocon 2024/IMG-20250327-WA0010.jpg" alt="">
-                          <div class="des">
-                            <span>[title]</span>
-                            <h5>[description]</h5>
-                          
-                              <h4>View More</h4>
-                          </div>
-                          <a href="./Robocon 2024/IMG-20250327-WA0010.jpg" target="_blank"> <i class="bi bi-arrow-right-short" id="cart"></i></i></a>
-                      </div>
-              
-                      <div class="pro">
-                          <img src="./img/Robocon 2024/IMG-20250327-WA0011.jpg" alt="">
-                          <div class="des">
-                            <span>[title]</span>
-                            <h5>[description]</h5>
-                             
-                              <h4>View More</h4>
-                          </div>
-                          <a href="./img/Robocon 2024/IMG-20250327-WA0011.jpg" target="_blank"> <i class="bi bi-arrow-right-short" id="cart"></i></i></a>
-                      </div>
-              
-                      <div class="pro">
-                          <img src="./album gcoea/not available.jpeg" alt="">
-                          <div class="des">
-                            <span>[title]</span>
-                            <h5>[description]</h5>
-                              
-                              <h4>View More</h4>
-                          </div>
-                          <a href="#"> <i class="bi bi-arrow-right-short" id="cart"></i></i></a>
-                      </div>
-                  </div>
-              </section>
-          </div>
-      </div>
-    </div> 
-
-    <!-- third drop down  -->
-     <div class="album-card">
-        <div class="album-header" onclick="toggleAlbum(this)">
-            <h3>Robocon 2023</h3>
-            <span class="arrow">&#9654;</span>
-          </div>
-      <div class="album-content">
-          <div class="pro-container">
-              <section id="product1" class="section-p1">
-                  <div class="pro-container">
-                      <div class="pro">
-                          <img src="./img/Robocon 2023/IMG-20250327-WA0003.jpg" alt="">
-                          <div class="des">
-                              <span>[title]</span>
-                              <h5>[description]</h5>
-                             
-                              <h4>View More</h4>
-                          </div>
-                          <a href="./img/Robocon 2023/IMG-20250327-WA0003.jpg" target="_blank"> <i class="bi bi-arrow-right-short" id="cart"></i></i></a>
-                      </div>
-              
-                      <div class="pro">
-                          <img src="./img/Robocon 2023/IMG-20250327-WA0004.jpg" alt="">
-                          <div class="des">
-                            <span>[title]</span>
-                            <h5>[description]</h5>
-                              <h4>View More</h4>
-                          </div>
-                          <a href="./img/Robocon 2023/IMG-20250327-WA0004.jpg" target="_blank"> <i class="bi bi-arrow-right-short" id="cart"></i></i></a>
-                      </div>
-              
-                      <div class="pro">
-                          <img src="./img/Robocon 2023/IMG-20250327-WA0005.jpg" alt="">
-                          <div class="des">
-                            <span>[title]</span>
-                            <h5>[description]</h5>
-                              
-                              <h4>View More</h4>
-                          </div>
-                          <a href="./img/Robocon 2023/IMG-20250327-WA0005.jpg" target="_blank"> <i class="bi bi-arrow-right-short" id="cart"></i></i></a>
-                      </div>
-              
-                      
-                  </div>
-              </section>
-          </div>
-      </div>
-    </div>
-
-</section>
-
-<footer class="section-p1">
-    <div class="col">
-      <h4>About</h4>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact Us</a>
-    </div>
-    <div class="col">
-      <h4>Quick Links</h4>
-      <a href="album.html">Album</a>
-      <a href="blog.html">blog</a>
-    </div>
-    <div class="col">
-      <div class="follow">
-          <h4>Follow Us</h4>
-          <div class="icons">
-            <i class="bi bi-facebook"><link rel="stylesheet" href="https://www.facebook.com/robotechforum?mibextid=ZbWKwL"></i>
-            <i class="bi bi-instagram"><link rel="stylesheet" href="https://www.instagram.com/the_robo_tech_forum_gcoea/"></i>
-            <i class="bi bi-linkedin"><link rel="stylesheet" href="https://www.linkedin.com/company/the-robo-tech-forum/"></i>
-           
-          </div>
+        <!-- Arts Competition -->
+        <div class="competition-section">
+            <h2 class="competition-title">DD Robocon 2023</h2>
+            <div class="photo-carousel">
+                <div class="photo-track" id="track3">
+                    <div class="photo-item">
+                        <img src="img/Robocon 2023/IMG-20250327-WA0003.jpg" alt="Art exhibition">
+                        <div class="photo-overlay">
+                            <h3>Gallery Opening</h3>
+                            <p>Student art exhibition showcase</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="img/Robocon 2023/IMG-20250327-WA0004.jpg" alt="Music performance">
+                        <div class="photo-overlay">
+                            <h3>Concert Performance</h3>
+                            <p>Musical excellence on stage</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="img/Robocon 2023/IMG-20250327-WA0005.jpg" alt="Theater performance">
+                        <div class="photo-overlay">
+                            <h3>Drama Competition</h3>
+                            <p>Outstanding theatrical performance</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="img/Robocon 2023/IMG-20250327-WA0003.jpg" alt="Dance performance">
+                        <div class="photo-overlay">
+                            <h3>Dance Championship</h3>
+                            <p>Graceful moves and perfect timing</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="img/Robocon 2023/IMG-20250327-WA0004.jpg" alt="Photography contest">
+                        <div class="photo-overlay">
+                            <h3>Photo Contest</h3>
+                            <p>Capturing beauty through the lens</p>
+                        </div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="img/Robocon 2023/IMG-20250327-WA0005.jpg" alt="Creative workshop">
+                        <div class="photo-overlay">
+                            <h3>Creative Workshop</h3>
+                            <p>Artists collaborating and learning</p>
+                        </div>
+                    </div>
+                    <!-- <div class="photo-item">
+                        <img src="https://via.placeholder.com/280x200/1abc9c/ffffff?text=Workshop" alt="Technical workshop">
+                        <div class="photo-overlay">
+                            <h3>Technical Workshop</h3>
+                            <p>Engineers collaborating and learning</p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
         </div>
     </div>
-  </footer>
-<div class="copyright"> 
-    <p>© 2025-The Robo-tech Forum  <br>
-    Developed by Mehul Dhakne</p>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<!-- Include necessary JavaScript files -->
-   <script src="./newscript.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    
-</body>
 
+    <script>
+        // Duplicate photos for seamless scrolling
+        const photoTracks = document.querySelectorAll('.photo-track');
+        photoTracks.forEach(track => {
+            const photos = track.innerHTML;
+            track.innerHTML = photos + photos;
+        });
+
+        // Pause animation on hover
+        photoTracks.forEach(track => {
+            const carousel = track.closest('.photo-carousel');
+            carousel.addEventListener('mouseenter', () => {
+                track.classList.add('paused');
+            });
+            carousel.addEventListener('mouseleave', () => {
+                track.classList.remove('paused');
+            });
+        });
+
+        // Mobile menu functionality
+        const bar = document.getElementById('bar');
+        const close = document.getElementById('close');
+        const nav = document.getElementById('navbar');
+        const overlay = document.getElementById('menu-overlay');
+
+        if (bar) {
+            bar.addEventListener('click', () => {
+                nav.classList.add('active');
+                overlay.classList.add('active');
+            });
+        }
+
+        if (close) {
+            close.addEventListener('click', () => {
+                nav.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+        }
+
+        if (overlay) {
+            overlay.addEventListener('click', () => {
+                nav.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+        }
+
+        // Close menu when clicking on a nav link (mobile)
+        const navLinks = document.querySelectorAll('#navbar li a:not(#close)');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+        });
+    </script>
+</body>
 
 </html>
