@@ -25,10 +25,8 @@
       overflow-x: hidden;
     }
 
-    /* strong { */
     .about-mehul {
       display: flex;
-
       background: #ffffff;
       padding: 20px 30px;
       border-radius: 10px;
@@ -86,8 +84,6 @@
       position: sticky;
     }
 
-
-
     .navbar-div {
       background-color: #fff;
       padding: 0;
@@ -98,7 +94,6 @@
       align-items: center;
       justify-content: space-between;
     }
-
 
     #navbar li {
       list-style: none;
@@ -119,8 +114,6 @@
       color: #0191f7;
     }
 
-    
-
     #navbar li a.active::after,
     #navbar li a:hover::after {
       content: '';
@@ -134,15 +127,11 @@
 
     .navbar-logo {
       position: absolute;
-      /* Position it independently of the rest of the navbar */
       top: 10px;
-      /* Adjust to move closer to the top */
       left: 10px;
-      /* Move it to the leftmost edge */
       font-size: 1.5em;
       font-weight: bold;
       color: #003366;
-      /* Robotech brand color */
       text-decoration: none;
     }
 
@@ -161,6 +150,22 @@
       right: 20px;
       font-size: 24px;
       color: #2c3e50;
+    }
+
+    /* Menu Overlay */
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 998;
+    }
+
+    .menu-overlay.active {
+      display: block;
     }
 
     .about-section {
@@ -220,7 +225,6 @@
       font-size: clamp(2.5rem, 5vw, 4rem);
       font-weight: 700;
       margin-bottom: 20px;
-
       color: black;
     }
 
@@ -496,54 +500,6 @@
       }
     }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .content-card {
-        padding: 40px 25px;
-      }
-
-      .content-card h3 {
-        font-size: 1.8rem;
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .card-icon {
-        margin-bottom: 10px;
-      }
-
-      .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .about-section {
-        padding: 60px 15px;
-      }
-
-      .timeline {
-        padding-left: 20px;
-      }
-
-      .timeline-item {
-        padding-left: 30px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .section-title {
-        font-size: 2.5rem;
-      }
-
-      .content-card h3 {
-        font-size: 1.6rem;
-      }
-
-      .content-card {
-        padding: 30px 20px;
-      }
-    }
-
     .copyright {
       color: #5f6e6a;
       width: 100%;
@@ -590,8 +546,6 @@
       color: #0191f7;
     }
 
-
-
     footer .follow i {
       color: #5f6e6a;
       padding-right: 4px;
@@ -601,6 +555,157 @@
     footer .follow i:hover {
       color: #0191f7;
     }
+
+    /* Responsive Design */
+    @media screen and (max-width: 1024px) {
+      #header {
+        padding: 20px 60px;
+      }
+
+      .navbar-logo {
+        font-size: 1.3em;
+      }
+
+      #navbar li a {
+        font-size: 15px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      #header {
+        padding: 20px 40px;
+      }
+
+      .navbar-logo {
+        font-size: 1.2em;
+        position: static;
+      }
+
+      /* Hide desktop navigation */
+      .navbar-div {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background: #e3e6f3;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        z-index: 1001;
+      }
+
+      .navbar-div.active {
+        right: 0;
+      }
+
+      #navbar {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 80px 20px 20px 20px;
+        height: 100%;
+      }
+
+      #navbar li {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 0;
+      }
+
+      #navbar li a {
+        width: 100%;
+        padding: 15px 20px;
+        border-radius: 8px;
+        font-size: 16px;
+        display: block;
+      }
+
+      #navbar li a.active::after,
+      #navbar li a:hover::after {
+        content: '';
+        width: 20px;
+        height: 2px;
+        background: #0191f7;
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+      }
+
+        /* Show mobile menu button */
+        #mobile {
+          display: block;
+        }
+
+        #close {
+          display: block;
+        }
+
+        .logo {
+          width: 120px;
+        }
+
+        .content-card {
+          padding: 40px 25px;
+        }
+
+        .content-card h3 {
+          font-size: 1.8rem;
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .card-icon {
+          margin-bottom: 10px;
+        }
+
+        .stats-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .about-section {
+          padding: 60px 15px;
+        }
+
+        .timeline {
+          padding-left: 20px;
+        }
+
+        .timeline-item {
+          padding-left: 30px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        #header {
+          padding: 15px 20px;
+        }
+
+        .navbar-logo {
+          font-size: 1.1em;
+        }
+
+        .logo {
+          width: 100px;
+        }
+
+        .navbar-div {
+          width: 280px;
+          padding: 70px 15px 15px 15px;
+        }
+
+        .section-title {
+          font-size: 2.5rem;
+        }
+
+        .content-card h3 {
+          font-size: 1.6rem;
+        }
+
+        .content-card {
+          padding: 30px 20px;
+        }
+      }
   </style>
 </head>
 
@@ -626,6 +731,9 @@
     </div>
   </section>
 
+  <!-- Mobile menu overlay -->
+  <div class="menu-overlay" id="menu-overlay"></div>
+
   <section class="about-section">
     <div class="particles" id="particles"></div>
 
@@ -638,22 +746,16 @@
 
       <div class="content-sections">
         <div class="content-card">
-          <h3>
-            Our Mission
-          </h3>
+          <h3>Our Mission</h3>
           <p>Our mission is to provide a platform for students to learn, experiment, and build robots that can solve
-            real-world problems. We believe in fostering creativity and teamwork in the field of robotics.
-          </p>
+            real-world problems. We believe in fostering creativity and teamwork in the field of robotics.</p>
         </div>
 
         <div class="content-card">
-          <h3>
-            What We Do
-          </h3>
+          <h3>What We Do</h3>
           <p>We work on various projects, from simple robots to complex autonomous systems. Our club members have access
             to state-of-the-art tools and resources to bring their ideas to life.. Our club offers comprehensive
-            programs designed to provide practical experience with modern robotics
-            technologies:</p>
+            programs designed to provide practical experience with modern robotics technologies:</p>
           <ul>
             <li><strong>Robotics Workshops:</strong> Hands-on sessions covering programming, electronics, mechanical
               design, and system integration</li>
@@ -668,42 +770,43 @@
         </div>
 
         <div class="content-card">
-          <h3>
-            Our History
-          </h3>
+          <h3>Our History</h3>
           <p>Founded with a vision to democratize robotics education, our club has grown from a small group of
             enthusiasts into a thriving community of innovators.</p>
 
           <div class="timeline">
             <div class="timeline-item">
               <div class="timeline-year">2014</div>
-              <div class="timeline-content">Founded in 2014 by some bunch of passionate tech enthusiast Engineers to share and explore the vast knowledge of Robotics. The main target of the founders was to target the DD Robocon Competition.</div>
+              <div class="timeline-content">Founded in 2014 by some bunch of passionate tech enthusiast Engineers to
+                share and explore the vast knowledge of Robotics. The main target of the founders was to target the DD
+                Robocon Competition.</div>
             </div>
             <div class="timeline-item">
               <div class="timeline-year">2017</div>
-              <div class="timeline-content">First time the club got The Mathworks Modelling Award. This was the biggest and the greated achievement for the whole Club which still is celebrated.</div>
+              <div class="timeline-content">First time the club got The Mathworks Modelling Award. This was the biggest
+                and the greated achievement for the whole Club which still is celebrated.</div>
             </div>
             <div class="timeline-item">
               <div class="timeline-year">2018</div>
-              <div class="timeline-content">This was the second time The Robo-Tech Forum was recognized and Considered worthy of the Mathworks Modelling Award, 2018. This makes our achievement to be twice in a row.</div>
+              <div class="timeline-content">This was the second time The Robo-Tech Forum was recognized and Considered
+                worthy of the Mathworks Modelling Award, 2018. This makes our achievement to be twice in a row.</div>
             </div>
             <div class="timeline-item">
               <div class="timeline-year">2023</div>
-              <div class="timeline-content">The Robo-Tech Forum was recognized by E-Yantra Lab of IIT, Bombay which lead us to gaining the access of Cutting Edge E-Yantra Lab Robotics Components, deepening our knowledge in the world of Robotics.</div>
+              <div class="timeline-content">The Robo-Tech Forum was recognized by E-Yantra Lab of IIT, Bombay which lead
+                us to gaining the access of Cutting Edge E-Yantra Lab Robotics Components, deepening our knowledge in
+                the world of Robotics.</div>
             </div>
             <div class="timeline-item">
               <div class="timeline-year">2024</div>
-              <div class="timeline-content">The Club now comes under the Department of Electronics and Telecommunicaton, Government College of Engineering, Amravati.</div>
+              <div class="timeline-content">The Club now comes under the Department of Electronics and Telecommunicaton,
+                Government College of Engineering, Amravati.</div>
             </div>
             <div class="timeline-item">
               <div class="timeline-year">2025</div>
-              <div class="timeline-content">We were able to secure All India Rank 12 in DD Robocon which marked our growth and development in the field of Robotics.</div>
+              <div class="timeline-content">We were able to secure All India Rank 12 in DD Robocon which marked our
+                growth and development in the field of Robotics.</div>
             </div>
-            <!-- <div class="timeline-item">
-              <div class="timeline-year">2024</div>
-              <div class="timeline-content">Established alumni mentorship network and launched scholarship program for
-                underrepresented students in STEM.</div>
-            </div> -->
           </div>
         </div>
       </div>
@@ -712,8 +815,8 @@
         <div class="stat-card">
           <span class="stat-number">500+</span>
           <div class="stat-label">Benefited Members</div>
-          <div class="stat-description">Students from diverse academic backgrounds who were actually benefited from The Robo-Tech Forum.
-          </div>
+          <div class="stat-description">Students from diverse academic backgrounds who were actually benefited from The
+            Robo-Tech Forum.</div>
         </div>
 
         <div class="stat-card">
@@ -728,12 +831,9 @@
           <div class="stat-description">Industrial Sponsorship we have</div>
         </div>
       </div>
-
-      <!-- <div class="cta-section">
-        <a href="#" class="cta-button">Join Our Community</a>
-      </div> -->
     </div>
   </section>
+
   <footer class="section-p1">
     <div class="col">
       <h4>About</h4>
@@ -749,7 +849,6 @@
       <div class="follow">
         <h4>Follow Us</h4>
         <div class="icons">
-
           <a target="_blank" href="https://www.facebook.com/robotechforum?mibextid=ZbWKwL">
             <i class="bi bi-facebook"></i>
           </a>
@@ -759,11 +858,6 @@
           <a target="_blank" href="https://www.linkedin.com/company/the-robo-tech-forum/">
             <i class="bi bi-linkedin"></i>
           </a>
-
-          <!-- <i class="bi bi-facebook" href="https://www.facebook.com/robotechforum?mibextid=ZbWKwL"></i> -->
-          <!-- <i class="bi bi-instagram"> <link rel="stylesheet" href="https://www.instagram.com/the_robo_tech_forum_gcoea/"></i> -->
-          <!-- <i class="bi bi-linkedin"> <link rel="stylesheet" href="https://www.linkedin.com/company/the-robo-tech-forum/"></i> -->
-
         </div>
       </div>
     </div>
@@ -771,7 +865,6 @@
       <p>© 2025-The Robo-Tech Forum<br>
         Developed by Mehul Dhakne in Collaboration With Hitesh Nagpure</p>
     </div>
-
   </footer>
 
   <script>
@@ -831,6 +924,42 @@
         observer.observe(number);
       });
     }
+
+    // Mobile menu functionality
+    const bar = document.getElementById('bar');
+    const close = document.getElementById('close');
+    const navbar = document.querySelector('.navbar-div');
+    const overlay = document.getElementById('menu-overlay');
+
+    if (bar) {
+      bar.addEventListener('click', () => {
+        navbar.classList.add('active');
+        overlay.classList.add('active');
+      });
+    }
+
+    if (close) {
+      close.addEventListener('click', () => {
+        navbar.classList.remove('active');
+        overlay.classList.remove('active');
+      });
+    }
+
+    if (overlay) {
+      overlay.addEventListener('click', () => {
+        navbar.classList.remove('active');
+        overlay.classList.remove('active');
+      });
+    }
+
+    // Close menu when clicking on a nav link (mobile)
+    const navLinks = document.querySelectorAll('#navbar li a:not(#close)');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navbar.classList.remove('active');
+        overlay.classList.remove('active');
+      });
+    });
 
     // Initialize everything when page loads
     document.addEventListener('DOMContentLoaded', () => {
