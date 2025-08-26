@@ -81,7 +81,7 @@ p {
 
 .map iframe {
   width: 70%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   /* border: none; */
   /* border: 1px solid black; */
   border-radius: 20px;
@@ -95,6 +95,27 @@ p {
 
 .section-m1 {
   margin: 40px 0;
+}
+
+
+
+.blog-card .blog-header h3 {
+  font-size: 20px;
+  color: #000;
+}
+
+.blog-content .info-section p {
+  text-align: justify;
+
+}
+
+@media screen and (max-width :768px) {
+  .blog-card .blog-header h3 {
+    font-size: 15px;
+  }
+
+
+
 }
 
 button.normal {
@@ -744,6 +765,10 @@ strong {
     /* Center align the content */
     align-items: center;
   }
+
+  .copyright p {
+    text-align: center;
+  }
 }
 
 /*^^^^^^ reviews and comments section end ^^^^^ */
@@ -1220,10 +1245,6 @@ footer a:hover {
   color: #0191f7;
 }
 
-footer .follow {
-  margin-top: 20px;
-}
-
 footer .follow i {
   color: #5f6e6a;
   padding-right: 4px;
@@ -1248,6 +1269,13 @@ footer .install img{
 .copyright {
   color: #5f6e6a;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* text-align: center; */
+}
+
+.copyright p {
   text-align: center;
 }
 
@@ -1450,6 +1478,12 @@ footer .install img{
   }
 
   .copyright {
-    text-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .copyright p {
+    text-align: center;
   }
 }
