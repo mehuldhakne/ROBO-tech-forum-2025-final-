@@ -15,13 +15,14 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            /* background-color: #000; */
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            /* font-family: 'times new roman',sans-serif; */
             color: #2c3e50;
             min-height: 100vh;
+            background-color: #000 !important;
         }
 
         .project-showcase {
@@ -29,8 +30,14 @@
             padding: 40px 20px;
             width: 90%;
             margin: 30px auto;
-            border: 2px solid black;
+            border: 2px solid #fff !important;
             border-radius: 50px;
+            background-color: #333;
+        }
+
+        .project-showcase .project-header h3, .section-title {
+            color: #fff !important;
+
         }
 
         .project-header {
@@ -140,6 +147,7 @@
         .hero-media {
             margin-bottom: 80px;
             opacity: 0;
+            /* background-color: #fff; */
             animation: fadeInUp 1s ease-out 0.5s forwards;
         }
 
@@ -152,6 +160,7 @@
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
+            background-color: #fff !important;
         }
 
         .video-container:hover {
@@ -161,7 +170,7 @@
         .demo-video {
             width: 100%;
             height: 500px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: #000;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -182,7 +191,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
+            /* background: #333; */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -281,7 +290,7 @@
         .gallery-image {
             width: 100%;
             height: 250px;
-            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c);
+            background: #fff;
             background-size: 400% 400%;
             animation: gradientShift 8s ease infinite;
             display: flex;
@@ -557,6 +566,81 @@
                 align-items: center;
             }
         }
+
+        /* ---- Dark Mode Overrides ---- */
+        body {
+            background-color: #000 !important;
+            color: #fff !important;
+        }
+
+        #header,
+        .navbar-div,
+        footer,
+        .copyright {
+            background-color: #000 !important;
+            color: #fff !important;
+            border: 1px solid #333 !important;
+        }
+
+        #navbar li a.active,
+        #navbar li a:hover {
+            color: #0056b3 !important;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        span,
+        li,
+        strong {
+            color: #fff !important;
+        }
+
+        .project-card,
+        .innovation-card,
+        .card-front,
+        .card-back {
+            background-color: #000 !important;
+            color: #fff !important;
+            border: 1px solid #333 !important;
+        }
+
+        .project-card h3,
+        .innovation-card h3 {
+            color: #fff !important;
+        }
+
+        button,
+        .project-btn,
+        .view-more {
+            background-color: #000 !important;
+            color: #fff !important;
+            border: 1px solid #555 !important;
+        }
+
+        button:hover,
+        .project-btn:hover,
+        .view-more:hover {
+            background-color: #028ffa !important;
+            color: #fff !important;
+        }
+
+        footer,
+        footer a,
+        footer p,
+        footer h4,
+        footer .follow i {
+            color: #fff !important;
+        }
+
+        footer a:hover,
+        footer .follow i:hover {
+            color: #028ffa !important;
+        }
     </style>
 </head>
 
@@ -616,7 +700,7 @@
                 <div class="demo-video">
                     <video loop autoplay muted src="Projects/Robocon/Robocon.webm"></video>
                     <div class="video-overlay">
-                        <div class="play-button" ></div>
+                        <div class="play-button"></div>
                     </div>
                     <!-- <span>🎥 Project Demo Video</span> -->
                 </div>
@@ -636,7 +720,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item" >
+                <div class="gallery-item">
                     <div class="gallery-image">
                         <img src="Projects/Robocon/RB2.jpg" alt="">
                         <div class="gallery-overlay">
@@ -645,7 +729,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item" >
+                <div class="gallery-item">
                     <div class="gallery-image">
                         <img src="Projects/Robocon/RB3.jpg" alt="">
                         <div class="gallery-overlay">
@@ -1000,7 +1084,7 @@
     <div class="project-showcase">
         <!-- Project Header -->
         <div class="project-header">
-            <h3 class="project-title">Cozmo Clench</h3>
+            <h3 class="project-title">Meshmerize</h3>
             <p class="project-subtitle"></p>
 
             <div class="project-tags">
@@ -1419,11 +1503,37 @@
         <div class="hero-media">
             <div class="video-container">
                 <div style="display: flex; flex-wrap: wrap-reverse;" class="demo-video">
-                    <video style="width: 50%; padding: 10px;" loop autoplay muted
+                    <video style="width: 90%; padding: 10px; border-radius: 20px;" loop autoplay muted
                         src="Projects/RC Boats/RC-boat-1.mp4"></video>
-                    <video style="width: 50%; padding: 10px;" loop autoplay muted
+
+                    <!-- <video style="width: 50%; padding: 20px;" loop autoplay muted src="Projects/Quadruped/Quadruped_test.mp4"></video> -->
+                    <div class="video-overlay">
+                        <div class="play-button"></div>
+                    </div>
+                    <!-- <span>🎥 Project Demo Video</span> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-media">
+            <div class="video-container">
+                <div style="display: flex; flex-wrap: wrap-reverse;" class="demo-video">
+
+                    <video style="width: 90%; padding: 10px; border-radius: 20px;" loop autoplay muted
                         src="Projects/RC Boats/RC-boat-3.mp4"></video>
-                    <video style="height: 70%; padding: 5px;" loop autoplay muted
+                    <!-- <video style="width: 50%; padding: 20px;" loop autoplay muted src="Projects/Quadruped/Quadruped_test.mp4"></video> -->
+                    <div class="video-overlay">
+                        <div class="play-button"></div>
+                    </div>
+                    <!-- <span>🎥 Project Demo Video</span> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-media">
+            <div class="video-container">
+                <div style="display: flex; flex-wrap: wrap-reverse;" class="demo-video">
+                    <video style="height: 90%; padding: 5px; border-radius: 20px;" loop autoplay muted
                         src="Projects/RC Boats/RC-boat-2.mp4"></video>
                     <!-- <video style="width: 50%; padding: 20px;" loop autoplay muted src="Projects/Quadruped/Quadruped_test.mp4"></video> -->
                     <div class="video-overlay">
@@ -1492,7 +1602,7 @@
                         </div>
                     </div>
                 </div> -->
-    
+
 
         <!-- Features Section -->
         <div class="features-section">
@@ -1508,14 +1618,16 @@
                 <div class="feature-card">
                     <div class="feature-icon">📱</div>
                     <h3 class="feature-title">Responsive Design</h3>
-                    <p class="feature-description">Fully responsive interface that works seamlessly across desktop, tablet,
+                    <p class="feature-description">Fully responsive interface that works seamlessly across desktop,
+                        tablet,
                         and mobile devices.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
                     <h3 class="feature-title">Fast Performance</h3>
-                    <p class="feature-description">Optimized for speed with lazy loading, image compression, and efficient
+                    <p class="feature-description">Optimized for speed with lazy loading, image compression, and
+                        efficient
                         database queries.</p>
                 </div>
 
@@ -1559,11 +1671,36 @@
         <div class="hero-media">
             <div class="video-container">
                 <div style="display: flex; flex-wrap: wrap;" class="demo-video">
-                    <video style="width: 50%; padding: 10px;" loop autoplay muted src="Projects/Line Follower/Line Follower-3.mp4"></video>
-                    <video style="width: 50%; padding: 10px;" loop autoplay muted src="Projects/Line Follower/Line Follower-2.webm"></video>
-                    <video style="width: 50%; padding: 10px;" loop autoplay muted src="Projects/Line Follower/Line Follower.mp4"></video>
+                    <video style="width: 90%; padding: 10px;" loop autoplay muted
+                        src="Projects/Line Follower/Line Follower-3.mp4"></video>
                     <div class="video-overlay">
-                        <div class="play-button" ></div>
+                        <div class="play-button"></div>
+                    </div>
+                    <!-- <span>🎥 Project Demo Video</span> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-media">
+            <div class="video-container">
+                <div style="display: flex; flex-wrap: wrap;" class="demo-video">
+                    <video style="width: 90%; padding: 10px;" loop autoplay muted
+                        src="Projects/Line Follower/Line Follower-2.webm"></video>
+                    <div class="video-overlay">
+                        <div class="play-button"></div>
+                    </div>
+                    <!-- <span>🎥 Project Demo Video</span> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-media">
+            <div class="video-container">
+                <div style="display: flex; flex-wrap: wrap;" class="demo-video">
+                    <video style="width: 90%; padding: 10px;" loop autoplay muted
+                        src="Projects/Line Follower/Line Follower.mp4"></video>
+                    <div class="video-overlay">
+                        <div class="play-button"></div>
                     </div>
                     <!-- <span>🎥 Project Demo Video</span> -->
                 </div>
