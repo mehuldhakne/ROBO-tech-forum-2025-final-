@@ -14,7 +14,211 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
   <link rel="stylesheet" href="./style.css">
+  <style>
+    /* Fixed testimonial section CSS */
+    .testimonial-section {
+      padding: 40px 20px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    .testimonial-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .testimonial-container {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      cursor: grab;
+    }
+
+    .testimonial-container:active {
+      cursor: grabbing;
+    }
+
+    .testimonial-track {
+      display: flex;
+      animation: marquee 30s linear infinite;
+      will-change: transform;
+    }
+
+    .testimonial-track:hover {
+      animation-play-state: paused;
+    }
+
+    .testimonial-box {
+      flex: 0 0 350px;
+      margin: 10px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+      min-height: 200px;
+    }
+
+    .quote-mark {
+      font-size: 4rem;
+      color: #d3d3d3;
+      position: absolute;
+      top: -20px;
+      left: 10px;
+    }
+
+    .testimonial-box p {
+      font-size: 1rem;
+      color: #555;
+      margin: 20px 0;
+      text-align: justify;
+      line-height: 1.5;
+    }
+
+    .author {
+      display: block;
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    @keyframes verticalScroll {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+
+    /* Mobile-specific fixes - Vertical scrolling */
+    @media (max-width: 768px) {
+      .testimonial-section {
+        padding: 30px 15px;
+      }
+      
+      .testimonial-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+      
+      .testimonial-container {
+        cursor: default;
+        max-height: 400px;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: #ccc transparent;
+      }
+      
+      .testimonial-container::-webkit-scrollbar {
+        width: 4px;
+      }
+      
+      .testimonial-container::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      
+      .testimonial-container::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 2px;
+      }
+      
+      .testimonial-track {
+        flex-direction: column;
+        animation: verticalScroll 20s linear infinite;
+        gap: 15px;
+      }
+
+      .testimonial-box {
+        flex: none;
+        width: 100%;
+        margin: 0;
+        padding: 15px;
+        min-height: auto;
+      }
+
+      .testimonial-box p {
+        font-size: 0.9rem;
+        margin: 15px 0;
+      }
+
+      .quote-mark {
+        font-size: 3rem;
+        top: -15px;
+      }
+      
+      .author {
+        font-size: 0.8rem;
+      }
+    }
+
+    /* Extra small screens */
+    @media (max-width: 480px) {
+      .testimonial-container {
+        max-height: 350px;
+      }
+      
+      .testimonial-track {
+        gap: 12px;
+      }
+      
+      .testimonial-box {
+        padding: 12px;
+      }
+
+      .testimonial-box p {
+        font-size: 0.85rem;
+        margin: 12px 0;
+      }
+
+      .quote-mark {
+        font-size: 2.5rem;
+        top: -10px;
+      }
+      
+      .author {
+        font-size: 0.75rem;
+      }
+    }
+
+    /* Utility classes for JavaScript control */
+    .paused {
+      animation-play-state: paused !important;
+    }
+
+    .fast-forward {
+      animation-duration: 10s !important;
+    }
+
+    .slow-motion {
+      animation-duration: 60s !important;
+    }
+
+    /* Prevent text selection during drag on mobile */
+    .testimonial-container * {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+  </style>
 </head>
+
 
 <body class="no-scroll">
 
@@ -215,7 +419,11 @@
               <div class="card-back-p">
 
                 <p>
-                  U R Rao Satellite Centre (URSC) solicits from the youth of India, innovative ideas and designs of robotic rovers for future missions through the conduct of IRoC-U. The objective here is to provide development opportunities in space robotics to the participating entities and to leverage the creative thinking among the youth of our Nation for ISRO interplanetary missions. It is also expected to play an important role in augmenting ISRO’s activities in space exploration..
+                  U R Rao Satellite Centre (URSC) solicits from the youth of India, innovative ideas and designs of
+                  robotic rovers for future missions through the conduct of IRoC-U. The objective here is to provide
+                  development opportunities in space robotics to the participating entities and to leverage the creative
+                  thinking among the youth of our Nation for ISRO interplanetary missions. It is also expected to play
+                  an important role in augmenting ISRO’s activities in space exploration..
                 </p>
               </div>
 
@@ -241,7 +449,6 @@
       </div>
     </section>
 
-    <!-- our team -->
 
 
 
@@ -249,78 +456,132 @@
     <!-- reviews and comments -->
     <section class="testimonial-section">
       <h2>What People Say About Us</h2>
-      <div class="testimonial-container">
-        <div class="testimonial-track">
-
-
+      <div class="testimonial-container" id="testimonialContainer">
+        <div class="testimonial-track" id="testimonialTrack">
+          <!-- First set of testimonials -->
           <div class="testimonial-box">
             <span class="quote-mark">&#8220;</span>
-            <p>My experience after joining the RTF has been very positive. It has helped me enhance my abilities and think beyond the syllabus with a more practical approach. It gave me a better understanding of how practical engineering works and also helped me strengthen my research skills.
-            </p>
-            <span class="author">- Gaurav Vishrojwar</span>
+            <p>My experience after joining the RTF has been very positive. It has helped me enhance my abilities and
+              think beyond the syllabus with a more practical approach. It gave me a better understanding of how
+              practical engineering works and also helped me strengthen my research skills.</p>
+            <span class="author">- Gaurav Vishrojwar (Team coordinator 2022)</span>
           </div>
 
           <div class="testimonial-box">
             <span class="quote-mark">&#8220;</span>
             <p>The only place in our college where people collectively think outside of the box, apply all the knowledge
               they have and put everything in real life from the theory they learned to solve different problems in real
-              life.
-              RTF provides you a platform where you can actually learn and apply your technical skills to make something
-              out of your imagination. You will get direction from the seniors and their experiences so that you can
-              head towards solving any problem.
-              RTF not only teaches you all technical things but also teaches you discipline, teamwork and pushes you to
-              your extreme limits when the time comes.
-            </p>
-            <span class="author">- Vishal Gaikwad</span>
+              life. RTF provides you a platform where you can actually learn and apply your technical skills to make
+              something out of your imagination.</p>
+            <span class="author">- Vishal Gaikwad (Mechanical Head 2017)</span>
           </div>
 
           <div class="testimonial-box">
             <span class="quote-mark">&#8220;</span>
-            <p>My time in The RoboTech Forum robotics club was seriously one of the highlights of college! I started out messing around with line followers in my first year, then in my second year I got to help seniors build those crazy robots for Robocon. By my third year, I was leading the electronics team and got to control one of robot at IIT Delhi's DD Robocon 2k23 - that was a rush! In my last year, I got to mentor some new folks coming into the club. The club's definitely where I learned a ton and had a blast doing it.
+            <p>The Robotech Forum (RTF) is the only place in our college where theory meets practice—where real
+              engineering happens. We work days and nights, pushing our limits. We fail, we learn from mistakes, and we
+              come back stronger—until we win. My time as Team Leader was the most rewarding part of my college life.
             </p>
-            <span class="author">- Piyush Kale</span>
+            <span class="author">— Ayush Umesh Patorkar (Former Team Leader & Overall Coordinator)</span>
           </div>
 
-
-
+          <div class="testimonial-box">
+            <span class="quote-mark">&#8220;</span>
+            <p>My time in The RoboTech Forum robotics club was seriously one of the highlights of college! I started out
+              messing around with line followers in my first year, then got to help seniors build robots for Robocon. By
+              my third year, I was leading the electronics team and got to control one of robot at IIT Delhi's DD
+              Robocon 2k23.</p>
+            <span class="author">- Piyush Kale (Vice captain and electronics head 2023)</span>
+          </div>
 
           <div class="testimonial-box">
             <span class="quote-mark">&#8220;</span>
             <p>Being a part of RTF was one of the most valuable experiences of my college life. As a coordinator and
               later the captain, I not only worked on cutting-edge robotics projects but also developed leadership,
-              problem-solving, and teamwork skills.
-
-              RTF gave me the platform to explore real-world applications of robotics and electronics beyond the
-              classroom. The exposure to hardware, coding, and collaborative projects helped me stand out during
-              interviews. More than just technical growth, RTF taught me how to manage a team, handle responsibilities,
-              and think innovatively—skills that are invaluable in post-college life.
-
-              RTF was more than a club—it was a family where I learned collaboration, perseverance, and innovation
-            </p>
-            <span class="author">- Vedant Raut</span>
+              problem-solving, and teamwork skills. RTF gave me the platform to explore real-world applications beyond
+              the classroom.</p>
+            <span class="author">- Vedant Raut (Team Captain and Coordinator 2024)</span>
           </div>
-
-
-
 
           <div class="testimonial-box">
             <span class="quote-mark">&#8220;</span>
-            <p>I served as Team Captain and Coordinator of RTF for year 2025 and the experience taught me various
-              things
-              and made my personality and nature more confident..</p>
+            <p>I served as Team Captain and Coordinator of RTF for year 2025 and the experience taught me various things
+              and made my personality and nature more confident.</p>
             <span class="author">- Shreyash Satish Dabhade</span>
           </div>
 
           <div class="testimonial-box">
             <span class="quote-mark">&#8220;</span>
-            <p>It’s a great place to learn and grow, with a supportive community that encourages innovation.</p>
+            <p>It's a great place to learn and grow, with a supportive community that encourages innovation.</p>
             <span class="author">- Mehul Dhakne</span>
           </div>
 
-  
-    
+          <!-- Duplicate set for seamless looping -->
+          <div class="testimonial-box">
+            <span class="quote-mark">&#8220;</span>
+            <p>My experience after joining the RTF has been very positive. It has helped me enhance my abilities and
+              think beyond the syllabus with a more practical approach. It gave me a better understanding of how
+              practical engineering works and also helped me strengthen my research skills.</p>
+            <span class="author">- Gaurav Vishrojwar (Team coordinator 2022)</span>
+          </div>
+
+          <div class="testimonial-box">
+            <span class="quote-mark">&#8220;</span>
+            <p>The only place in our college where people collectively think outside of the box, apply all the knowledge
+              they have and put everything in real life from the theory they learned to solve different problems in real
+              life. RTF provides you a platform where you can actually learn and apply your technical skills to make
+              something out of your imagination.</p>
+            <span class="author">- Vishal Gaikwad (Mechanical Head 2017)</span>
+          </div>
+
+          <div class="testimonial-box">
+            <span class="quote-mark">&#8220;</span>
+            <p>The Robotech Forum (RTF) is the only place in our college where theory meets practice—where real
+              engineering happens. We work days and nights, pushing our limits. We fail, we learn from mistakes, and we
+              come back stronger—until we win. My time as Team Leader was the most rewarding part of my college life.
+            </p>
+            <span class="author">— Ayush Umesh Patorkar (Former Team Leader & Overall Coordinator)</span>
+          </div>
+
+          <div class="testimonial-box">
+            <span class="quote-mark">&#8220;</span>
+            <p>My time in The RoboTech Forum robotics club was seriously one of the highlights of college! I started out
+              messing around with line followers in my first year, then got to help seniors build robots for Robocon. By
+              my third year, I was leading the electronics team and got to control one of robot at IIT Delhi's DD
+              Robocon 2k23.</p>
+            <span class="author">- Piyush Kale (Vice captain and electronics head 2023)</span>
+          </div>
+
+          <div class="testimonial-box">
+            <span class="quote-mark">&#8220;</span>
+            <p>Being a part of RTF was one of the most valuable experiences of my college life. As a coordinator and
+              later the captain, I not only worked on cutting-edge robotics projects but also developed leadership,
+              problem-solving, and teamwork skills. RTF gave me the platform to explore real-world applications beyond
+              the classroom.</p>
+            <span class="author">- Vedant Raut (Team Captain and Coordinator 2024)</span>
+          </div>
+
+          <div class="testimonial-box">
+            <span class="quote-mark">&#8220;</span>
+            <p>I served as Team Captain and Coordinator of RTF for year 2025 and the experience taught me various things
+              and made my personality and nature more confident.</p>
+            <span class="author">- Shreyash Satish Dabhade</span>
+          </div>
+
+          <div class="testimonial-box">
+            <span class="quote-mark">&#8220;</span>
+            <p>It's a great place to learn and grow, with a supportive community that encourages innovation.</p>
+            <span class="author">- Mehul Dhakne</span>
+          </div>
         </div>
       </div>
+
+      <!-- <div class="testimonial-controls">
+        <button class="control-btn" id="pauseBtn">Pause</button>
+        <button class="control-btn" id="slowBtn">Slow</button>
+        <button class="control-btn" id="normalBtn">Normal</button>
+        <button class="control-btn" id="fastBtn">Fast</button>
+      </div> -->
     </section>
 
     <footer class="section-p1">
@@ -370,6 +631,92 @@
     <script src="./newscript.js"></script>
 
   </div>
+
+  <script>
+    // Updated JavaScript for mobile vertical auto-scrolling
+    class TestimonialCarousel {
+      constructor() {
+        this.track = document.getElementById('testimonialTrack');
+        this.container = document.getElementById('testimonialContainer');
+        this.isPaused = false;
+        this.isDragging = false;
+        this.startX = 0;
+        this.scrollLeft = 0;
+        this.isMobile = window.innerWidth <= 768;
+        this.init();
+      }
+
+      init() {
+        // Only add drag functionality for desktop
+        if (!this.isMobile) {
+          // Mouse events for desktop
+          this.container.addEventListener('mousedown', (e) => this.startDrag(e));
+          this.container.addEventListener('mousemove', (e) => this.drag(e));
+          this.container.addEventListener('mouseup', () => this.endDrag());
+          this.container.addEventListener('mouseleave', () => this.endDrag());
+
+          // Pause on hover for desktop only
+          this.container.addEventListener('mouseleave', () => {
+            if (!this.isPaused && !this.isDragging) {
+              this.track.style.animationPlayState = 'running';
+            }
+          });
+        } else {
+          // Mobile: Pause on touch, resume after touch ends
+          this.container.addEventListener('touchstart', () => {
+            this.track.style.animationPlayState = 'paused';
+          });
+          
+          this.container.addEventListener('touchend', () => {
+            setTimeout(() => {
+              this.track.style.animationPlayState = 'running';
+            }, 2000); // Resume after 2 seconds
+          });
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+          this.isMobile = window.innerWidth <= 768;
+        });
+      }
+
+      startDrag(e) {
+        if (this.isMobile) return;
+        this.isDragging = true;
+        this.startX = e.pageX || e.clientX;
+        this.scrollLeft = this.container.scrollLeft;
+        this.track.style.animationPlayState = 'paused';
+        this.container.style.cursor = 'grabbing';
+      }
+
+      drag(e) {
+        if (!this.isDragging || this.isMobile) return;
+        e.preventDefault();
+        const x = e.pageX || e.clientX;
+        const walk = (x - this.startX) * 2;
+        this.container.scrollLeft = this.scrollLeft - walk;
+      }
+
+      endDrag() {
+        if (this.isMobile) return;
+        this.isDragging = false;
+        this.container.style.cursor = 'grab';
+
+        // Resume animation after a short delay
+        setTimeout(() => {
+          if (!this.isPaused) {
+            this.track.style.animationPlayState = 'running';
+          }
+        }, 1000);
+      }
+    }
+
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      new TestimonialCarousel();
+    });
+  </script>
+
 
 </body>
 
