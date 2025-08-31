@@ -84,7 +84,6 @@
       background-color: #fff;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
       z-index: 999;
-      position: sticky;
     }
 
     .navbar-div {
@@ -131,6 +130,8 @@
     .navbar-logo {
       position: absolute;
       top: 10px;
+      display: flex;
+      align-items: center;
       left: 10px;
       font-size: 1.5em;
       font-weight: bold;
@@ -143,7 +144,7 @@
       display: none;
       cursor: pointer;
       font-size: 24px;
-      color: #2c3e50;
+      color: #000;
     }
 
     #close {
@@ -511,6 +512,9 @@
       color: #5f6e6a;
       width: 100%;
       text-align: center;
+      border: 1px solid #333 !important;
+      padding-top: 50px;
+      padding-bottom: 50px;
     }
 
     footer {
@@ -595,7 +599,7 @@
         right: -100%;
         width: 300px;
         height: 100vh;
-        background: #e3e6f3;
+        background: #fff;
         transition: right 0.3s ease;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
         z-index: 1001;
@@ -646,6 +650,9 @@
       #close {
         display: block;
       }
+      #close i {
+        color: #000;
+      }
 
       .logo {
         width: 120px;
@@ -680,6 +687,14 @@
 
       .timeline-item {
         padding-left: 30px;
+      }
+
+      footer a,
+      footer h4,
+      .copyright p {
+        font-size: 10px;
+
+
       }
     }
 
@@ -718,17 +733,26 @@
     .content-card,
     .stat-card,
     .about-mehul,
-    #header,
-    
+
     footer {
+      padding-top: 50px ;
       background-color: #000 !important;
       color: #fff !important;
       border: 1px solid #333 !important;
     }
+
+    #header {
+      background-color: #fff;
+
+    }
+
+    #header li a, strong {
+      color: #000 !important;
+    }
     .navbar-div {
-      background-color: #000 !important;
-      color: #fff !important;
-      /* border: 1px solid #333 !important;       */
+      background-color: #fff !important;
+      color: #000 !important;
+      /* border: 1px solid #333 !important;*/
     }
 
     h1,
@@ -760,6 +784,7 @@
   <section id="header">
     <a href="#"><img src="./logo-removebg-preview-modified.png" width="140px" class="logo" alt=""></a>
     <a href="index.html" class="navbar-logo">
+      <img style="position: relative; width: 50px;" src="./img/logo-removebg-preview-modified.png" alt="">
       <strong>The Robo-Tech Forum</strong>
     </a>
     <div class="navbar-div">
@@ -767,7 +792,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="album.html">Album</a></li>
         <li><a href="projects.html">Projects</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="blog.html">Blogs</a></li>
         <li><a class="active" href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <a href="#" id="close"><i class="bi bi-x-lg"></i></a>
@@ -786,7 +811,7 @@
 
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">About Our Robotics Club</h2>
+        <h2 class="section-title">About The Robo-Tech Forum</h2>
         <p class="section-subtitle">Welcome to the The Robo-Tech Forum, where technology meets innovation! Our club is
           dedicated to exploring the exciting world of robotics, engineering, and automation.</p>
       </div>
@@ -799,19 +824,19 @@
         </div>
 
         <div class="content-card">
-          <h3>What We Do</h3>
+          <h3>What We Do?</h3>
           <p>We work on various projects, from simple robots to complex autonomous systems. Our club members have access
             to state-of-the-art tools and resources to bring their ideas to life.. Our club offers comprehensive
             programs designed to provide practical experience with modern robotics technologies:</p>
           <ul>
-            <li><strong>Robotics Workshops:</strong> Hands-on sessions covering programming, electronics, mechanical
+            <li><strong style="color: #fff !important;">Robotics Workshops:</strong> Hands-on sessions covering programming, electronics, mechanical
               design, and system integration</li>
-            <li><strong>Competition Teams:</strong> Participation in DD Robocon, IRoC-U, and regional
+            <li><strong style="color: #fff !important;">Competition Teams:</strong> Participation in DD Robocon, IRoC-U, and regional
               engineering & Robotics competitions</li>
-            <li><strong>Personal Projects:</strong> Collaborative work on autonomous systems, machine learning
+            <li><strong style="color: #fff !important;">Personal Projects:</strong> Collaborative work on autonomous systems, machine learning
               applications, and innovative prototypes</li>
-            <li><strong>Industry Partnerships:</strong> Company Sponsorships and internship opportunities</li>
-            <li><strong>Technical Skills Development:</strong> CAD design, 3D printing, microcontroller
+            <li><strong style="color: #fff !important;">Industry Partnerships:</strong> Company Sponsorships and internship opportunities</li>
+            <li><strong style="color: #fff !important;">Technical Skills Development:</strong> CAD, 3D printing, microcontroller
               programming, and project management</li>
           </ul>
         </div>

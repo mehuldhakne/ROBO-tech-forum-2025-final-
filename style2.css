@@ -109,10 +109,16 @@ p {
 
 .blog-card h4 {
   color: #000 !important;
-} 
+}
 
 .blog-content .info-section p {
   text-align: justify;
+  color: #000 !important;
+
+}
+
+.blog-content .info-section h5 {
+  text-align: start;
   color: #000 !important;
 
 }
@@ -153,22 +159,26 @@ button.white {
 
 body {
   width: 100%;
+  overflow: hidden;
 }
 
 /* Header Start */
 #header {
+  width: 99vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 80px;
   background: #000;
-  border: 1px solid #333 !important;
+  border: 1px solid #999 !important;
   /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06); */
   z-index: 999;
   position: sticky;
-  top: 0;
-  left: 0;
+  /* top: 0;
+  left: 0; */
 }
+
+
 
 strong {
   font-family: "times new roman";
@@ -180,7 +190,8 @@ strong {
 #navbar {
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: space-between; */
+  /* width: 100%; */
   /* background-color: #000; */
 }
 
@@ -201,7 +212,7 @@ strong {
 
 #navbar li a:hover,
 #navbar li a.active {
-  color: #0191f7  !important;
+  color: #0191f7 !important;
 }
 
 #navbar li a.active::after,
@@ -224,6 +235,8 @@ strong {
   display: none;
 }
 
+
+
 /*Home Page*/
 #hero {
   background-image: url('./img/indexbanner.jpg');
@@ -241,10 +254,25 @@ strong {
 
 @media screen and (max-width: 768px) {
   #hero {
-    background-image: url(./img/logo.jpg);
+    background-image: url(./img/mobile-banner.jpg);
+    display: flex;
+    flex-direction: column;
+    
     background-color: black;
     color: white;
     /* Keep contrast */
+  }
+  #hero .project-btn {
+    margin-left: 27%;
+    margin-top: 50vh !important;
+    transform: scale(0.89);
+  }
+
+  #header strong {
+    font-size: 1rem;
+  }
+  #hero h2, #hero a {
+    display: none;
   }
 }
 
@@ -365,6 +393,7 @@ strong {
   align-items: center;
   padding: 20px;
   background-color: #f4f4f4;
+  
 }
 
 .section {
@@ -483,6 +512,7 @@ strong {
   object-fit: cover;
   margin-top: -50px;
   border-radius: 25px;
+  padding-bottom: 20px;
 }
 
 .card-front {
@@ -772,6 +802,15 @@ strong {
 
 /* copyright mobile version*/
 @media (max-width: 768px) {
+
+  footer a,
+  footer h4,
+  .copyright p {
+    font-size: 10px !important;
+
+
+  }
+
   .copyright {
     display: flex;
     justify-content: center;
@@ -943,7 +982,26 @@ strong {
   color: #003366;
   /* Robotech brand color */
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  
 }
+
+@media (max-width:768px){
+  .navbar-logo {
+    position: sticky;
+    align-items: center;
+    margin-left: 20px;
+    justify-content: space-evenly;
+    display: flex;
+  }
+
+  .navbar-logo strong {
+    font-size: 1.1rem !important;
+  }
+}
+
+
 
 /* Adjust navbar to avoid overlapping */
 #navbar {
@@ -1221,6 +1279,7 @@ footer {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  border: 1px solid #333 !important;
 }
 
 footer .col {
@@ -1285,6 +1344,7 @@ footer .install img{
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid #333 !important;
   /* text-align: center; */
 }
 
@@ -1329,7 +1389,7 @@ footer .install img{
 }
 
 /*media query*/
-@media (max-width: 799px) {
+@media (max-width: 768px) {
   .section-p1 {
     padding: 40px 40px;
   }
@@ -1344,7 +1404,7 @@ footer .install img{
     right: -300px;
     height: 99vh;
     width: 300px;
-    background-color: #e3e6f3;
+    background-color: #fff;
     box-shadow: 0 40px 60px rgba(0, 0, 0, 0.01);
     padding: 110px 0 0 10px;
     transition: 0.3s;
@@ -1365,7 +1425,7 @@ footer .install img{
   }
 
   #mobile i {
-    color: #1a1a1a;
+    color: #000;
     font-size: 24px;
     padding-left: 30px;
   }
@@ -1375,8 +1435,12 @@ footer .install img{
     position: absolute;
     top: 30px;
     left: 30px;
-    color: #222;
+    color: #000;
     font-size: 24px;
+  }
+
+  #close i {
+    color: #000;
   }
 
   #lg-bag {
@@ -1512,37 +1576,70 @@ body {
 
 
 
-h1, h2, h3, h4, h5, h6, strong {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
   color: #ffffff !important;
 }
 
-p, a, span, li {
-  color: #cccccc !important;
+p {
+  color: #fff;
+}
+
+span,
+a,
+p {
+  color: #fff !important;
 }
 
 .section-p1 .col a:hover {
-  color: #0056b3 !important; 
+  color: #0056b3 !important;
 }
 
-.footer, .testimonial-section,
-.learning-section, .feature-box, .card-front,
-.card-back, .sponsor-box, .album-card {
+.footer,
+.testimonial-section,
+.learning-section,
+.feature-box,
+.card-front,
+.card-back,
+.sponsor-box,
+.album-card {
   background-color: #000 !important;
   color: #f5f5f5 !important;
   border-color: #fff !important;
 }
 
-.testimonial-box, .map, .innovation-card {
+.testimonial-box,
+.map,
+.innovation-card {
   background-color: #000 !important;
   color: #f5f5f5 !important;
 }
 
-button, .project-btn, .view-more {
+button,
+.project-btn,
+.view-more {
   background-color: #000 !important;
   color: #fff !important;
   border: 1px solid #fff !important;
 }
 
-button:hover, .project-btn:hover, .view-more:hover {
+button:hover,
+.project-btn:hover,
+.view-more:hover {
   background-color: #0056b3 !important;
+}
+
+#header {
+  background-color: #fff;
+
+}
+
+#header li a,
+strong {
+  color: #000 !important;
 }

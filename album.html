@@ -61,13 +61,15 @@
             align-items: center;
             justify-content: space-between;
             padding: 20px 80px;
-            background-color: #fff;
+            /* background-color: #fff; */
+            background-color: red;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
             z-index: 999;
             position: sticky;
             top: 0;
             left: 0;
         }
+
 
         .navbar-div {
             background-color: #fff;
@@ -77,7 +79,7 @@
         #navbar {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-start !important;
         }
 
         #navbar li {
@@ -118,6 +120,8 @@
             font-weight: bold;
             color: #003366;
             text-decoration: none;
+            display: flex;
+            align-items: center;
         }
 
         /* Mobile Menu Styles */
@@ -125,7 +129,7 @@
             display: none;
             cursor: pointer;
             font-size: 24px;
-            color: #2c3e50;
+            color: #000;
         }
 
         #close {
@@ -134,7 +138,7 @@
             top: 20px;
             right: 20px;
             font-size: 24px;
-            color: #2c3e50;
+            color: #000;
         }
 
         /* Menu Overlay */
@@ -155,8 +159,8 @@
 
         /* Gallery Container */
         .gallery-container {
-            max-width: 1200px;
-            margin: 50px auto;
+            width: 30vw;
+            margin-left: 10px;
             display: flex;
             flex-direction: column;
             gap: 40px;
@@ -168,6 +172,7 @@
             background-color: white;
             border-radius: 20px;
             padding: 30px;
+            width: 95vw;
             box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
         }
 
@@ -268,12 +273,15 @@
             color: #5f6e6a;
             width: 100%;
             text-align: center;
+            border: 1px solid #333 !important;
         }
 
         footer {
             display: flex;
             justify-content: space-evenly;
             flex-wrap: wrap;
+            border: 1px solid #333 !important;
+            padding: 50px 50px;
         }
 
         footer .col {
@@ -364,10 +372,11 @@
             }
         }
 
-        @media screen and (max-width: 768px) {
+        @media (max-width: 768px) {
             #header {
                 padding: 20px 40px;
             }
+
 
             .navbar-logo {
                 font-size: 1.2em;
@@ -381,7 +390,7 @@
                 right: -100%;
                 width: 300px;
                 height: 100vh;
-                background: #e3e6f3;
+                background: #fff;
                 transition: right 0.3s ease;
                 box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
                 z-index: 1001;
@@ -392,9 +401,10 @@
             }
 
             #navbar {
+                display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
-                align-items: flex-start;
+                align-items: center;
                 padding: 80px 20px 20px 20px;
                 height: 100%;
             }
@@ -452,13 +462,19 @@
             }
 
             .gallery-container {
-                margin: 30px auto;
+                /* margin: 30px auto; */
                 gap: 30px;
                 padding: 0 15px;
+                margin: 15vh 0;
             }
 
             .competition-section {
                 padding: 20px;
+            }
+
+            .photo-carousel {
+                margin: 0;
+
             }
 
             .photo-item {
@@ -468,6 +484,14 @@
 
             .photo-carousel {
                 height: 220px;
+            }
+
+            footer a,
+            footer h4,
+            .copyright p {
+                font-size: 10px;
+
+
             }
         }
 
@@ -507,7 +531,7 @@
             }
 
             .competition-title {
-                font-size: 1.5rem;
+                font-size: 1rem;
             }
 
             .gallery-container {
@@ -528,20 +552,24 @@
             }
         }
 
-        #header,
         .competition-section {
             background-color: #000 !important;
             color: #fff !important;
             border: 1px solid #333 !important;
         }
 
-        .navbar-div {
-            background-color: #000 !important;
-            color: #fff !important;            
+        /* .navbar-div {
+            color: #fff !important;
+        } */
+
+        #header {
+            background-color: #fff;
+
         }
 
-        #navbar li a {
-            color: #fff !important;
+        #header li a,
+        strong {
+            color: #000 !important;
         }
 
         #navbar li a:hover,
@@ -555,9 +583,6 @@
             color: #fff !important;
         }
 
-        strong {
-            color: #fff !important;
-        }
 
         footer,
         footer p,
@@ -581,6 +606,7 @@
     <section id="header">
         <a href="#"><img src="./logo-removebg-preview-modified.png" width="140px" class="logo" alt=""></a>
         <a href="index.html" class="navbar-logo">
+            <img style="position: relative; width: 50px;" src="./img/logo-removebg-preview-modified.png" alt="">
             <strong>The Robo-Tech Forum</strong>
         </a>
         <div class="navbar-div">
@@ -588,7 +614,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a class="active" href="album.html">Album</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="blog.html">Blogs</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <a href="#" id="close"><i class="bi bi-x-lg"></i></a>
@@ -607,12 +633,86 @@
             <h1>Album of Glimpses From Recent Competitions</h1>
             <img src="img/Picsart_24-04-13_21-22-47-513.jpg" alt="">
             <div class="span-container">
-                <span>The Album showcases our recent active participation in some of our major competitions. Each
+                <span style="font-size: 20px;">The Album showcases our recent active participation in some of our major
+                    competitions. Each
                     section is a new timeline, new memory and new learning opportunity.</span>
             </div>
         </div>
 
         <div class="gallery-container">
+
+            <!-- College Programns -->
+            <div class="competition-section">
+                <h2 class="competition-title">College Programs</h2>
+                <div class="photo-carousel">
+                    <div class="photo-track" id="track1">
+                        <div class="photo-item">
+                            <img src="img/College Programs/20240927_173505.webp" alt="Competition moment">
+                            <div class="photo-overlay">
+                                <h3>Orientation</h3>
+                                <p>2024-25 RTF Orientation</p>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/College Programs/20241012_085453.webp" alt="Robot in action">
+                            <div class="photo-overlay">
+                                <h3>Dussahera</h3>
+                                <p>Shastra Poojan in The Robo-Tech Forum </p>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/College Programs/20250326_153556.webp" alt="Team collaboration">
+                            <div class="photo-overlay">
+                                <h3>Students Visit</h3>
+                                <p>Visit of Navodaya Vidyalaya Students.</p>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/College Programs/IMG-20250831-WA0252.webp" alt="Technical precision">
+                            <div class="photo-overlay">
+                                <h3>Independence Day</h3>
+                                <p>Independence Day Celebration, 2025</p>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/College Programs/IMG-20250831-WA0253.webp" alt="Final moments">
+                            <div class="photo-overlay">
+                                <h3>Independence Day</h3>
+                                <p>Team RTF with Former Faculty Coordinator</p>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/College Programs/IMG-20250831-WA0254.webp" alt="Final moments">
+                            <div class="photo-overlay">
+                                <h3>Team RTF</h3>
+                                <p>The Robo-Tech Forum Family.</p>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/College Programs/IMG-20250831-WA0255.webp" alt="Final moments">
+                            <div class="photo-overlay">
+                                <h3>Ganesh Chaturthi</h3>
+                                <p>Arrival of Ganpati Bappa in RTF</p>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/College Programs/WhatsApp Image 2025-08-31 at 20.02.58_5f042c78.webp" alt="Final moments">
+                            <div class="photo-overlay">
+                                <h3>Photo Session</h3>
+                                <p>Year End Photo of Team The Robo-Tech Forum With College Authorities</p>
+                            </div>
+                        </div>
+                        <div class="photo-item">
+                            <img src="img/College Programs/WhatsApp Image 2025-08-31 at 20.04.32_303d0c60.webp" alt="Final moments">
+                            <div class="photo-overlay">
+                                <h3>Photo </h3>
+                                <p>Year End Photo of Team The Robo-Tech Forum With Seniors</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- DD Robocon 2025 -->
             <div class="competition-section">
                 <h2 class="competition-title">DD Robocon 2025</h2>
