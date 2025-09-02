@@ -5,252 +5,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Robo-Tech Forum GCOEA</title>
-  <script src="script.js"></script>
+
   <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="./style2.css">
+  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
-  <link rel="stylesheet" href="./style.css">
-  <style>
 
+  <link rel="stylesheet" href="./assets/css/style.css">
 
-    /* Fixed testimonial section CSS */
-
-    .testimonial-section {
-      padding: 40px 20px;
-      background-color: #f9f9f9;
-      text-align: center;
-    }
-
-    .testimonial-section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    .testimonial-container {
-      overflow: hidden;
-      position: relative;
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      cursor: grab;
-    }
-
-    .testimonial-container:active {
-      cursor: grabbing;
-    }
-
-    .testimonial-track {
-      display: flex;
-      animation: marquee 30s linear infinite;
-      will-change: transform;
-    }
-
-    .testimonial-track:hover {
-      animation-play-state: paused;
-    }
-
-    .testimonial-box {
-      flex: 0 0 350px;
-      margin: 10px;
-      padding: 20px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      position: relative;
-      min-height: 200px;
-    }
-
-    .quote-mark {
-      font-size: 4rem;
-      color: #d3d3d3;
-      position: absolute;
-      top: -20px;
-      left: 10px;
-    }
-
-    .testimonial-box p {
-      font-size: 1rem;
-      color: #555;
-      margin: 20px 0;
-      text-align: justify;
-      line-height: 1.5;
-    }
-
-    .author {
-      display: block;
-      font-size: 0.9rem;
-      color: #777;
-      margin-top: 10px;
-      font-weight: 600;
-    }
-
-    @keyframes marquee {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-100%);
-      }
-    }
-
-    @keyframes verticalScroll {
-      0% {
-        transform: translateY(0);
-      }
-
-      100% {
-        transform: translateY(-100%);
-      }
-    }
-
-    /* Mobile-specific fixes - Vertical scrolling */
-    @media (max-width: 768px) {
-      .testimonial-section {
-        padding: 30px 15px;
-      }
-
-      .testimonial-section h2 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-      }
-
-      .testimonial-container {
-        cursor: default;
-        max-height: 400px;
-        overflow-y: hidden;
-        overflow-x: hidden;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
-        scrollbar-color: #ccc transparent;
-      }
-
-      .testimonial-container::-webkit-scrollbar {
-        width: 4px;
-      }
-
-      .testimonial-container::-webkit-scrollbar-track {
-        background: transparent;
-      }
-
-      .testimonial-container::-webkit-scrollbar-thumb {
-        background: #ccc;
-        border-radius: 2px;
-      }
-
-      .testimonial-track {
-        flex-direction: column;
-        animation: verticalScroll 20s linear infinite;
-        gap: 15px;
-      }
-
-      .testimonial-box {
-        flex: none;
-        width: 100%;
-        margin: 0;
-        padding: 15px;
-        min-height: auto;
-      }
-
-      .testimonial-box p {
-        font-size: 0.9rem;
-        margin: 15px 0;
-      }
-
-      .quote-mark {
-        font-size: 3rem;
-        top: -15px;
-      }
-
-      .author {
-        font-size: 0.8rem;
-      }
-    }
-
-    /* Extra small screens */
-    @media (max-width: 480px) {
-      .testimonial-container {
-        max-height: 350px;
-      }
-
-      .testimonial-track {
-        gap: 12px;
-      }
-
-      .testimonial-box {
-        padding: 12px;
-      }
-
-      .testimonial-box p {
-        font-size: 0.85rem;
-        margin: 12px 0;
-      }
-
-      .quote-mark {
-        font-size: 2.5rem;
-        top: -10px;
-      }
-
-      .author {
-        font-size: 0.75rem;
-      }
-    }
-
-    /* Utility classes for JavaScript control */
-    .paused {
-      animation-play-state: paused !important;
-    }
-
-    .fast-forward {
-      animation-duration: 10s !important;
-    }
-
-    .slow-motion {
-      animation-duration: 60s !important;
-    }
-
-    /* Prevent text selection during drag on mobile */
-    .testimonial-container * {
-      user-select: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-    }
-
-
-  </style>
 </head>
 
 
 <body class="no-scroll dark-mode">
 
-  <video id="intro-video" autoplay muted src="/Videos/intro-video.mp4"></video>
+  <video id="intro-video" autoplay muted src="./assets/Videos/intro-video.mp4"></video>
 
   <div id="main">
 
 
     <section id="header">
-      <a href="#"><img src="./logo-removebg-preview-modified.png" width="140px" class="logo" alt=""></a>
+      <!-- <a href="#"><img src="./logo-removebg-preview-modified.png" width="140px" class="logo" alt=""></a> -->
       <a href="index.html" class="navbar-logo">
-        <img style="position: relative; width: 50px;" src="./img/logo-removebg-preview-modified.png" alt="">
+        <img style="position: relative; width: 40px;" src="./assets/img/new logo only.png" alt="">
         <strong>The Robo-Tech Forum</strong>
       </a>
       <div>
         <ul id="navbar">
-          <li><a class="active" href="index.html">Home</a></li>
+          <li><a class="active" href="./index.html">Home</a></li>
           <li><a href="album.html">Album</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="blog.html">Blogs</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <!-- <li>
-                <button id="dark-mode-toggle" class="dark-mode-btn">Dark Mode</button>
-          </li> -->
+
 
           <a href="#" id="close"><i class="bi bi-x-lg"></i></a>
         </ul>
@@ -262,21 +53,22 @@
 
 
     <section id="hero">
+      <img src="./assets/img/mobile-banner.jpg" alt="" id="hero-banner">
       <h2>THE</h2>
       <h2>ROBO-TECH FORUM </h2>
       <a href="https://www.gcoea.ac.in/">
-
         <h1>GCOEA </h1>
       
       </a>
 
 
 
-      <a href="projects.html" target="_blank" class="project-btn">Projects</a>
+      <a href="./projects.html" target="_blank" class="project-btn">Projects</a>
     </section>
 
 
-    <hr style="margin-bottom: 50px; border: none; height: 1px; background-color: #333;">
+    <hr style="z-index: 999;margin-top: 100px; margin-bottom: 50px; border: none; height: 1px; background-color: #333; width: 100%;">
+
     <section class="learning-section">
       <div class="section">
         <div class="feature-box">
@@ -309,7 +101,7 @@
           <div class="card-inner">
             <div class="card-front">
               <p style="color: #000;">&#xF130;</p>
-              <img src="./event banner/eYRC2024-25(jpg).jpg" alt="" />
+              <img src="./assets/event banner/eYRC2024-25(jpg).jpg" alt="" />
               <div class="des">
                 <span> Eyantra Robotics challenge</span>
                 <h5>2025-26</h5>
@@ -336,7 +128,7 @@
         <div class="card">
           <div class="card-inner">
             <div class="card-front">
-              <img src="./event banner/logo (1).png" alt="" />
+              <img src="./assets/event banner/logo (1).png" alt="" />
               <div class="des">
                 <span>ABU ROBOCON</span>
                 <h5>Hong Kong, China</h5>
@@ -365,7 +157,7 @@
           <div class="card-inner">
             <div class="card-front">
 
-              <img src="./event banner/Tech-Fest IIT.png" alt="" />
+              <img src="./assets/event banner/Tech-Fest IIT.png" alt="" />
               <div class="des">
                 <span>Techfest IIT Bombay </span>
                 <!-- <h5> IIT Bombay</h5> -->
@@ -392,7 +184,7 @@
         <div class="card">
           <div class="card-inner">
             <div class="card-front">
-              <img src="./event banner/fluxus (1)-2019013131.png" alt="" />
+              <img src="./assets/event banner/fluxus (1)-2019013131.png" alt="" />
               <div class="des">
                 <span>Fluxus </span>
                 <h5>IIT Indore</h5>
@@ -418,7 +210,7 @@
         <div class="card">
           <div class="card-inner">
             <div class="card-front">
-              <img src="./event banner/IRoCUBanner.jpg" alt="IRoC-U" />
+              <img src="./assets/event banner/IRoCUBanner.jpg" alt="IRoC-U" />
               <div class="des">
                 <span>IRoC-U</span>
                 <h5>ISRO</h5>
@@ -445,7 +237,7 @@
         <div class="card">
           <div class="card-inner">
             <div class="card-front">
-              <img src="./event banner/AXIS.jpg" alt="AXIS, VNIT" />
+              <img src="./assets/event banner/AXIS.jpg" alt="AXIS, VNIT" />
               <div class="des">
                 <span>AXIS, VNIT</span>
                 <!-- <h5>ISRO</h5> -->
@@ -478,10 +270,10 @@
       <h2>Our Sponsors</h2>
       <div class="sponsors-container">
         <div class="sponsor-box">
-          <img src="./sponsors/mathworks-logo.png" alt="Sponsor 1" class="sponsor-image">
+          <img src="./assets/sponsors/mathworks-logo.png" alt="Sponsor 1" class="sponsor-image">
         </div>
         <div class="sponsor-box">
-          <img src="./sponsors/Untitled design-re.png" alt="Sponsor 2" class="sponsor-image">
+          <img src="./assets/sponsors/Untitled design.png" alt="Sponsor 2" class="sponsor-image">
         </div>
       </div>
     </section>
@@ -632,7 +424,7 @@
       <div class="col">
         <h4>Quick Links</h4>
         <a href="album.html">Album</a>
-        <a href="blog.html">blog</a>
+        <a href="blogs.html">blog</a>
       </div>
       <div class="col">
         <div class="follow">
@@ -667,7 +459,7 @@
       crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="./newscript.js"></script>
+    <script src="./assets/js/script.js"></script>
 
   </div>
 

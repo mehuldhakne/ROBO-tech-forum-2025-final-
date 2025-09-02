@@ -5,22 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blogs</title>
-    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./style2.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
         integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./assets/css/blogs.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
 
     <section id="header">
-        <a href="#"><img src="./logo-removebg-preview-modified.png" width="140px" class="logo" alt=""></a>
         <a href="index.html" class="navbar-logo">
-            <img style="position: relative; width: 50px;" src="./img/logo-removebg-preview-modified.png" alt="">
+            <img style="position: relative; width: 50px;" src="./assets/img/new logo only.png" alt="">
             <strong>The Robo-Tech Forum</strong>
         </a>
 
@@ -29,7 +27,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="album.html">Album</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a class="active" href="blog.html">Blogs</a></li>
+                <li><a class="active" href="blogs.html">Blogs</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <a href="#" id="close"> <i class="bi bi-x-lg"></i></a>
@@ -50,7 +48,7 @@
             <!-- Blog Card 1 -->
             <div class="blog-card">
                 <div class="blog-header" onclick="toggleBlog(this)">
-                    <img src="./img/logo-removebg-preview-modified.png" alt="">
+                    <img src="./assets/img/new logo only.png" alt="">
                     <h3>The Robo-Tech Forum (Robocon)</h3>
                     <i style="color: #000;" class="arrow">&#9654;</i>
                 </div>
@@ -164,7 +162,7 @@
             <!-- Blog Card 2 -->
             <div class="blog-card">
                 <div class="blog-header" onclick="toggleBlog(this)">
-                    <img src="./icons/blog icon 2.png" alt="">
+                    <img src="./assets/icons/blog icon 2.png" alt="">
                     <h3>Competitions & Achievements</h3>
                     <i style="color: #000;" class="arrow">&#9654;</i>
 
@@ -174,13 +172,15 @@
 
                     <div class="info-section">
                         <h4> ABU ROBOCON</h4>
-                        
-                        <p style="color: #000 !important;">&bull;<strong style="color: #000 !important;">DD-Robocon, 2025:</strong> Secured AIR-12 in DD Robocon, 2025 Organized By IIT, Delhi.</p>
-                        <p style="color: #000 !important;">&bull;<strong style="color: #000 !important;">DD-Robocon, 2024:</strong> Joint AIR-1 in DD Robocon, 2024 Stage-1, Organized By IIT, Delhi.</p>
+
+                        <p style="color: #000 !important;">&bull;<strong style="color: #000 !important;">DD-Robocon,
+                                2025:</strong> Secured AIR-12 in DD Robocon, 2025 Organized By IIT, Delhi.</p>
+                        <p style="color: #000 !important;">&bull;<strong style="color: #000 !important;">DD-Robocon,
+                                2024:</strong> Joint AIR-1 in DD Robocon, 2024 Stage-1, Organized By IIT, Delhi.</p>
                     </div>
 
 
-        
+
 
 
                     <div class="info-section">
@@ -188,30 +188,37 @@
                         <p>Every year we take part in the following competitions organized by IIT Bombay:</p>
 
                         <!-- <h4></h4> -->
-                        <p>&bull; <strong style="color: #000 !important;text-decoration: underline;">Rowboatics:</strong> RTF was one of the top 8 Performers in Rowboatics (Boat-race).
+                        <p>&bull; <strong
+                                style="color: #000 !important;text-decoration: underline;">Rowboatics:</strong> RTF was
+                            one of the top 8 Performers in Rowboatics (Boat-race).
                         </p>
-                        <p>&bull; <strong style="color: #000 !important;">Micromouse:</strong> An autonomous maze-solving robot competition requiring advanced path-planning algorithms such
+                        <p>&bull; <strong style="color: #000 !important;">Micromouse:</strong> An autonomous
+                            maze-solving robot competition requiring advanced path-planning algorithms such
                             as A* and Dijkstra’s algorithm. Uses high-speed stepper motors, precise encoders, and IR
                             sensors for navigation. Efficient battery management and compact PCB design are essential.
                         </p>
 
                         <!-- <h4></h4> -->
-                        <p>&bull; <strong style="color: #000 !important;">Meshmerize:</strong>A networking-based competition where teams develop decentralized communication
+                        <p>&bull; <strong style="color: #000 !important;">Meshmerize:</strong>A networking-based
+                            competition where teams develop decentralized communication
                             protocols for message passing in a dynamic network environment. Focuses on ad-hoc
                             networking, routing protocols, and optimization algorithms.</p>
 
                         <!-- <h4></h4> -->
-                        <p>&bull; <strong style="color: #000 !important;">Cozmo Clench: </strong>A gripping and manipulation-based robotics challenge requiring teams to design
+                        <p>&bull; <strong style="color: #000 !important;">Cozmo Clench: </strong>A gripping and
+                            manipulation-based robotics challenge requiring teams to design
                             robotic arms and grippers for object handling. Uses servo-controlled or pneumatic actuators
                             for precision movement.</p>
 
                         <!-- <h4></h4> -->
-                        <p>&bull; <strong style="color: #000 !important;">Hackathons: </strong>Multiple hackathons focused on blockchain, cybersecurity, AI, and web
+                        <p>&bull; <strong style="color: #000 !important;">Hackathons: </strong>Multiple hackathons
+                            focused on blockchain, cybersecurity, AI, and web
                             development. Participants solve real-world industry problems using cloud computing, data
                             structures, and APIs.</p>
 
                         <!-- <h4></h4> -->
-                        <p>&bull; <strong style="color: #000 !important;">Drone Challenge: </strong>An autonomous drone competition where teams design UAVs (Unmanned Aerial
+                        <p>&bull; <strong style="color: #000 !important;">Drone Challenge: </strong>An autonomous drone
+                            competition where teams design UAVs (Unmanned Aerial
                             Vehicles) for tasks like object tracking, navigation, and payload delivery. Utilizes GPS,
                             LiDAR, IMUs, and computer vision algorithms.</p>
 
@@ -224,20 +231,24 @@
                             competitions include:</p>
 
                         <!-- <h5 style="font-size: 15px;"></h5> -->
-                        <p>&bull; <strong style="color: #000 !important;">Aero-Artistry:</strong> AIR-2 and AIR-3 in Aero-Artistry 2024 and 2023 Respeactively </p>
+                        <p>&bull; <strong style="color: #000 !important;">Aero-Artistry:</strong> AIR-2 and AIR-3 in
+                            Aero-Artistry 2024 and 2023 Respeactively </p>
 
                         <!-- <h5 style="font-size: 15px;"></h5> -->
-                        <p>&bull; <strong style="color: #000 !important; ">Margadarshak (Line Follower):</strong> Top 10 in Margadarshak (Line Follower) Competition</p>
+                        <p>&bull; <strong style="color: #000 !important; ">Margadarshak (Line Follower):</strong> Top 10
+                            in Margadarshak (Line Follower) Competition</p>
 
                         <!-- <h5 style="font-size: 15px;"></h5> -->
-                        <p> &bull;<strong style="color: #000 !important; ">Meshmerize:</strong> A competition in which an autonomous bot finds its way from start to end.</p>
+                        <p> &bull;<strong style="color: #000 !important; ">Meshmerize:</strong> A competition in which
+                            an autonomous bot finds its way from start to end.</p>
 
 
                     </div>
 
                     <div class="info-section">
                         <h4>Government College of Engineering, Jalgaon</h4>
-                        <p>&bull; <strong style="color: #000 !important;">Tech Carvaan: </strong> Secured AIR-1 and AIR-4 in Tech Carvaan, 2024 (Two Teams).</p>
+                        <p>&bull; <strong style="color: #000 !important;">Tech Carvaan: </strong> Secured AIR-1 and
+                            AIR-4 in Tech Carvaan, 2024 (Two Teams).</p>
                     </div>
                     <div class="info-section">
                         <h4>Mathworks Modelling Award</h4>
@@ -252,7 +263,7 @@
             <!-- Blog Card 3 -->
             <div class="blog-card">
                 <div class="blog-header" onclick="toggleBlog(this)">
-                    <img src="./icons/blog icon 3.png" alt="">
+                    <img src="./assets/icons/blog icon 3.png" alt="">
                     <h3>Aeromodelling & Innovation</h3>
                     <i style="color: #000;" class="arrow">&#9654;</i>
 
@@ -269,9 +280,13 @@
                             competitions, expos, or sessions organized by RTF. During introductory sessions for new RTF
                             recruits, they are shown every plane and drone built in RTF to capture their interest in
                             this field.</p>
-                        <p>&bull; <strong style="color: #000 !important;">FLUXUS IIT, Indore: </strong> All India Rank 2 in FLUXUS IIT, Indore, 2024. </p>
-                        <p>&bull; <strong style="color: #000 !important;">FLUXUS IIT, Indore: </strong> All India Rank 3 in FLUXUS IIT, Indore, 2023. </p>
-                        <p>&bull; <strong style="color: #000 !important;">Ram Meghe College of Engineering, Amravati: </strong> RTF Secured 1st Rank and Second Rank in State Level Project Competiton held at Ram Meghe College of Engineering and Management, Amravati. </p>
+                        <p>&bull; <strong style="color: #000 !important;">FLUXUS IIT, Indore: </strong> All India Rank 2
+                            in FLUXUS IIT, Indore, 2024. </p>
+                        <p>&bull; <strong style="color: #000 !important;">FLUXUS IIT, Indore: </strong> All India Rank 3
+                            in FLUXUS IIT, Indore, 2023. </p>
+                        <p>&bull; <strong style="color: #000 !important;">Ram Meghe College of Engineering, Amravati:
+                            </strong> RTF Secured 1st Rank and Second Rank in State Level Project Competiton held at Ram
+                            Meghe College of Engineering and Management, Amravati. </p>
 
                         <h4>RC Planes</h4>
 
@@ -382,7 +397,7 @@
             <div class="col">
                 <h4>Quick Links</h4>
                 <a href="album.html">Album</a>
-                <a href="blog.html">blog</a>
+                <a href="blogs.html">blog</a>
             </div>
             <div class="col">
                 <div class="follow">
@@ -410,179 +425,14 @@
 
 
         <!-- personal styles for this page only -->
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f9f9f9;
-            }
 
-            .feature-block h3 {
-                margin-bottom: 10px;
-                font-size: 20px;
-                text-align: left;
-            }
-
-
-            .container {
-                width: 90%;
-                margin: 20px auto;
-            }
-
-            .blog-card {
-
-                background: #fff;
-                border: 1px solid #cce7d0;
-                border-radius: 25px;
-                box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.01);
-                overflow: hidden;
-                margin-bottom: 20px;
-                transition: all 0.3s ease-in-out;
-            }
-
-            .blog-card:hover {
-                box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
-            }
-
-            ul {
-
-                list-style-type: none;
-                padding: 0;
-                text-align: left;
-            }
-
-
-            .blog-header {
-                display: flex;
-                align-items: center;
-                cursor: pointer;
-                padding: 20px;
-                transition: all 0.3s ease;
-                position: relative;
-            }
-
-            .info-section {
-                border: 1px solid #0000;
-                /* Border color as specified */
-                border-radius: 25px;
-                /* Rounded corners */
-                /* padding: 10px; */
-                margin-bottom: 10px;
-                background-color: #0000;
-                display: flex;
-                /* background-color: red; */
-                flex-direction: column;
-                flex-wrap: wrap;
-                /* Optional: a subtle background for separation */
-            }
-
-            .info-section p {
-                text-align: justify;
-                margin-top: 30px;
-                /* makes paragraph alignment neat */
-                margin-bottom: 0;
-            }
-
-            .info-section h4 {
-                /* position: absolute; */
-                /* background-color: blue; */
-                font-size: 22px;
-                font-weight: 700;
-                /* margin-top: 20px; */
-                margin-bottom: 15px;
-                text-align: start;
-                color: #222;
-                letter-spacing: 0.5px;
-            }
-
-
-            .blog-header img {
-                width: 100px;
-                height: 100px;
-                border-radius: 8px;
-                margin-right: 20px;
-                transition: all 0.3s ease, transform 0.5s ease-in-out;
-                position: relative;
-                z-index: 1;
-            }
-
-            .blog-header img.expand {
-                width: 150px;
-                height: 150px;
-                transform: translate(-10px, 10px);
-            }
-
-            .blog-header h3 {
-                text-align: left;
-                margin: 0;
-                font-size: 1.5em;
-                line-height: 1.2;
-                color: #088178;
-            }
-
-            .arrow {
-                margin-left: auto;
-                font-size: 1.5em;
-                transform: rotate(0deg);
-                transition: transform 0.3s ease;
-            }
-
-            .arrow.rotate {
-                transform: rotate(90deg);
-            }
-
-            .blog-content {
-                max-height: 0;
-                overflow: auto;
-                padding: 0 20px;
-                transition: max-height 0.3s ease, opacity 0.3s ease;
-                opacity: 0;
-            }
-
-            .blog-content.expanded {
-                max-height: 500px;
-                opacity: 1;
-            }
-
-            .blog-content p {
-                font-size: 1em;
-                line-height: 1.6;
-                margin: 20px 0;
-            }
-
-            /* Responsive Design */
-            @media (max-width: 768px) {
-                .blog-header img {
-                    width: 80px;
-                    height: 80px;
-                }
-
-                .blog-header img.expand {
-                    width: 120px;
-                    height: 120px;
-                }
-
-                .blog-header h3 {
-                    font-size: 1.2em;
-                }
-
-                footer a,
-                footer h4,
-                .copyright p {
-                    font-size: 10px;
-
-
-                }
-            }
-        </style>
 
 
         <!-- common scripts -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
-        <script src="./newscript.js"></script>
+        <script src="./assets/js/script.js"></script>
 
 
         <!-- personal scripts for this page only -->

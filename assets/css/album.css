@@ -1,0 +1,616 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'times new roman', sans-serif;
+    background-color: #000 !important;
+    color: #fff !important;
+    min-height: 100vh;
+}
+
+strong {
+    color: black;
+}
+
+#header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0px;
+    border: 2px solid #aaa !important;
+    background-color: #fff;
+    z-index: 999;
+    position: fixed;
+}
+
+
+
+#header li a {
+    color: #000;
+}
+
+#header strong {
+    font-family: "times new roman";
+    font-weight: 900;
+    color: #000;
+    font-size: 1.1rem;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #0191f7 !important;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: '';
+    width: 30%;
+    height: 2px;
+    background: #0191f7 !important;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#close {
+    display: none;
+    color: #000;
+    text-decoration: none;
+}
+
+.album-heading {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.album-heading h1 {
+    color: white;
+    position: absolute;
+    z-index: 99;
+    font-size: 46px;
+    margin-top: 150px;
+}
+
+.album-heading img {
+    width: 50%;
+    top: 0;
+    opacity: 20%;
+}
+
+.album-heading .span-container {
+    position: absolute;
+    margin-top: 300px;
+    width: 50%;
+    height: 50px;
+}
+
+.album-heading .span-container span {
+    color: white;
+}
+
+.navbar-div {
+    background-color: #fff;
+    padding: 0;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #0191f7;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: '';
+    width: 30%;
+    height: 2px;
+    background: #0191f7;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+.navbar-logo {
+    position: relative;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Mobile Menu Styles */
+#mobile {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #000;
+}
+
+#close {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+}
+
+/* Menu Overlay */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+/* Gallery Container */
+.gallery-container {
+    width: 30vw;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.competition-section {
+    border: 2px solid #000;
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    width: 95vw;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+}
+
+.competition-title {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.photo-carousel {
+    height: 240px;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    padding: 20px 0;
+}
+
+.photo-track {
+    display: flex;
+    height: 100%;
+    animation: scroll 45s linear infinite;
+    transition: animation-play-state 0.3s ease;
+}
+
+.photo-track.paused {
+    animation-play-state: paused;
+}
+
+.photo-item {
+    min-width: 280px;
+    height: 200px;
+    position: relative;
+    margin-right: 25px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.photo-item:hover {
+    transform: scale(1.05);
+    z-index: 10;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.1);
+}
+
+.photo-overlay {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover .photo-overlay {
+    transform: translateY(0);
+}
+
+.photo-overlay h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.photo-overlay p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Different scroll speeds for variety */
+.competition-section:nth-child(2) .photo-track {
+    animation-duration: 45s;
+}
+
+.competition-section:nth-child(3) .photo-track {
+    animation-duration: 40s;
+}
+
+.copyright {
+    color: #5f6e6a;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #333 !important;
+}
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border: 1px solid #333 !important;
+    padding: 50px 50px;
+}
+
+footer .col {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+footer .logo {
+    margin-bottom: 30px;
+}
+
+footer h4 {
+    color: #fff;
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer p {
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: #5f6e6a;
+    font-size: 13px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+footer a:hover {
+    color: #0191f7;
+}
+
+footer .follow i {
+    color: #5f6e6a;
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+footer .follow i:hover {
+    color: #0191f7;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-280px * 6 - 150px));
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    #header {
+        padding: 5px 30px;
+    }
+
+    .navbar-logo {
+        font-size: 1.3em;
+    }
+
+    #navbar li a {
+        font-size: 15px;
+    }
+
+    .album-heading h1 {
+        font-size: 36px;
+    }
+
+    .gallery-container {
+        margin: 30px auto;
+        gap: 30px;
+        padding: 0 15px;
+    }
+
+    .competition-section {
+        padding: 25px;
+    }
+
+    .photo-item {
+        min-width: 250px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    #header {
+        padding: 5px 30px;
+    }
+
+    /* Fixed mobile navbar styles */
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 300px;
+        background-color: #fff;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.3);
+        padding: 80px 0 0 20px;
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+
+    #navbar.active {
+        right: 0px;
+    }
+
+    #navbar li {
+        margin-bottom: 15px;
+        width: 100%;
+        padding: 0;
+    }
+
+    #navbar li a {
+        display: block;
+        width: 100%;
+        padding: 15px 20px;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+
+    #navbar li a:hover {
+        background-color: #f0f8ff;
+    }
+
+    #navbar li a.active::after,
+    #navbar li a:hover::after {
+        content: '';
+        width: 20px;
+        height: 2px;
+        background: #0191f7;
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+    }
+
+    #mobile {
+        display: flex;
+        align-items: center;
+        color: #000;
+    }
+
+    #mobile i {
+        color: #000;
+        font-size: 24px;
+        padding-left: 30px;
+    }
+
+    #close {
+        display: flex;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: #000;
+        font-size: 24px;
+        z-index: 1001;
+    }
+
+    #close i {
+        display: flex;
+        color: #000;
+    }
+
+    .navbar-logo {
+        position: sticky;
+        align-items: center;
+        margin-left: 20px;
+        justify-content: space-evenly;
+        display: flex;
+    }
+
+    .navbar-logo strong {
+        font-size: 1.1rem !important;
+    }
+
+    .album-heading h1 {
+        font-size: 28px;
+        margin-top: 100px;
+    }
+
+    .album-heading img {
+        width: 100%;
+        
+    }
+
+    .album-heading .span-container {
+        margin-top: 200px;
+        width: 80%;
+    }
+
+    .album-heading .span-container span {
+        font-size: 14px;
+    }
+
+    .gallery-container {
+        gap: 30px;
+        padding: 0 15px;
+        margin: 15vh 0;
+    }
+
+    .competition-section {
+        padding: 20px;
+    }
+
+    .photo-carousel {
+        margin: 0;
+    }
+
+    .photo-item {
+        min-width: 240px;
+        height: 180px;
+    }
+
+    .photo-carousel {
+        height: 220px;
+    }
+
+    footer a,
+    footer h4,
+    .copyright p {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #header {
+        padding: 15px 30px ;
+    }
+
+    .navbar-logo {
+        font-size: 1.1em;
+    }
+
+    .navbar-div {
+        width: 280px;
+    }
+
+    #navbar {
+        padding: 70px 15px 15px 15px;
+        width: 280px;
+    }
+
+    .album-heading h1 {
+        font-size: 24px;
+        margin-top: 80px;
+    }
+
+    .album-heading .span-container {
+        margin-top: 150px;
+        width: 90%;
+    }
+
+    .album-heading .span-container span {
+        font-size: 12px;
+    }
+
+    .competition-title {
+        font-size: 1rem;
+    }
+
+    .gallery-container {
+        padding: 0 10px;
+    }
+
+    .competition-section {
+        padding: 15px;
+    }
+
+    .photo-item {
+        min-width: 200px;
+        height: 150px;
+    }
+
+    .photo-carousel {
+        height: 180px;
+    }
+}
+
+.competition-section {
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 1px solid #333 !important;
+}

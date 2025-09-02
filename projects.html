@@ -4,695 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Showcase</title>
-    <!-- Include necessary CSS files -->
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="./style2.css" />
+    <title>Projects</title>
+    <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
+    <link rel="stylesheet" href="./assets/css/projects.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
         integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous" />
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            /* background-color: #000; */
-        }
 
-        body {
-            /* font-family: 'times new roman',sans-serif; */
-            color: #2c3e50;
-            min-height: 100vh;
-            background-color: #000 !important;
-        }
-
-        #aero-title {
-            text-decoration: none;
-            padding: 10px 20px;
-            background-color: #000;
-            color: #fff;
-            border: 1px solid #fff;
-            height: min-content;
-            border-radius: 20px;
-            transition-duration: 0.5s;
-
-        }
-
-        #aero-title:hover {
-            background-color: #0056b3;
-            transform: scale(1.1);
-        }
-
-        .project-showcase {
-            /* margin-top: 50px; */
-            padding: 40px 20px;
-            width: 90%;
-            margin: 30px auto;
-            border: 2px solid #fff !important;
-            border-radius: 50px;
-            background-color: transparent;
-        }
-
-        .project-showcase .project-header h3,
-        .section-title {
-            color: #fff !important;
-
-        }
-
-        .project-header {
-            text-align: center;
-            margin-bottom: 60px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease-out forwards;
-        }
-
-        .projects-title-container {
-            display: flex;
-            margin-top: 50px;
-            /* background-color: rebeccapurple; */
-            flex-direction: column;
-            width: 100%;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .projects-title-container h1 {
-            color: black;
-            font-size: 3.5rem;
-
-        }
-
-        .projects-title-container .projects-para-cont {
-            width: 50%;
-
-        }
-
-        .projects-title-container p {
-            color: black;
-            text-align: center;
-
-        }
-
-
-
-        .project-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #0390f7;
-            animation: shimmer 3s ease-in-out infinite;
-        }
-
-        .project-subtitle {
-            font-size: 1.3rem;
-            color: #6c757d;
-            margin-bottom: 30px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
-
-        .project-tags {
-            display: none;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-
-        .tag {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 10px 20px;
-            border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: #495057;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .tag:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-
-        .tag:nth-child(2) {
-            animation-delay: 0.3s;
-        }
-
-        .tag:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-
-        .tag:nth-child(4) {
-            animation-delay: 0.5s;
-        }
-
-        .tag:nth-child(5) {
-            animation-delay: 0.6s;
-        }
-
-        .tag:hover {
-            background: rgba(102, 126, 234, 0.2);
-            transform: translateY(-5px) scale(1.05);
-            border-color: rgba(102, 126, 234, 0.5);
-        }
-
-        /* Hero Media Section */
-        .hero-media {
-            margin-bottom: 80px;
-            opacity: 0;
-            /* background-color: #fff; */
-            animation: fadeInUp 1s ease-out 0.5s forwards;
-        }
-
-        .video-container {
-            position: relative;
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto 40px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-            background-color: #fff !important;
-        }
-
-        .video-container:hover {
-            transform: translateY(-10px);
-        }
-
-        .demo-video {
-            width: 100%;
-            height: 500px;
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .demo-video video {
-            width: 90%;
-            border-radius: 20px;
-            border: 2px solid #fff;
-            border-radius: 20px;
-        }
-
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            /* background: #333; */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.3s ease;
-        }
-
-        .play-button {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.9);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
-        }
-
-        .play-button:hover {
-            background: white;
-            transform: scale(1.1);
-        }
-
-        .play-button::after {
-            content: '▶';
-            color: #667eea;
-            font-size: 24px;
-            margin-left: 3px;
-        }
-
-        /* Gallery Section */
-        .gallery-section {
-            margin-bottom: 80px;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 40px;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease-out 1s forwards;
-        }
-
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            transition: all 0.4s ease;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease-out forwards;
-            cursor: pointer;
-        }
-
-        .gallery-item:nth-child(1) {
-            animation-delay: 1.2s;
-        }
-
-        .gallery-item:nth-child(2) {
-            animation-delay: 1.4s;
-        }
-
-        .gallery-item:nth-child(3) {
-            animation-delay: 1.6s;
-        }
-
-        .gallery-item:nth-child(4) {
-            animation-delay: 1.8s;
-        }
-
-        .gallery-item:nth-child(5) {
-            animation-delay: 2s;
-        }
-
-        .gallery-item:nth-child(6) {
-            animation-delay: 2.2s;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-        }
-
-        .gallery-image {
-            /* width: 100%; */
-            height: 100%;
-            background: #fff;
-            background-size: 400% 400%;
-            animation: gradientShift 8s ease infinite;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            font-weight: 500;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .gallery-image img {
-            width: 90%;
-            border-radius: 20px;
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
-            display: flex;
-            align-items: flex-end;
-            padding: 20px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-
-        .overlay-text {
-            color: white;
-            font-weight: 500;
-        }
-
-        /* Features Grid */
-        .features-section {
-            margin-bottom: 80px;
-            display: none;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .feature-card {
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.4s ease;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .feature-card:nth-child(1) {
-            animation-delay: 2.4s;
-        }
-
-        .feature-card:nth-child(2) {
-            animation-delay: 2.6s;
-        }
-
-        .feature-card:nth-child(3) {
-            animation-delay: 2.8s;
-        }
-
-        .feature-card:nth-child(4) {
-            animation-delay: 3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.35);
-            border-color: rgba(102, 126, 234, 0.5);
-        }
-
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 30px;
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1) rotate(10deg);
-        }
-
-        .feature-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-
-        .feature-description {
-            color: #6c757d;
-            line-height: 1.6;
-        }
-
-        /* Modal for full-screen images */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .modal-image {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: white;
-            font-size: 40px;
-            cursor: pointer;
-            transition: opacity 0.3s ease;
-        }
-
-        .close-modal:hover {
-            opacity: 0.7;
-        }
-
-        /* Project Links */
-        .project-links {
-            display: none;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 50px;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out 3.2s forwards;
-        }
-
-        .project-link {
-            padding: 15px 30px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .link-primary {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-        }
-
-        .link-secondary {
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: #495057;
-        }
-
-        .project-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes shimmer {
-
-            0%,
-            100% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-        }
-
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .project-title {
-                font-size: 1.5rem;
-            }
-
-            .project-subtitle {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
-
-            .demo-video {
-                height: 300px;
-                border-radius: 20px;
-            }
-
-            .image-gallery {
-                grid-template-columns: 1fr;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .project-links {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .footer a {
-                font-size: 10px;
-            }
-
-            footer a,
-            footer h4,
-            .copyright p {
-                font-size: 10px;
-
-
-            }
-        }
-
-        /* ---- Dark Mode Overrides ---- */
-        body {
-            background-color: #000 !important;
-            color: #fff !important;
-        }
-
-        .navbar-div,
-        footer,
-        .copyright {
-            background-color: #000 !important;
-            color: #fff !important;
-            border: 1px solid #333 !important;
-        }
-
-        #header {
-            background-color: #fff;
-        }
-        #header li a,
-        strong {
-            color: #000 !important;
-        }
-
-        #navbar li a.active,
-        #navbar li a:hover {
-            color: #0056b3 !important;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p,
-        span,
-        li{
-            color: #fff !important;
-        }
-
-        .project-card,
-        .innovation-card,
-        .card-front,
-        .card-back {
-            background-color: #000 !important;
-            color: #fff !important;
-            border: 1px solid #333 !important;
-        }
-
-        .project-card h3,
-        .innovation-card h3 {
-            color: #fff !important;
-        }
-
-        button,
-        .project-btn,
-        .view-more {
-            background-color: #000 !important;
-            color: #fff !important;
-            border: 1px solid #555 !important;
-        }
-
-        button:hover,
-        .project-btn:hover,
-        .view-more:hover {
-            background-color: #028ffa !important;
-            color: #fff !important;
-        }
-
-        footer,
-        footer a,
-        footer p,
-        footer h4,
-        footer .follow i {
-            color: #fff !important;
-        }
-
-
-
-        footer a:hover,
-        footer .follow i:hover {
-            color: #028ffa !important;
-        }
-    </style>
 </head>
 
 <body>
     <section id="header">
-        <a href="#"><img src="./logo-removebg-preview-modified.png" width="140px" class="logo" alt="" /></a>
+        <!-- <a href="#"><img src="./logo-removebg-preview-modified.png" width="140px" class="logo" alt="" /></a> -->
         <a href="index.html" class="navbar-logo">
-            <img style="position: relative; width: 50px;" src="./img/logo-removebg-preview-modified.png" alt="">
+            <img style="position: relative; width: 50px;" src="./assets/img/new logo only.png" alt="">
             <strong>The Robo-Tech Forum</strong>
         </a>
         <div>
@@ -700,7 +25,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="album.html">Album</a></li>
                 <li><a class="active" href="projects.html">Projects</a></li>
-                <li><a href="blog.html">Blogs</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <a href="#" id="close"> <i class="bi bi-x-lg"></i></a>
@@ -711,55 +36,40 @@
         </div>
     </section>
 
+
     <div class="projects-title-container">
         <h1>Projects</h1>
         <div class="projects-para-cont">
-
-            <p>The Robo-Tech Forum has successfuly built more than 50 projects. The club is still actively building
+            <p>The Robo-Tech Forum has successfully built more than 50 projects. The club is still actively building
                 Robots, IOT Applications and Embedded Projects. Some of the Main Projects are listed below:</p>
         </div>
         <a id="aero-title" href="#aero-title-scroll">Aero Projects</a>
     </div>
 
-
-
-
     <!-- Robocon 2025 -->
     <div class="project-showcase">
-        <!-- Project Header -->
         <div class="project-header">
             <h3 class="project-title">DD Robocon 2025 Bot</h3>
             <p class="project-subtitle"></p>
-
-            <div class="project-tags">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">MongoDB</span>
-                <span class="tag">Stripe</span>
-                <span class="tag">AWS</span>
-            </div>
         </div>
 
-        <!-- Hero Video Section -->
         <div class="hero-media">
             <div class="video-container">
                 <div class="demo-video">
-                    <video loop autoplay muted src="Projects/Robocon/Robocon.webm"></video>
+                    <video loop autoplay muted src="./assets/Projects/Robocon/Robocon.webm"></video>
                     <div class="video-overlay">
                         <div class="play-button"></div>
                     </div>
-                    <!-- <span>🎥 Project Demo Video</span> -->
                 </div>
             </div>
         </div>
 
-        <!-- Image Gallery -->
         <div class="gallery-section">
             <h2 class="section-title">Photos</h2>
             <div class="image-gallery">
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/Robocon/RB1.jpg" alt="">
+                        <img src="./assets/Projects/Robocon/RB1.jpg" alt="">
                         <div class="gallery-overlay">
                             <div class="overlay-text">R1 and R2 Bots Together Ready for a Match</div>
                         </div>
@@ -768,7 +78,7 @@
 
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/Robocon/RB2.jpg" alt="">
+                        <img src="./assets/Projects/Robocon/RB2.jpg" alt="">
                         <div class="gallery-overlay">
                             <div class="overlay-text">R2 Bot On The Arena of IIT, Delhi</div>
                         </div>
@@ -777,391 +87,78 @@
 
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/Robocon/RB3.jpg" alt="">
+                        <img src="./assets/Projects/Robocon/RB3.jpg" alt="">
                         <div class="gallery-overlay">
-                            <div class="overlay-text">R1 Bot On The Aren of IIT, Delhi</div>
+                            <div class="overlay-text">R1 Bot On The Arena of IIT, Delhi</div>
                         </div>
                     </div>
-                </div>
-
-                <!-- <div class="gallery-item" onclick="openModal('Checkout Process')">
-                    <div class="gallery-image">
-                        💳 Checkout Process
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Secure payment integration with Stripe</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" onclick="openModal('Admin Dashboard')">
-                    <div class="gallery-image">
-                        📊 Admin Dashboard
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Comprehensive admin panel for inventory management</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" onclick="openModal('Mobile Experience')">
-                    <div class="gallery-image">
-                        📱 Mobile Experience
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Fully responsive design optimized for mobile devices</div>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-
-        <!-- Features Section -->
-        <div class="features-section">
-            <h2 class="section-title">Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Secure Payments</h3>
-                    <p class="feature-description">Integrated with Stripe for secure payment processing with support for
-                        multiple payment methods and currencies.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">Responsive Design</h3>
-                    <p class="feature-description">Fully responsive interface that works seamlessly across desktop,
-                        tablet, and mobile devices.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Fast Performance</h3>
-                    <p class="feature-description">Optimized for speed with lazy loading, image compression, and
-                        efficient database queries.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">👤</div>
-                    <h3 class="feature-title">User Management</h3>
-                    <p class="feature-description">Complete user authentication system with profiles, order history, and
-                        personalized recommendations.</p>
                 </div>
             </div>
-        </div>
-
-        <!-- Project Links -->
-        <div class="project-links">
-            <a href="#" class="project-link link-primary">
-                🚀 Live Demo
-            </a>
-            <a href="#" class="project-link link-secondary">
-                💻 View Code
-            </a>
         </div>
     </div>
 
     <!-- 3 wheel holonomic base -->
     <div class="project-showcase">
-        <!-- Project Header -->
         <div class="project-header">
             <h3 class="project-title">First 3-wheel Holonomic Base</h3>
             <p class="project-subtitle"></p>
-
-            <div class="project-tags">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">MongoDB</span>
-                <span class="tag">Stripe</span>
-                <span class="tag">AWS</span>
-            </div>
         </div>
 
-        <!-- Hero Video Section -->
         <div class="hero-media">
             <div class="video-container">
                 <div class="demo-video">
-                    <video loop autoplay muted src="Projects/First 3W Base/vid2.mp4"></video>
+                    <video loop autoplay muted src="./assets/Projects/First 3W Base/vid2.mp4"></video>
                     <div class="video-overlay">
-                        <div class="play-button" onclick="playDemo()"></div>
-                    </div>
-                    <!-- <span>🎥 Project Demo Video</span> -->
-                </div>
-            </div>
-        </div>
-
-        <!-- Image Gallery -->
-        <!-- <div class="gallery-section">
-            <h2 class="section-title">Photos</h2>
-            <div class="image-gallery">
-                <div class="gallery-item" onclick="openModal('Homepage Design')">
-                    <div class="gallery-image">
-                        🏠 Homepage Design
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Modern landing page with hero section and featured products</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Product Catalog')">
-                    <div class="gallery-image">
-                        📱 Product Catalog
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Filterable product grid with search functionality</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Shopping Cart')">
-                    <div class="gallery-image">
-                        🛒 Shopping Cart
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Interactive cart with quantity controls and pricing</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Checkout Process')">
-                    <div class="gallery-image">
-                        💳 Checkout Process
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Secure payment integration with Stripe</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Admin Dashboard')">
-                    <div class="gallery-image">
-                        📊 Admin Dashboard
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Comprehensive admin panel for inventory management</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Mobile Experience')">
-                    <div class="gallery-image">
-                        📱 Mobile Experience
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Fully responsive design optimized for mobile devices</div>
-                        </div>
+                        <div class="play-button"></div>
                     </div>
                 </div>
             </div>
-        </div> -->
-
-        <!-- Features Section -->
-        <div class="features-section">
-            <h2 class="section-title">Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Secure Payments</h3>
-                    <p class="feature-description">Integrated with Stripe for secure payment processing with support for
-                        multiple payment methods and currencies.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">Responsive Design</h3>
-                    <p class="feature-description">Fully responsive interface that works seamlessly across desktop,
-                        tablet, and mobile devices.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Fast Performance</h3>
-                    <p class="feature-description">Optimized for speed with lazy loading, image compression, and
-                        efficient database queries.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">👤</div>
-                    <h3 class="feature-title">User Management</h3>
-                    <p class="feature-description">Complete user authentication system with profiles, order history, and
-                        personalized recommendations.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Links -->
-        <div class="project-links">
-            <a href="#" class="project-link link-primary">
-                🚀 Live Demo
-            </a>
-            <a href="#" class="project-link link-secondary">
-                💻 View Code
-            </a>
         </div>
     </div>
 
     <!-- Cozmo Clench -->
     <div class="project-showcase">
-        <!-- Project Header -->
         <div class="project-header">
             <h3 class="project-title">Meshmerize</h3>
             <p class="project-subtitle"></p>
-
-            <div class="project-tags">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">MongoDB</span>
-                <span class="tag">Stripe</span>
-                <span class="tag">AWS</span>
-            </div>
         </div>
 
-        <!-- Hero Video Section -->
         <div class="hero-media">
             <div class="video-container">
                 <div class="demo-video">
-                    <video loop autoplay muted src="Projects/Cozmo Clench/Cozmo-clench.mp4"></video>
+                    <video loop autoplay muted src="./assets/Projects/Cozmo Clench/Cozmo-clench.mp4"></video>
                     <div class="video-overlay">
-                        <div class="play-button" onclick="playDemo()"></div>
-                    </div>
-                    <!-- <span>🎥 Project Demo Video</span> -->
-                </div>
-            </div>
-        </div>
-
-        <!-- Image Gallery -->
-        <!-- <div class="gallery-section">
-            <h2 class="section-title">Photos</h2>
-            <div class="image-gallery">
-                <div class="gallery-item" onclick="openModal('Homepage Design')">
-                    <div class="gallery-image">
-                        🏠 Homepage Design
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Modern landing page with hero section and featured products</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Product Catalog')">
-                    <div class="gallery-image">
-                        📱 Product Catalog
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Filterable product grid with search functionality</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Shopping Cart')">
-                    <div class="gallery-image">
-                        🛒 Shopping Cart
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Interactive cart with quantity controls and pricing</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Checkout Process')">
-                    <div class="gallery-image">
-                        💳 Checkout Process
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Secure payment integration with Stripe</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Admin Dashboard')">
-                    <div class="gallery-image">
-                        📊 Admin Dashboard
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Comprehensive admin panel for inventory management</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Mobile Experience')">
-                    <div class="gallery-image">
-                        📱 Mobile Experience
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Fully responsive design optimized for mobile devices</div>
-                        </div>
+                        <div class="play-button"></div>
                     </div>
                 </div>
             </div>
-        </div> -->
-
-        <!-- Features Section -->
-        <div class="features-section">
-            <h2 class="section-title">Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Secure Payments</h3>
-                    <p class="feature-description">Integrated with Stripe for secure payment processing with support for
-                        multiple payment methods and currencies.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">Responsive Design</h3>
-                    <p class="feature-description">Fully responsive interface that works seamlessly across desktop,
-                        tablet, and mobile devices.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Fast Performance</h3>
-                    <p class="feature-description">Optimized for speed with lazy loading, image compression, and
-                        efficient database queries.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">👤</div>
-                    <h3 class="feature-title">User Management</h3>
-                    <p class="feature-description">Complete user authentication system with profiles, order history, and
-                        personalized recommendations.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Links -->
-        <div class="project-links">
-            <a href="#" class="project-link link-primary">
-                🚀 Live Demo
-            </a>
-            <a href="#" class="project-link link-secondary">
-                💻 View Code
-            </a>
         </div>
     </div>
 
     <!-- Robo Dog -->
     <div class="project-showcase">
-        <!-- Project Header -->
         <div class="project-header">
             <h3 class="project-title">Quadruped (Robo-dog)</h3>
             <p class="project-subtitle"></p>
-
-            <div class="project-tags">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">MongoDB</span>
-                <span class="tag">Stripe</span>
-                <span class="tag">AWS</span>
-            </div>
         </div>
 
-        <!-- Hero Video Section -->
         <div class="hero-media">
             <div class="video-container">
                 <div class="demo-video">
-                    <video loop autoplay muted src="Projects/Quadruped/Quadruped_test.mp4"></video>
+                    <video loop autoplay muted src="./assets/Projects/Quadruped/Quadruped_test.mp4"></video>
                     <div class="video-overlay">
-                        <div class="play-button" onclick="playDemo()"></div>
+                        <div class="play-button"></div>
                     </div>
-                    <!-- <span>🎥 Project Demo Video</span> -->
                 </div>
             </div>
         </div>
 
-        <!-- Image Gallery -->
         <div class="gallery-section">
             <h2 class="section-title">Photos</h2>
             <div class="image-gallery">
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/Quadruped/QP2.png" alt="">
+                        <img src="./assets/Projects/Quadruped/QP2.png" alt="">
                         <div class="gallery-overlay">
                             <div class="overlay-text">Initial Assembly of the Dog</div>
                         </div>
@@ -1170,132 +167,40 @@
 
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/Quadruped/QP3.png" alt="">
+                        <img src="./assets/Projects/Quadruped/QP3.png" alt="">
                         <div class="gallery-overlay">
                             <div class="overlay-text">Final Assembly of the dog</div>
                         </div>
                     </div>
                 </div>
-
-                <!-- <div class="gallery-item" >
-                    <div class="gallery-image">
-                        <img src="Projects/Quadruped/Qp1.png" alt="">
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Interactive cart with quantity controls and pricing</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Checkout Process')">
-                    <div class="gallery-image">
-                        💳 Checkout Process
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Secure payment integration with Stripe</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Admin Dashboard')">
-                    <div class="gallery-image">
-                        📊 Admin Dashboard
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Comprehensive admin panel for inventory management</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Mobile Experience')">
-                    <div class="gallery-image">
-                        📱 Mobile Experience
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Fully responsive design optimized for mobile devices</div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
-        </div>
-
-        <!-- Features Section -->
-        <div class="features-section">
-            <h2 class="section-title">Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Secure Payments</h3>
-                    <p class="feature-description">Integrated with Stripe for secure payment processing with support for
-                        multiple payment methods and currencies.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">Responsive Design</h3>
-                    <p class="feature-description">Fully responsive interface that works seamlessly across desktop,
-                        tablet, and mobile devices.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Fast Performance</h3>
-                    <p class="feature-description">Optimized for speed with lazy loading, image compression, and
-                        efficient database queries.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">👤</div>
-                    <h3 class="feature-title">User Management</h3>
-                    <p class="feature-description">Complete user authentication system with profiles, order history, and
-                        personalized recommendations.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Links -->
-        <div class="project-links">
-            <a href="#" class="project-link link-primary">
-                🚀 Live Demo
-            </a>
-            <a href="#" class="project-link link-secondary">
-                💻 View Code
-            </a>
         </div>
     </div>
 
     <!-- IRoC-U -->
     <div class="project-showcase">
-        <!-- Project Header -->
         <div class="project-header">
             <h3 class="project-title">ISRO Robotics challenge, URSC (IRoC-U)</h3>
             <p class="project-subtitle"></p>
-
-            <div class="project-tags">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">MongoDB</span>
-                <span class="tag">Stripe</span>
-                <span class="tag">AWS</span>
-            </div>
         </div>
 
-        <!-- Hero Video Section -->
         <div class="hero-media">
             <div class="video-container">
                 <div class="demo-video">
-                    <video loop autoplay muted src="Projects/IRoC-U/IRoC-U.mp4"></video>
+                    <video loop autoplay muted src="./assets/Projects/IRoC-U/IRoC-U.mp4"></video>
                     <div class="video-overlay">
-                        <div class="play-button" onclick="playDemo()"></div>
+                        <div class="play-button"></div>
                     </div>
-                    <!-- <span>🎥 Project Demo Video</span> -->
                 </div>
             </div>
         </div>
 
-        <!-- Image Gallery -->
         <div class="gallery-section">
             <h2 class="section-title">Photos</h2>
             <div class="image-gallery">
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/IRoC-U/IRoC-U.jpg" alt="">
+                        <img src="./assets/Projects/IRoC-U/IRoC-U.jpg" alt="">
                         <div class="gallery-overlay">
                             <div class="overlay-text">Testing Time of ANAV Drone</div>
                         </div>
@@ -1304,7 +209,7 @@
 
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/IRoC-U/IRoC-U-2.jpg" alt="">
+                        <img src="./assets/Projects/IRoC-U/IRoC-U-2.jpg" alt="">
                         <div class="gallery-overlay">
                             <div class="overlay-text">ANAV Drone and the Base station</div>
                         </div>
@@ -1313,116 +218,31 @@
 
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/IRoC-U/IRoC-U-3.jpg" alt="">
+                        <img src="./assets/Projects/IRoC-U/IRoC-U-3.jpg" alt="">
                         <div class="gallery-overlay">
                             <div class="overlay-text">ANAV Placed in the Testing Environment</div>
                         </div>
                     </div>
                 </div>
-
-                <!--
-                <div class="gallery-item" onclick="openModal('Checkout Process')">
-                    <div class="gallery-image">
-                        💳 Checkout Process
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Secure payment integration with Stripe</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Admin Dashboard')">
-                    <div class="gallery-image">
-                        📊 Admin Dashboard
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Comprehensive admin panel for inventory management</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Mobile Experience')">
-                    <div class="gallery-image">
-                        📱 Mobile Experience
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Fully responsive design optimized for mobile devices</div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
-        </div>
-
-        <!-- Features Section -->
-        <div class="features-section">
-            <h2 class="section-title">Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Secure Payments</h3>
-                    <p class="feature-description">Integrated with Stripe for secure payment processing with support for
-                        multiple payment methods and currencies.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">Responsive Design</h3>
-                    <p class="feature-description">Fully responsive interface that works seamlessly across desktop,
-                        tablet, and mobile devices.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Fast Performance</h3>
-                    <p class="feature-description">Optimized for speed with lazy loading, image compression, and
-                        efficient database queries.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">👤</div>
-                    <h3 class="feature-title">User Management</h3>
-                    <p class="feature-description">Complete user authentication system with profiles, order history, and
-                        personalized recommendations.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Links -->
-        <div class="project-links">
-            <a href="#" class="project-link link-primary">
-                🚀 Live Demo
-            </a>
-            <a href="#" class="project-link link-secondary">
-                💻 View Code
-            </a>
         </div>
     </div>
 
     <!-- RC Boats -->
     <div class="project-showcase">
-        <!-- Project Header -->
         <div class="project-header">
             <h3 class="project-title">RC Boats</h3>
             <p class="project-subtitle"></p>
-
-            <div class="project-tags">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">MongoDB</span>
-                <span class="tag">Stripe</span>
-                <span class="tag">AWS</span>
-            </div>
         </div>
 
-        <!-- Hero Video Section -->
         <div class="hero-media">
             <div class="video-container">
                 <div style="display: flex; flex-wrap: wrap-reverse;" class="demo-video">
                     <video style="width: 90%; padding: 10px; border-radius: 20px;" loop autoplay muted
-                        src="Projects/RC Boats/RC-boat-1.mp4"></video>
-
-                    <!-- <video style="width: 50%; padding: 20px;" loop autoplay muted src="Projects/Quadruped/Quadruped_test.mp4"></video> -->
+                        src="./assets/Projects/RC Boats/RC-boat-1.mp4"></video>
                     <div class="video-overlay">
                         <div class="play-button"></div>
                     </div>
-                    <!-- <span>🎥 Project Demo Video</span> -->
                 </div>
             </div>
         </div>
@@ -1430,14 +250,11 @@
         <div class="hero-media">
             <div class="video-container">
                 <div style="display: flex; flex-wrap: wrap-reverse;" class="demo-video">
-
                     <video style="width: 90%; padding: 10px; border-radius: 20px;" loop autoplay muted
-                        src="Projects/RC Boats/RC-boat-3.mp4"></video>
-                    <!-- <video style="width: 50%; padding: 20px;" loop autoplay muted src="Projects/Quadruped/Quadruped_test.mp4"></video> -->
+                        src="./assets/Projects/RC Boats/RC-boat-3.mp4"></video>
                     <div class="video-overlay">
                         <div class="play-button"></div>
                     </div>
-                    <!-- <span>🎥 Project Demo Video</span> -->
                 </div>
             </div>
         </div>
@@ -1446,160 +263,27 @@
             <div class="video-container">
                 <div style="display: flex; flex-wrap: wrap-reverse;" class="demo-video">
                     <video style="height: 90%; padding: 5px; border-radius: 50px;" loop autoplay muted
-                        src="Projects/RC Boats/RC-boat-2.mp4"></video>
-
-                    <!-- <video style="width: 50%; padding: 20px;" loop autoplay muted src="Projects/Quadruped/Quadruped_test.mp4"></video> -->
+                        src="./assets/Projects/RC Boats/RC-boat-2.mp4"></video>
                     <div class="video-overlay">
                         <div class="play-button"></div>
                     </div>
-                    <!-- <span>🎥 Project Demo Video</span> -->
                 </div>
             </div>
-        </div>
-
-        <!-- Image Gallery -->
-        <!--
-        <div class="gallery-section">
-            <h2 class="section-title">Photos</h2>
-            <div class="image-gallery">
-                <div class="gallery-item" >
-                    <div class="gallery-image">
-                        <img src="Projects/Quadruped/QP2.png" alt="">
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Initial Assembly of the Dog</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" >
-                    <div class="gallery-image">
-                        <img src="Projects/Quadruped/QP3.png" alt="">
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Final Assembly of the dog</div>
-                        </div>
-                    </div>
-                </div>
-                
-                 <div class="gallery-item" >
-                    <div class="gallery-image">
-                        <img src="Projects/Quadruped/Qp1.png" alt="">
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Interactive cart with quantity controls and pricing</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Checkout Process')">
-                    <div class="gallery-image">
-                        💳 Checkout Process
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Secure payment integration with Stripe</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Admin Dashboard')">
-                    <div class="gallery-image">
-                        📊 Admin Dashboard
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Comprehensive admin panel for inventory management</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Mobile Experience')">
-                    <div class="gallery-image">
-                        📱 Mobile Experience
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Fully responsive design optimized for mobile devices</div>
-                        </div>
-                    </div>
-                </div> -->
-
-
-        <!-- Features Section -->
-        <div class="features-section">
-            <h2 class="section-title">Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Secure Payments</h3>
-                    <p class="feature-description">Integrated with Stripe for secure payment processing with support for
-                        multiple payment methods and currencies.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">Responsive Design</h3>
-                    <p class="feature-description">Fully responsive interface that works seamlessly across desktop,
-                        tablet,
-                        and mobile devices.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Fast Performance</h3>
-                    <p class="feature-description">Optimized for speed with lazy loading, image compression, and
-                        efficient
-                        database queries.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">👤</div>
-                    <h3 class="feature-title">User Management</h3>
-                    <p class="feature-description">Complete user authentication system with profiles, order history, and
-                        personalized recommendations.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Links -->
-        <div class="project-links">
-            <a href="#" class="project-link link-primary">
-                🚀 Live Demo
-            </a>
-            <a href="#" class="project-link link-secondary">
-                💻 View Code
-            </a>
         </div>
     </div>
 
     <!-- Swerve Wheel Drive Bot -->
     <div class="project-showcase">
-        <!-- Project Header -->
         <div class="project-header">
             <h3 class="project-title">Swerve Wheel Drive Bot</h3>
             <p class="project-subtitle"></p>
-
-            <div class="project-tags">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">MongoDB</span>
-                <span class="tag">Stripe</span>
-                <span class="tag">AWS</span>
-            </div>
         </div>
 
-        <!-- Hero Video Section -->
-        <!-- <div class="hero-media">
-            <div class="video-container">
-                <div class="demo-video">
-                    <video loop autoplay muted src="Projects/Quadruped/Quadruped_test.mp4"></video>
-                    <div class="video-overlay">
-                        <div class="play-button" onclick="playDemo()"></div>
-                    </div>
-                    <span>🎥 Project Demo Video</span>
-                </div>
-            </div>
-        </div> -->
-
-        <!-- Image Gallery -->
         <div class="gallery-section">
-            <!-- <h2 class="section-title">Photos</h2> -->
             <div class="image-gallery">
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/Swerve Bot/1.avif" alt="">
+                        <img src="./assets/Projects/Swerve Bot/1.avif" alt="">
                         <div class="gallery-overlay">
                             <div class="overlay-text">Swerve wheel Drive Bot Prototype-I</div>
                         </div>
@@ -1608,7 +292,7 @@
 
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/Swerve Bot/2.avif" alt="">
+                        <img src="./assets/Projects/Swerve Bot/2.avif" alt="">
                         <div class="gallery-overlay">
                             <div class="overlay-text">Left View of the Swerve Wheel Drive Bot</div>
                         </div>
@@ -1616,122 +300,31 @@
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/Swerve Bot/3.avif" alt="">
+                        <img src="./assets/Projects/Swerve Bot/3.avif" alt="">
                         <div class="gallery-overlay">
                             <div class="overlay-text">Front Top-view of the Bot</div>
                         </div>
                     </div>
                 </div>
-
-                <!-- <div class="gallery-item" >
-                    <div class="gallery-image">
-                        <img src="Projects/Quadruped/Qp1.png" alt="">
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Interactive cart with quantity controls and pricing</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Checkout Process')">
-                    <div class="gallery-image">
-                        💳 Checkout Process
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Secure payment integration with Stripe</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Admin Dashboard')">
-                    <div class="gallery-image">
-                        📊 Admin Dashboard
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Comprehensive admin panel for inventory management</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Mobile Experience')">
-                    <div class="gallery-image">
-                        📱 Mobile Experience
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Fully responsive design optimized for mobile devices</div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
-        </div>
-
-        <!-- Features Section -->
-        <div class="features-section">
-            <h2 class="section-title">Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Secure Payments</h3>
-                    <p class="feature-description">Integrated with Stripe for secure payment processing with support for
-                        multiple payment methods and currencies.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">Responsive Design</h3>
-                    <p class="feature-description">Fully responsive interface that works seamlessly across desktop,
-                        tablet, and mobile devices.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Fast Performance</h3>
-                    <p class="feature-description">Optimized for speed with lazy loading, image compression, and
-                        efficient database queries.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">👤</div>
-                    <h3 class="feature-title">User Management</h3>
-                    <p class="feature-description">Complete user authentication system with profiles, order history, and
-                        personalized recommendations.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Links -->
-        <div class="project-links">
-            <a href="#" class="project-link link-primary">
-                🚀 Live Demo
-            </a>
-            <a href="#" class="project-link link-secondary">
-                💻 View Code
-            </a>
         </div>
     </div>
 
     <!-- Line Follower -->
     <div class="project-showcase">
-        <!-- Project Header -->
         <div class="project-header">
             <h3 class="project-title">Line Followers</h3>
             <p class="project-subtitle"></p>
-
-            <div class="project-tags">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">MongoDB</span>
-                <span class="tag">Stripe</span>
-                <span class="tag">AWS</span>
-            </div>
         </div>
 
-        <!-- Hero Video Section -->
         <div class="hero-media">
             <div class="video-container">
                 <div style="display: flex; flex-wrap: wrap;" class="demo-video">
                     <video style="width: 90%; padding: 10px;" loop autoplay muted
-                        src="Projects/Line Follower/Line Follower-3.mp4"></video>
+                        src="./assets/Projects/Line Follower/Line Follower-3.mp4"></video>
                     <div class="video-overlay">
                         <div class="play-button"></div>
                     </div>
-                    <!-- <span>🎥 Project Demo Video</span> -->
                 </div>
             </div>
         </div>
@@ -1740,11 +333,10 @@
             <div class="video-container">
                 <div style="display: flex; flex-wrap: wrap;" class="demo-video">
                     <video style="width: 90%; padding: 10px;" loop autoplay muted
-                        src="Projects/Line Follower/Line Follower-2.webm"></video>
+                        src="./assets/Projects/Line Follower/Line Follower-2.webm"></video>
                     <div class="video-overlay">
                         <div class="play-button"></div>
                     </div>
-                    <!-- <span>🎥 Project Demo Video</span> -->
                 </div>
             </div>
         </div>
@@ -1753,22 +345,20 @@
             <div class="video-container">
                 <div style="display: flex; flex-wrap: wrap;" class="demo-video">
                     <video style="width: 90%; padding: 10px;" loop autoplay muted
-                        src="Projects/Line Follower/Line Follower.mp4"></video>
+                        src="./assets/Projects/Line Follower/Line Follower.mp4"></video>
                     <div class="video-overlay">
                         <div class="play-button"></div>
                     </div>
-                    <!-- <span>🎥 Project Demo Video</span> -->
                 </div>
             </div>
         </div>
 
-        <!-- Image Gallery -->
         <div class="gallery-section">
             <h2 class="section-title">Photos</h2>
             <div class="image-gallery">
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/Line Follower/LF-1.jpg" alt="">
+                        <img src="./assets/Projects/Line Follower/LF-1.jpg" alt="">
                         <div class="gallery-overlay">
                             <div class="overlay-text">Final Line Follower Won at Tech Carvaan</div>
                         </div>
@@ -1777,100 +367,15 @@
 
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/Line Follower/LF3.jpg" alt="">
+                        <img src="./assets/Projects/Line Follower/LF3.jpg" alt="">
                         <div class="gallery-overlay">
                             <div class="overlay-text">Line Follower Bot With LSA-08 Sensor for Best Performance</div>
                         </div>
                     </div>
                 </div>
-
-                <!-- <div class="gallery-item" >
-                    <div class="gallery-image">
-                        <img src="Projects/Line Follower/LF2.jpg" alt="">
-                        <div class="gallery-overlay">
-                            <div class="overlay-text"></div>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- 
-                
-                <div class="gallery-item" onclick="openModal('Checkout Process')">
-                    <div class="gallery-image">
-                        💳 Checkout Process
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Secure payment integration with Stripe</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Admin Dashboard')">
-                    <div class="gallery-image">
-                        📊 Admin Dashboard
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Comprehensive admin panel for inventory management</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Mobile Experience')">
-                    <div class="gallery-image">
-                        📱 Mobile Experience
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Fully responsive design optimized for mobile devices</div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
-        </div>
-
-        <!-- Features Section -->
-        <div class="features-section">
-            <h2 class="section-title">Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Secure Payments</h3>
-                    <p class="feature-description">Integrated with Stripe for secure payment processing with support for
-                        multiple payment methods and currencies.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">Responsive Design</h3>
-                    <p class="feature-description">Fully responsive interface that works seamlessly across desktop,
-                        tablet, and mobile devices.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Fast Performance</h3>
-                    <p class="feature-description">Optimized for speed with lazy loading, image compression, and
-                        efficient database queries.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">👤</div>
-                    <h3 class="feature-title">User Management</h3>
-                    <p class="feature-description">Complete user authentication system with profiles, order history, and
-                        personalized recommendations.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Links -->
-        <div class="project-links">
-            <a href="#" class="project-link link-primary">
-                🚀 Live Demo
-            </a>
-            <a href="#" class="project-link link-secondary">
-                💻 View Code
-            </a>
         </div>
     </div>
-
-
-    <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
     <div id="aero-title-scroll"
         style="display: flex; align-items: center; justify-content: center; width: 100%; margin-top: 200px; height: min-content;"
@@ -1878,177 +383,37 @@
         <h1 style="font-size: 3.5rem; color: #fff;">Aero Projects</h1>
     </div>
 
-
-    <!-- RC PLane -->
+    <!-- RC Plane -->
     <div class="project-showcase">
-        <!-- Project Header -->
         <div class="project-header">
-            <h3 class="project-title">First Rc Plane</h3>
+            <h3 class="project-title">First RC Plane</h3>
             <p class="project-subtitle"></p>
-
-            <div class="project-tags">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">MongoDB</span>
-                <span class="tag">Stripe</span>
-                <span class="tag">AWS</span>
-            </div>
         </div>
 
-        <!-- Hero Video Section -->
         <div class="hero-media">
             <div class="video-container">
                 <div class="demo-video">
-                    <video loop autoplay muted src="Projects/First Plane/vid3.mp4"></video>
+                    <video loop autoplay muted src="./assets/Projects/First Plane/vid3.mp4"></video>
                     <div class="video-overlay">
-                        <div class="play-button" onclick="playDemo()"></div>
-                    </div>
-                    <!-- <span>🎥 Project Demo Video</span> -->
-                </div>
-            </div>
-        </div>
-
-        <!-- Image Gallery -->
-        <!-- <div class="gallery-section">
-            <h2 class="section-title">Photos</h2>
-            <div class="image-gallery">
-                <div class="gallery-item" onclick="openModal('Homepage Design')">
-                    <div class="gallery-image">
-                        🏠 Homepage Design
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Modern landing page with hero section and featured products</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Product Catalog')">
-                    <div class="gallery-image">
-                        📱 Product Catalog
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Filterable product grid with search functionality</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Shopping Cart')">
-                    <div class="gallery-image">
-                        🛒 Shopping Cart
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Interactive cart with quantity controls and pricing</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Checkout Process')">
-                    <div class="gallery-image">
-                        💳 Checkout Process
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Secure payment integration with Stripe</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Admin Dashboard')">
-                    <div class="gallery-image">
-                        📊 Admin Dashboard
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Comprehensive admin panel for inventory management</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" onclick="openModal('Mobile Experience')">
-                    <div class="gallery-image">
-                        📱 Mobile Experience
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Fully responsive design optimized for mobile devices</div>
-                        </div>
+                        <div class="play-button"></div>
                     </div>
                 </div>
             </div>
-        </div> -->
-
-        <!-- Features Section -->
-        <div class="features-section">
-            <h2 class="section-title">Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Secure Payments</h3>
-                    <p class="feature-description">Integrated with Stripe for secure payment processing with support for
-                        multiple payment methods and currencies.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">Responsive Design</h3>
-                    <p class="feature-description">Fully responsive interface that works seamlessly across desktop,
-                        tablet, and mobile devices.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Fast Performance</h3>
-                    <p class="feature-description">Optimized for speed with lazy loading, image compression, and
-                        efficient database queries.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">👤</div>
-                    <h3 class="feature-title">User Management</h3>
-                    <p class="feature-description">Complete user authentication system with profiles, order history, and
-                        personalized recommendations.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Links -->
-        <div class="project-links">
-            <a href="#" class="project-link link-primary">
-                🚀 Live Demo
-            </a>
-            <a href="#" class="project-link link-secondary">
-                💻 View Code
-            </a>
         </div>
     </div>
 
     <!-- Quadcopters -->
     <div class="project-showcase">
-        <!-- Project Header -->
         <div class="project-header">
             <h3 class="project-title">Quadcopters</h3>
             <p class="project-subtitle"></p>
-
-            <div class="project-tags">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">MongoDB</span>
-                <span class="tag">Stripe</span>
-                <span class="tag">AWS</span>
-            </div>
         </div>
 
-        <!-- Hero Video Section -->
-        <!-- <div class="hero-media">
-            <div class="video-container">
-                <div class="demo-video">
-                    <video loop autoplay muted src="Projects/Aero/VTOL.mov"></video>
-                    <div class="video-overlay">
-                        <div class="play-button"></div>
-                    </div>
-                    <span>🎥 Project Demo Video</span>
-                </div>
-            </div>
-        </div> -->
-
-        <!-- Image Gallery -->
         <div class="gallery-section">
-            <!-- <h2 class="section-title">Photos</h2> -->
             <div class="image-gallery">
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/Aero/Quadcopter.avif" alt="">
+                        <img src="./assets/Projects/Aero/Quadcopter.avif" alt="">
                         <div class="gallery-overlay">
                             <div class="overlay-text">Small Quadcopter with Speedy Bee flight controller</div>
                         </div>
@@ -2057,560 +422,128 @@
 
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/Aero/Quadcopter2.avif" alt="">
+                        <img src="./assets/Projects/Aero/Quadcopter2.avif" alt="">
                         <div class="gallery-overlay">
                             <div class="overlay-text">Slightly Bigger Quadcopter with more payload capacity</div>
                         </div>
                     </div>
                 </div>
-
-                <!-- <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="Projects/Robocon/RB3.jpg" alt="">
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">R1 Bot On The Aren of IIT, Delhi</div>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- <div class="gallery-item" onclick="openModal('Checkout Process')">
-                    <div class="gallery-image">
-                        💳 Checkout Process
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Secure payment integration with Stripe</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" onclick="openModal('Admin Dashboard')">
-                    <div class="gallery-image">
-                        📊 Admin Dashboard
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Comprehensive admin panel for inventory management</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" onclick="openModal('Mobile Experience')">
-                    <div class="gallery-image">
-                        📱 Mobile Experience
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Fully responsive design optimized for mobile devices</div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
-        </div>
-
-        <!-- Features Section -->
-        <div class="features-section">
-            <h2 class="section-title">Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Secure Payments</h3>
-                    <p class="feature-description">Integrated with Stripe for secure payment processing with support for
-                        multiple payment methods and currencies.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">Responsive Design</h3>
-                    <p class="feature-description">Fully responsive interface that works seamlessly across desktop,
-                        tablet, and mobile devices.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Fast Performance</h3>
-                    <p class="feature-description">Optimized for speed with lazy loading, image compression, and
-                        efficient database queries.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">👤</div>
-                    <h3 class="feature-title">User Management</h3>
-                    <p class="feature-description">Complete user authentication system with profiles, order history, and
-                        personalized recommendations.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Links -->
-        <div class="project-links">
-            <a href="#" class="project-link link-primary">
-                🚀 Live Demo
-            </a>
-            <a href="#" class="project-link link-secondary">
-                💻 View Code
-            </a>
         </div>
     </div>
 
     <!-- VTOL -->
     <div class="project-showcase">
-        <!-- Project Header -->
         <div class="project-header">
-            <h3 class="project-title">Vertical Take-off and Landing (VTAL)</h3>
+            <h3 class="project-title">Vertical Take-off and Landing (VTOL)</h3>
             <p class="project-subtitle"></p>
-
-            <div class="project-tags">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">MongoDB</span>
-                <span class="tag">Stripe</span>
-                <span class="tag">AWS</span>
-            </div>
         </div>
 
-        <!-- Hero Video Section -->
         <div class="hero-media">
             <div class="video-container">
                 <div class="demo-video">
-                    <video loop autoplay muted src="Projects/Aero/VTOL.mp4"></video>
+                    <video loop autoplay muted src="./assets/Projects/Aero/VTOL.mp4"></video>
                     <div class="video-overlay">
                         <div class="play-button"></div>
                     </div>
-                    <!-- <span>🎥 Project Demo Video</span> -->
                 </div>
             </div>
         </div>
 
-        <!-- Image Gallery -->
         <div class="gallery-section">
             <h2 class="section-title">Photos</h2>
             <div class="image-gallery">
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/Aero/Plane1.avif" alt="">
+                        <img src="./assets/Projects/Aero/Plane1.avif" alt="">
                         <div class="gallery-overlay">
-                            <div class="overlay-text">VTAL Plane for Vertical Take-off and Landing</div>
+                            <div class="overlay-text">VTOL Plane for Vertical Take-off and Landing</div>
                         </div>
                     </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="Projects/Aero/Plane1.avif" alt="">
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">VTAL Plane for Vertical Take-off and Landing</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="Projects/Robocon/RB2.jpg" alt="">
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">R2 Bot On The Arena of IIT, Delhi</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="Projects/Robocon/RB3.jpg" alt="">
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">R1 Bot On The Aren of IIT, Delhi</div>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- <div class="gallery-item" onclick="openModal('Checkout Process')">
-                    <div class="gallery-image">
-                        💳 Checkout Process
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Secure payment integration with Stripe</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" onclick="openModal('Admin Dashboard')">
-                    <div class="gallery-image">
-                        📊 Admin Dashboard
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Comprehensive admin panel for inventory management</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" onclick="openModal('Mobile Experience')">
-                    <div class="gallery-image">
-                        📱 Mobile Experience
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Fully responsive design optimized for mobile devices</div>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-
-        <!-- Features Section -->
-        <div class="features-section">
-            <h2 class="section-title">Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Secure Payments</h3>
-                    <p class="feature-description">Integrated with Stripe for secure payment processing with support for
-                        multiple payment methods and currencies.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">Responsive Design</h3>
-                    <p class="feature-description">Fully responsive interface that works seamlessly across desktop,
-                        tablet, and mobile devices.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Fast Performance</h3>
-                    <p class="feature-description">Optimized for speed with lazy loading, image compression, and
-                        efficient database queries.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">👤</div>
-                    <h3 class="feature-title">User Management</h3>
-                    <p class="feature-description">Complete user authentication system with profiles, order history, and
-                        personalized recommendations.</p>
                 </div>
             </div>
-        </div>
-
-        <!-- Project Links -->
-        <div class="project-links">
-            <a href="#" class="project-link link-primary">
-                🚀 Live Demo
-            </a>
-            <a href="#" class="project-link link-secondary">
-                💻 View Code
-            </a>
         </div>
     </div>
 
     <!-- Glider -->
     <div class="project-showcase">
-        <!-- Project Header -->
         <div class="project-header">
             <h3 class="project-title">Glider</h3>
             <p class="project-subtitle"></p>
-
-            <div class="project-tags">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">MongoDB</span>
-                <span class="tag">Stripe</span>
-                <span class="tag">AWS</span>
-            </div>
         </div>
 
-        <!-- Hero Video Section -->
         <div class="hero-media">
             <div class="video-container">
                 <div class="demo-video">
-                    <video loop autoplay muted src="Projects/Aero/Plane2.mov"></video>
+                    <video loop autoplay muted src="./assets/Projects/Aero/Plane2.mov"></video>
                     <div class="video-overlay">
                         <div class="play-button"></div>
                     </div>
-                    <!-- <span>🎥 Project Demo Video</span> -->
                 </div>
             </div>
         </div>
 
-        <!-- Image Gallery -->
         <div class="gallery-section">
             <h2 class="section-title">Photos</h2>
             <div class="image-gallery">
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/Aero/Plane2.avif" alt="">
+                        <img src="./assets/Projects/Aero/Plane2.avif" alt="">
                         <div class="gallery-overlay">
                             <div class="overlay-text">A Glider Plane Which Can Glide in the Air For Considerable amount
                                 of time</div>
                         </div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="Projects/Aero/Plane2.avif" alt="">
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">A Glider Plane Which Can Glide in the Air For Considerable amount
-                                of time</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="Projects/Robocon/RB2.jpg" alt="">
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">R2 Bot On The Arena of IIT, Delhi</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="Projects/Robocon/RB3.jpg" alt="">
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">R1 Bot On The Aren of IIT, Delhi</div>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- <div class="gallery-item" onclick="openModal('Checkout Process')">
-                    <div class="gallery-image">
-                        💳 Checkout Process
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Secure payment integration with Stripe</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" onclick="openModal('Admin Dashboard')">
-                    <div class="gallery-image">
-                        📊 Admin Dashboard
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Comprehensive admin panel for inventory management</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" onclick="openModal('Mobile Experience')">
-                    <div class="gallery-image">
-                        📱 Mobile Experience
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Fully responsive design optimized for mobile devices</div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
-        </div>
-
-        <!-- Features Section -->
-        <div class="features-section">
-            <h2 class="section-title">Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Secure Payments</h3>
-                    <p class="feature-description">Integrated with Stripe for secure payment processing with support for
-                        multiple payment methods and currencies.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">Responsive Design</h3>
-                    <p class="feature-description">Fully responsive interface that works seamlessly across desktop,
-                        tablet, and mobile devices.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Fast Performance</h3>
-                    <p class="feature-description">Optimized for speed with lazy loading, image compression, and
-                        efficient database queries.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">👤</div>
-                    <h3 class="feature-title">User Management</h3>
-                    <p class="feature-description">Complete user authentication system with profiles, order history, and
-                        personalized recommendations.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Links -->
-        <div class="project-links">
-            <a href="#" class="project-link link-primary">
-                🚀 Live Demo
-            </a>
-            <a href="#" class="project-link link-secondary">
-                💻 View Code
-            </a>
         </div>
     </div>
 
     <!-- Delta Wing -->
     <div class="project-showcase">
-        <!-- Project Header -->
         <div class="project-header">
             <h3 class="project-title">Delta Wing</h3>
             <p class="project-subtitle"></p>
-
-            <div class="project-tags">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">MongoDB</span>
-                <span class="tag">Stripe</span>
-                <span class="tag">AWS</span>
-            </div>
         </div>
 
-        <!-- Hero Video Section -->
         <div class="hero-media">
             <div class="video-container">
                 <div class="demo-video">
-                    <video loop autoplay muted src="Projects/Aero/Plane3.mp4"></video>
+                    <video loop autoplay muted src="./assets/Projects/Aero/Plane3.mp4"></video>
                     <div class="video-overlay">
                         <div class="play-button"></div>
                     </div>
-                    <!-- <span>🎥 Project Demo Video</span> -->
                 </div>
             </div>
         </div>
 
-        <!-- Image Gallery -->
         <div class="gallery-section">
             <h2 class="section-title">Photos</h2>
             <div class="image-gallery">
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/Aero/Plane3.avif" alt="">
+                        <img src="./assets/Projects/Aero/Plane3.avif" alt="">
                         <div class="gallery-overlay">
-                            <div class="overlay-text">R1 and R2 Bots Together Ready for a Match</div>
+                            <div class="overlay-text">Delta Wing Aircraft Design</div>
                         </div>
                     </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="Projects/Aero/Plane3.avif" alt="">
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">R1 and R2 Bots Together Ready for a Match</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="Projects/Robocon/RB2.jpg" alt="">
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">R2 Bot On The Arena of IIT, Delhi</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <img src="Projects/Robocon/RB3.jpg" alt="">
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">R1 Bot On The Aren of IIT, Delhi</div>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- <div class="gallery-item" onclick="openModal('Checkout Process')">
-                    <div class="gallery-image">
-                        💳 Checkout Process
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Secure payment integration with Stripe</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" onclick="openModal('Admin Dashboard')">
-                    <div class="gallery-image">
-                        📊 Admin Dashboard
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Comprehensive admin panel for inventory management</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" onclick="openModal('Mobile Experience')">
-                    <div class="gallery-image">
-                        📱 Mobile Experience
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Fully responsive design optimized for mobile devices</div>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-
-        <!-- Features Section -->
-        <div class="features-section">
-            <h2 class="section-title">Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Secure Payments</h3>
-                    <p class="feature-description">Integrated with Stripe for secure payment processing with support for
-                        multiple payment methods and currencies.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">Responsive Design</h3>
-                    <p class="feature-description">Fully responsive interface that works seamlessly across desktop,
-                        tablet, and mobile devices.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Fast Performance</h3>
-                    <p class="feature-description">Optimized for speed with lazy loading, image compression, and
-                        efficient database queries.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">👤</div>
-                    <h3 class="feature-title">User Management</h3>
-                    <p class="feature-description">Complete user authentication system with profiles, order history, and
-                        personalized recommendations.</p>
                 </div>
             </div>
-        </div>
-
-        <!-- Project Links -->
-        <div class="project-links">
-            <a href="#" class="project-link link-primary">
-                🚀 Live Demo
-            </a>
-            <a href="#" class="project-link link-secondary">
-                💻 View Code
-            </a>
         </div>
     </div>
 
     <!-- RC Planes -->
     <div class="project-showcase">
-        <!-- Project Header -->
         <div class="project-header">
             <h3 class="project-title">RC Planes</h3>
             <p class="project-subtitle"></p>
-
-            <div class="project-tags">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">MongoDB</span>
-                <span class="tag">Stripe</span>
-                <span class="tag">AWS</span>
-            </div>
         </div>
 
-        <!-- Hero Video Section -->
-        <!-- <div class="hero-media">
-            <div class="video-container">
-                <div class="demo-video">
-                    <video loop autoplay muted src="Projects/Robocon/Robocon.webm"></video>
-                    <div class="video-overlay">
-                        <div class="play-button"></div>
-                    </div>
-                    <span>🎥 Project Demo Video</span>
-                </div>
-            </div>
-        </div> -->
-
-        <!-- Image Gallery -->
         <div class="gallery-section">
-            <!-- <h2 class="section-title">Photos</h2> -->
             <div class="image-gallery">
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/Aero/Plane4.avif" alt="">
+                        <img src="./assets/Projects/Aero/Plane4.avif" alt="">
                         <div class="gallery-overlay">
                             <div class="overlay-text">A simple Remote Controlled Plane</div>
                         </div>
@@ -2619,7 +552,7 @@
 
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/Aero/Plane5.webp" alt="">
+                        <img src="./assets/Projects/Aero/Plane5.webp" alt="">
                         <div class="gallery-overlay">
                             <div class="overlay-text">A simple Remote Controlled Plane</div>
                         </div>
@@ -2628,91 +561,15 @@
 
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="Projects/Aero/Plane6.webp" alt="">
+                        <img src="./assets/Projects/Aero/Plane6.webp" alt="">
                         <div class="gallery-overlay">
                             <div class="overlay-text">A simple Remote Controlled Plane</div>
                         </div>
                     </div>
                 </div>
-
-                <!-- <div class="gallery-item" onclick="openModal('Checkout Process')">
-                    <div class="gallery-image">
-                        💳 Checkout Process
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Secure payment integration with Stripe</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" onclick="openModal('Admin Dashboard')">
-                    <div class="gallery-image">
-                        📊 Admin Dashboard
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Comprehensive admin panel for inventory management</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-item" onclick="openModal('Mobile Experience')">
-                    <div class="gallery-image">
-                        📱 Mobile Experience
-                        <div class="gallery-overlay">
-                            <div class="overlay-text">Fully responsive design optimized for mobile devices</div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
-        </div>
-
-        <!-- Features Section -->
-        <div class="features-section">
-            <h2 class="section-title">Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Secure Payments</h3>
-                    <p class="feature-description">Integrated with Stripe for secure payment processing with support for
-                        multiple payment methods and currencies.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">Responsive Design</h3>
-                    <p class="feature-description">Fully responsive interface that works seamlessly across desktop,
-                        tablet, and mobile devices.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Fast Performance</h3>
-                    <p class="feature-description">Optimized for speed with lazy loading, image compression, and
-                        efficient database queries.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">👤</div>
-                    <h3 class="feature-title">User Management</h3>
-                    <p class="feature-description">Complete user authentication system with profiles, order history, and
-                        personalized recommendations.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Links -->
-        <div class="project-links">
-            <a href="#" class="project-link link-primary">
-                🚀 Live Demo
-            </a>
-            <a href="#" class="project-link link-secondary">
-                💻 View Code
-            </a>
         </div>
     </div>
-
-
-
-
-
 
     <!-- Modal for full-screen images -->
     <div class="modal" id="imageModal">
@@ -2721,65 +578,6 @@
             <div class="modal-image" id="modalImage"></div>
         </div>
     </div>
-
-    <script>
-        function playDemo() {
-            alert('🎬 Demo video would play here!\n\nIn a real implementation, this would:\n• Open a video player\n• Stream the project demo\n• Show interactive features');
-        }
-
-        function openModal(imageName) {
-            const modal = document.getElementById('imageModal');
-            const modalImage = document.getElementById('modalImage');
-
-            // Create a larger, more detailed view
-            modalImage.innerHTML = `
-                <div style="width: 800px; height: 500px; background: linear-gradient(45deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; border-radius: 10px; position: relative;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 4rem; margin-bottom: 20px;">📸</div>
-                        <div>${imageName}</div>
-                        <div style="font-size: 1rem; margin-top: 10px; opacity: 0.8;">Full resolution image would display here</div>
-                    </div>
-                </div>
-            `;
-
-            modal.style.display = 'block';
-
-            // Add fade-in animation
-            setTimeout(() => {
-                modal.style.opacity = '1';
-            }, 10);
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('imageModal');
-            modal.style.opacity = '0';
-            setTimeout(() => {
-                modal.style.display = 'none';
-            }, 300);
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function (event) {
-            const modal = document.getElementById('imageModal');
-            if (event.target === modal) {
-                closeModal();
-            }
-        }
-
-        // Add smooth scrolling for better UX
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
 
     <footer class="section-p1">
         <div class="col">
@@ -2790,21 +588,21 @@
         <div class="col">
             <h4>Quick Links</h4>
             <a href="album.html">Album</a>
-            <a href="blog.html">blog</a>
+            <a href="blogs.html">Blog</a>
         </div>
         <div class="col">
             <div class="follow">
                 <h4>Follow Us</h4>
                 <div class="icons">
-                    <i class="bi bi-facebook">
-                        <link rel="stylesheet" href="https://www.facebook.com/robotechforum?mibextid=ZbWKwL" />
-                    </i>
-                    <i class="bi bi-instagram">
-                        <link rel="stylesheet" href="https://www.instagram.com/the_robo_tech_forum_gcoea/" />
-                    </i>
-                    <i class="bi bi-linkedin">
-                        <link rel="stylesheet" href="https://www.linkedin.com/company/the-robo-tech-forum/" />
-                    </i>
+                    <a href="https://www.facebook.com/robotechforum?mibextid=ZbWKwL" target="_blank">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/the_robo_tech_forum_gcoea/" target="_blank">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/the-robo-tech-forum/" target="_blank">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -2816,12 +614,12 @@
         </p>
     </div>
 
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="./newscript.js"></script>
-    <!-- Include necessary JavaScript files -->
-    <script src="script.js"></script>
+    <script src="./assets/js/projects.js"></script>
 </body>
 
 </html>
